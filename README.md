@@ -63,7 +63,7 @@ Inspiration, code snippets, etc.
 * [zenorocha](https://gist.github.com/zenorocha/4526327)
 * [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
 
-<img src="sapienza_delivery_logo2.png" align="left" width="192px" height="192px"/>
+<img src="sapienza_delivery_logo2.PNG" align="left" width="192px" height="192px"/>
 <img align="left" width="0" height="192px" hspace="10"/>
 
 > Template files for writing maintanable GitHub projects. Make your repo pretty!
