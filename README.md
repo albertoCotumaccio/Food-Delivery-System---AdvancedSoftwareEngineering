@@ -48,7 +48,7 @@ command to run if program contains helper info
 
 ## Authors :thumbsup:
 
-> References for starting a Project
+> Those who participated in the creation of the project are listed here
 
 * [Helping people contribute to your Project](https://help.github.com/articles/helping-people-contribute-to-your-project/)
 * [Am I Ready to Open Source it?](https://gist.github.com/PurpleBooth/6f1ba788bf70fb501439#file-am-i-ready-to-open-source-this-md)
