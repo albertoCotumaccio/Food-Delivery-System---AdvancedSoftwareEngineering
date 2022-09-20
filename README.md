@@ -46,13 +46,12 @@ Any advise for common problems or issues.
 command to run if program contains helper info
 ```
 
-## Authors
+## Authors :thumbsup:
 
-Contributors names and contact info
+> References for starting a Project
 
-dr. Alberto Cotumaccio(https://twitter.com/dompizzie)
-dr. Giovanni Montobbio
-dr. Vincenzo Romito
+* [Helping people contribute to your Project](https://help.github.com/articles/helping-people-contribute-to-your-project/)
+* [Am I Ready to Open Source it?](https://gist.github.com/PurpleBooth/6f1ba788bf70fb501439#file-am-i-ready-to-open-source-this-md)
 
 ## Version History
 
