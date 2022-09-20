@@ -1,6 +1,6 @@
 ## Food-Delivery-System with WebRatio
 
-This project was carried out for the Advanced Software Engineering exam, Master in Computer Science at Sapienza - September 2022
+This project was carried out for the Advanced Software Engineering exam, Master degree in Computer Science at Sapienza - September 2022
 
 <img src="sapienza_delivery_logo2.PNG" align="left" width="192px" height="192px"/>
 <img align="left" width="0" height="192px" hspace="10"/>
