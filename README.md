@@ -1,3 +1,7 @@
+## Project Title
+
+Simple overview of use/purpose.
+
 <img src="sapienza_delivery_logo2.PNG" align="left" width="192px" height="192px"/>
 <img align="left" width="0" height="192px" hspace="10"/>
 
@@ -14,13 +18,6 @@ So you had an idea and developed the next world's industry-changing application.
 </p>
 <br>
 
-## Project Title
-
-Simple overview of use/purpose.
-
-## Description
-
-An in-depth paragraph about your project and overview of use.
 
 ## Getting Started
 
