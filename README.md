@@ -50,7 +50,7 @@ command to run if program contains helper info
 
 > Those who participated in the creation of the project are listed here
 
-* [Alberto Cotumaccio](https://help.github.com/articles/helping-people-contribute-to-your-project/](https://it.linkedin.com/in/alberto-cotumaccio-8b8443229?trk=people-guest_people_search-card)
+* [Alberto Cotumaccio](https://help.github.com/articles/helping-people-contribute-to-your-project/)
 * Giovanni Montobbio
 * Vincenzo Romito
 
