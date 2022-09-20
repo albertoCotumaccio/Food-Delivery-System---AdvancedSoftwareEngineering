@@ -50,7 +50,7 @@ command to run if program contains helper info
 
 Contributors names and contact info
 
-dr. Alberto Cotumaccio(https://twitter.com/dompizzie) 
+dr. Alberto Cotumaccio(https://twitter.com/dompizzie)
 dr. Giovanni Montobbio
 dr. Vincenzo Romito
 
