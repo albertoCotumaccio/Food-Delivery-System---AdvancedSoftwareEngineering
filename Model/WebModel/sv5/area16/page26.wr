@@ -1,0 +1,38 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="395" gr:y="35" id="sv5#area16#page26" name="Edit slot" ignoreMasterPage="true" layout:pageLayout="WRDefault/Empty">
+  <ContentUnits>
+    <EntryUnit id="sv5#area16#page26#enu4" name="Edit Slot" gr:x="0" gr:y="0" fieldOrder="sv5#area16#page26#enu4#fld5 sv5#area16#page26#enu4#fld9 sv5#area16#page26#enu4#fld12" linkOrder="sv5#area16#page26#enu4#ln13" entity="ent6">
+      <Field id="sv5#area16#page26#enu4#fld12" name="Finish" type="time" modifiable="true"/>
+      <Field id="sv5#area16#page26#enu4#fld9" name="Start" type="time" modifiable="true"/>
+      <Field id="sv5#area16#page26#enu4#fld5" name="Day" type="string" modifiable="false" preloaded="true"/>
+      <Link id="sv5#area16#page26#enu4#ln13" name="Save" to="sv5#area16#miu12" type="normal" validate="true">
+        <LinkParameter id="sv5#area16#page26#enu4#ln13#par19" name="Day_day" source="sv5#area16#page26#enu4#fld5" target="sv5#area16#miu12.mov1#opm7#icu7#icp33"/>
+        <LinkParameter id="sv5#area16#page26#enu4#ln13#par20" name="Finish_finish" source="sv5#area16#page26#enu4#fld12" target="sv5#area16#miu12.mov1#opm7#icu7#icp42"/>
+        <LinkParameter id="sv5#area16#page26#enu4#ln13#par21" name="Start_start" source="sv5#area16#page26#enu4#fld9" target="sv5#area16#miu12.mov1#opm7#icu7#icp35"/>
+        <LinkParameter id="sv5#area16#page26#enu4#ln13#par29" name="Key [oid]_oid_slot" source="key.ent6#att13" target="sv5#area16#miu12.mov1#opm7#icu7#icp43"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv5#area16#page26#enu4">
+          <layout:Field field="sv5#area16#page26#enu4#fld5"/>
+          <layout:Field field="sv5#area16#page26#enu4#fld9"/>
+          <layout:Field field="sv5#area16#page26#enu4#fld12"/>
+          <layout:Link link="sv5#area16#page26#enu4#ln13"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

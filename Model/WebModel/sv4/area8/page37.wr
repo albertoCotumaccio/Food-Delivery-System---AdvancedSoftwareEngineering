@@ -1,0 +1,57 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area8#page37" name="Details order - modal" ignoreMasterPage="true" layout:pageLayout="WRDefault/Empty" gr:x="435" gr:y="15">
+  <ContentUnits>
+    <QueryUnit id="sv4#area8#page37#qu26" name="show all my orders" gr:x="150" gr:y="0" mode="select" language="SQL" db="db6" outputsOrder="sv4#area8#page37#qu26#qo64 sv4#area8#page37#qu26#qo59 sv4#area8#page37#qu26#qo60 sv4#area8#page37#qu26#qo61 sv4#area8#page37#qu26#qo62 sv4#area8#page37#qu26#qo63 sv4#area8#page37#qu26#qo65">
+      <QueryText xml:space="preserve">select distinct o.oid, r.name, o.total, o.accepted, r.delivery_time, rider.surname, ur.phone
+from restaurantuser r, sapienza_delivery.order o, item i, orderitem oi, rideruser rider, sapienza_delivery.user u, sapienza_delivery.user ur
+where o.customeruser_oid = :userKey and r.user_oid = i.restaurantuser_oid 
+and oi.item_oid = i.oid and oi.order_oid = o.oid and o.rideruser_oid = rider.user_oid 
+and rider.user_oid = u.oid and r.user_oid = ur.oid and u.oid &lt;&gt; ur.oid and o.oid = :orderIDinput</QueryText>
+      <QueryOutput id="sv4#area8#page37#qu26#qo59" name="restaurant" type="string"/>
+      <QueryOutput id="sv4#area8#page37#qu26#qo60" name="total" type="float"/>
+      <QueryOutput id="sv4#area8#page37#qu26#qo61" name="accepted" type="boolean"/>
+      <QueryInput id="sv4#area8#page37#qu26#qi27" name="userKey" required="true"/>
+      <QueryOutput id="sv4#area8#page37#qu26#qo62" name="delivery time" type="integer"/>
+      <QueryOutput id="sv4#area8#page37#qu26#qo63" name="rider"/>
+      <QueryOutput id="sv4#area8#page37#qu26#qo64" name="order ID" type="integer"/>
+      <QueryOutput id="sv4#area8#page37#qu26#qo65" name="restaurant phone" type="string"/>
+      <QueryInput id="sv4#area8#page37#qu26#qi28" name="orderIDinput" required="true" type="integer"/>
+    </QueryUnit>
+    <GetUnit id="sv4#area8#page37#gtu21" name="userKey" gr:x="0" gr:y="90" contextParameters="UserCtxParam">
+      <Link id="sv4#area8#page37#gtu21#ln146" name="Flow61" to="sv4#area8#page37#qu26" type="transport" validate="true">
+        <LinkParameter id="sv4#area8#page37#gtu21#ln146#par383" name="UserCtxParam.oid_userKey" source="sv4#area8#page37#gtu21.UserCtxParam" target="sv4#area8#page37#qu26.sv4#area8#page37#qu26#qi27"/>
+      </Link>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area8#page37#qu26"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

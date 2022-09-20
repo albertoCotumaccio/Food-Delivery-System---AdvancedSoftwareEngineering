@@ -1,0 +1,42 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="145" gr:y="75" id="mov4#opm23" name="Update balance">
+  <OperationUnits>
+    <InputCollectorUnit id="mov4#opm23#icu23" gr:x="30" gr:y="60">
+      <OKLink id="mov4#opm23#icu23#oln26" name="OKFlow26" to="mov4#opm23#qu7">
+        <LinkParameter id="mov4#opm23#icu23#oln26#par82" name="toSum_toSum" source="mov4#opm23#icu23#icp15" target="mov4#opm23#qu7.mov4#opm23#qu7#qi8"/>
+      </OKLink>
+      <InputCollectorParameter id="mov4#opm23#icu23#icp15" name="toSum"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="855" gr:y="95" id="mov4#opm23#okcu21" name="OK Port21">
+      <OutputCollectorParameter id="mov4#opm23#okcu21#ocp33" name="message" value="Money loaded"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="855" gr:y="270" id="mov4#opm23#kocu23" name="KO Port23">
+      <OutputCollectorParameter id="mov4#opm23#kocu23#ocp34" name="message" value="error"/>
+    </KOCollectorUnit>
+    <ModifyUnit gr:x="605" gr:y="125" id="mov4#opm23#mfu10" name="Update10" entity="User">
+      <Selector id="mov4#opm23#mfu10#su19" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov4#opm23#mfu10#su19#kcond15" name="KeyCondition15" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov4#opm23#mfu10#oln22" name="OKFlow22" to="mov4#opm23#okcu21" automaticCoupling="true"/>
+      <KOLink id="mov4#opm23#mfu10#kln7" name="KOFlow7" to="mov4#opm23#kocu23" automaticCoupling="true"/>
+    </ModifyUnit>
+    <GetUnit gr:x="380" gr:y="310" id="mov4#opm23#gtu9" name="customerID" contextParameters="UserCtxParam">
+      <Link id="mov4#opm23#gtu9#ln31" name="Flow31" to="mov4#opm23#mfu10" type="transport" validate="true">
+        <LinkParameter id="mov4#opm23#gtu9#ln31#par30" name="UserCtxParam.oid_KeyCondition15 [oid]" source="mov4#opm23#gtu9.UserCtxParam" target="mov4#opm23#mfu10#su19#kcond15.userOID"/>
+      </Link>
+      <Link id="mov4#opm23#gtu9#ln35" name="Flow35" to="mov4#opm23#qu7" type="transport" validate="true">
+        <LinkParameter id="mov4#opm23#gtu9#ln35#par77" name="UserCtxParam.oid_customerID" source="mov4#opm23#gtu9.UserCtxParam" target="mov4#opm23#qu7.mov4#opm23#qu7#qi4"/>
+      </Link>
+    </GetUnit>
+    <QueryUnit gr:x="350" gr:y="115" id="mov4#opm23#qu7" name="Query7" mode="select" language="SQL" db="db6">
+      <OKLink id="mov4#opm23#qu7#oln71" name="OKFlow71" to="mov4#opm23#mfu10">
+        <LinkParameter id="mov4#opm23#qu7#oln71#par105" name="newBalance_balance" source="data[].newBalance" target="mov4#opm23#mfu10.User#att1"/>
+      </OKLink>
+      <QueryInput id="mov4#opm23#qu7#qi4" name="customerID" required="true" type="integer"/>
+      <QueryInput id="mov4#opm23#qu7#qi8" name="toSum" required="true" type="float"/>
+      <QueryText xml:space="preserve">select u.balance + :toSum
+from sapienza_delivery.user u
+where u.oid = :customerID;</QueryText>
+      <QueryOutput id="mov4#opm23#qu7#qo12" name="newBalance" type="float"/>
+    </QueryUnit>
+  </OperationUnits>
+</OperationModule>

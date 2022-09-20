@@ -1,0 +1,45 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="450" gr:y="305" id="sv4#area8#page35" name="Recent orders" landmark="true">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="0" gr:y="0" id="sv4#area8#page35#pwu12" name="Orders delivered without feedback" sortable="true" checkable="false" useCountQuery="false" entity="ent5" displayAttributes="ent5#att6 ent5#att39" linkOrder="sv4#area8#page35#pwu12#ln147 sv4#area8#page35#pwu12#ln155">
+      <Link id="sv4#area8#page35#pwu12#ln147" name="Order details" to="sv4#area8#page37#qu26" type="normal" validate="true" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowTitle="Order details" ajaxWindowWidth="800" ajaxWindowHeight="600" ajaxWindowResizable="false" ajaxWindowAutoResizing="true" ajaxWindowClosable="true" ajaxWindowModal="true">
+        <LinkParameter id="sv4#area8#page35#pwu12#ln147#par384" name="oid_orderIDinput" source="data[].ent5#att6" target="sv4#area8#page37#qu26.sv4#area8#page37#qu26#qi28"/>
+      </Link>
+      <Selector id="sv4#area8#page35#pwu12#su56" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#area8#page35#pwu12#su56#rcond27" name="RoleCondition27" predicate="in" implied="false" role="rel3#role6"/>
+        <AttributesCondition id="sv4#area8#page35#pwu12#su56#acond30" name="delivered" predicate="eq" booleanOperator="or" implied="false" attributes="ent5#att17" value="1"/>
+        <AttributesCondition id="sv4#area8#page35#pwu12#su56#acond31" name="not exists feedback to rest" predicate="null" booleanOperator="or" implied="false" attributes="ent5#att26"/>
+      </Selector>
+      <Link id="sv4#area8#page35#pwu12#ln155" name="Insert feedback" to="sv4#area8#page39#enu16" type="normal" validate="true" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowWidth="800" ajaxWindowHeight="600" ajaxWindowResizable="false" ajaxWindowAutoResizing="true" ajaxWindowClosable="true" ajaxWindowModal="true" ajaxWindowTitle="feedback to restaurant">
+        <LinkParameter id="sv4#area8#page35#pwu12#ln155#par391" name="oid_Key Condition [oid]" source="data[].ent5#att6" target="sv4#area8#page39#enu16.ent5#att6"/>
+      </Link>
+    </PowerIndexUnit>
+    <GetUnit id="sv4#area8#page35#gtu22" name="get customerID" gr:x="165" gr:y="220" contextParameters="UserCtxParam">
+      <Link id="sv4#area8#page35#gtu22#ln149" name="Flow149" to="sv4#area8#page35#pwu12" type="transport" validate="true">
+        <LinkParameter id="sv4#area8#page35#gtu22#ln149#par386" name="UserCtxParam.oid_RoleCondition27 [oid]" source="sv4#area8#page35#gtu22.UserCtxParam" target="sv4#area8#page35#pwu12#su56#rcond27.userOID"/>
+      </Link>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area8#page35#pwu12">
+          <layout:Attribute attribute="ent5#att6"/>
+          <layout:Attribute attribute="ent5#att39"/>
+          <layout:Link link="sv4#area8#page35#pwu12#ln147"/>
+          <layout:Link link="sv4#area8#page35#pwu12#ln155"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

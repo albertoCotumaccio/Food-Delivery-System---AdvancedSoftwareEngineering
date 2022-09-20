@@ -1,0 +1,58 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov3#mpkg1#opm18#opg3" name="Operation Registration Restaurant" transaction="true" gr:x="330" gr:y="105">
+  <OperationUnits>
+    <CreateUnit id="mov3#mpkg1#opm18#opg3#cru27" name="Create1" gr:x="5" gr:y="0" entity="ent6">
+      <OKLink id="mov3#mpkg1#opm18#opg3#cru27#oln40" name="OKFlow22" to="mov3#mpkg1#opm18#opg3#cru30" automaticCoupling="true"/>
+    </CreateUnit>
+    <CreateUnit id="mov3#mpkg1#opm18#opg3#cru28" name="Create5" gr:x="255" gr:y="0" entity="ent6">
+      <OKLink id="mov3#mpkg1#opm18#opg3#cru28#oln45" name="OKFlow30" to="mov3#mpkg1#opm18#opg3#cru32" automaticCoupling="true"/>
+    </CreateUnit>
+    <CreateUnit id="mov3#mpkg1#opm18#opg3#cru29" name="Restaurant" gr:x="0" gr:y="195" entity="ent3">
+      <Link id="mov3#mpkg1#opm18#opg3#cru29#ln16" name="Flow20" to="mov3#mpkg1#opm18#opg3#cru30" type="transport" validate="true">
+        <LinkParameter id="mov3#mpkg1#opm18#opg3#cru29#ln16#par304" name="oid_RestaurantUser.oid(SlotToRestaurantUser)" source="userOIDArray" target="mov3#mpkg1#opm18#opg3#cru30.rel6#role11.userOID"/>
+        <LinkParameter id="mov3#mpkg1#opm18#opg3#cru29#ln16#par305" name="Tuesday_day" target="mov3#mpkg1#opm18#opg3#cru30.ent6#att14" sourceValue="Tuesday"/>
+      </Link>
+      <OKLink id="mov3#mpkg1#opm18#opg3#cru29#oln46" name="OKFlow24" to="mov3#mpkg1#opm18#opg3#cru27">
+        <LinkParameter id="mov3#mpkg1#opm18#opg3#cru29#oln46#par306" name="oid_RestaurantUser.oid(SlotToRestaurantUser)" source="userOIDArray" target="mov3#mpkg1#opm18#opg3#cru27.rel6#role11.userOID"/>
+        <LinkParameter id="mov3#mpkg1#opm18#opg3#cru29#oln46#par307" name="Monday_day" target="mov3#mpkg1#opm18#opg3#cru27.ent6#att14" sourceValue="Monday"/>
+      </OKLink>
+      <Link id="mov3#mpkg1#opm18#opg3#cru29#ln20" name="Flow21" to="mov3#mpkg1#opm18#opg3#cru28" type="transport" validate="true">
+        <LinkParameter id="mov3#mpkg1#opm18#opg3#cru29#ln20#par308" name="oid_RestaurantUser.oid(SlotToRestaurantUser)" source="userOIDArray" target="mov3#mpkg1#opm18#opg3#cru28.rel6#role11.userOID"/>
+        <LinkParameter id="mov3#mpkg1#opm18#opg3#cru29#ln20#par309" name="Wednesday_day" target="mov3#mpkg1#opm18#opg3#cru28.ent6#att14" sourceValue="Wednesday"/>
+      </Link>
+      <Link id="mov3#mpkg1#opm18#opg3#cru29#ln21" name="Flow25" to="mov3#mpkg1#opm18#opg3#cru32" type="transport" validate="true">
+        <LinkParameter id="mov3#mpkg1#opm18#opg3#cru29#ln21#par310" name="oid_RestaurantUser.oid(SlotToRestaurantUser)" source="userOIDArray" target="mov3#mpkg1#opm18#opg3#cru32.rel6#role11.userOID"/>
+        <LinkParameter id="mov3#mpkg1#opm18#opg3#cru29#ln21#par311" name="Thursday_day" target="mov3#mpkg1#opm18#opg3#cru32.ent6#att14" sourceValue="Thursday"/>
+      </Link>
+      <Link id="mov3#mpkg1#opm18#opg3#cru29#ln25" name="Flow27" to="mov3#mpkg1#opm18#opg3#cru31" type="transport" validate="true">
+        <LinkParameter id="mov3#mpkg1#opm18#opg3#cru29#ln25#par312" name="oid_RestaurantUser.oid(SlotToRestaurantUser)" source="userOIDArray" target="mov3#mpkg1#opm18#opg3#cru31.rel6#role11.userOID"/>
+        <LinkParameter id="mov3#mpkg1#opm18#opg3#cru29#ln25#par313" name="Friday_day" target="mov3#mpkg1#opm18#opg3#cru31.ent6#att14" sourceValue="Friday"/>
+      </Link>
+      <Link id="mov3#mpkg1#opm18#opg3#cru29#ln27" name="Flow28" to="mov3#mpkg1#opm18#opg3#cru34" type="transport" validate="true">
+        <LinkParameter id="mov3#mpkg1#opm18#opg3#cru29#ln27#par314" name="oid_RestaurantUser.oid(SlotToRestaurantUser)" source="userOIDArray" target="mov3#mpkg1#opm18#opg3#cru34.rel6#role11.userOID"/>
+        <LinkParameter id="mov3#mpkg1#opm18#opg3#cru29#ln27#par315" name="Saturday_day" target="mov3#mpkg1#opm18#opg3#cru34.ent6#att14" sourceValue="Saturday"/>
+      </Link>
+      <Link id="mov3#mpkg1#opm18#opg3#cru29#ln28" name="Flow29" to="mov3#mpkg1#opm18#opg3#cru33" type="transport" validate="true">
+        <LinkParameter id="mov3#mpkg1#opm18#opg3#cru29#ln28#par316" name="oid_RestaurantUser.oid(SlotToRestaurantUser)" source="userOIDArray" target="mov3#mpkg1#opm18#opg3#cru33.rel6#role11.userOID"/>
+        <LinkParameter id="mov3#mpkg1#opm18#opg3#cru29#ln28#par317" name="Sunday_day" target="mov3#mpkg1#opm18#opg3#cru33.ent6#att14" sourceValue="Sunday"/>
+      </Link>
+    </CreateUnit>
+    <CreateUnit id="mov3#mpkg1#opm18#opg3#cru30" name="Create3" gr:x="125" gr:y="0" entity="ent6">
+      <OKLink id="mov3#mpkg1#opm18#opg3#cru30#oln50" name="OKFlow25" to="mov3#mpkg1#opm18#opg3#cru28" automaticCoupling="true"/>
+    </CreateUnit>
+    <CreateUnit id="mov3#mpkg1#opm18#opg3#cru31" name="Create9" gr:x="495" gr:y="0" entity="ent6">
+      <OKLink id="mov3#mpkg1#opm18#opg3#cru31#oln51" name="OKFlow33" to="mov3#mpkg1#opm18#opg3#cru34" automaticCoupling="true"/>
+    </CreateUnit>
+    <CreateUnit id="mov3#mpkg1#opm18#opg3#cru32" name="Create8" gr:x="375" gr:y="0" entity="ent6">
+      <OKLink id="mov3#mpkg1#opm18#opg3#cru32#oln52" name="OKFlow32" to="mov3#mpkg1#opm18#opg3#cru31" automaticCoupling="true"/>
+    </CreateUnit>
+    <CreateUnit id="mov3#mpkg1#opm18#opg3#cru33" name="Create11" gr:x="760" gr:y="0" entity="ent6">
+      <OKLink id="mov3#mpkg1#opm18#opg3#cru33#oln57" name="OKFlow36" to="mov3#mpkg1#opm18#okcu15" automaticCoupling="true"/>
+    </CreateUnit>
+    <CreateUnit id="mov3#mpkg1#opm18#opg3#cru34" name="Create10" gr:x="620" gr:y="0" entity="ent6">
+      <OKLink id="mov3#mpkg1#opm18#opg3#cru34#oln58" name="OKFlow35" to="mov3#mpkg1#opm18#opg3#cru33" automaticCoupling="true"/>
+    </CreateUnit>
+  </OperationUnits>
+  <KOLink id="mov3#mpkg1#opm18#opg3#kln33" name="KOFlow28" to="mov3#mpkg1#opm18#kocu18">
+    <LinkParameter id="mov3#mpkg1#opm18#opg3#kln33#par318" name="error_message" target="mov3#mpkg1#opm18#kocu18#ocp29" sourceValue="error"/>
+  </KOLink>
+</OperationGroup>

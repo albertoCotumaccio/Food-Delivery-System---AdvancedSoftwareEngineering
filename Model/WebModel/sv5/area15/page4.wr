@@ -1,0 +1,58 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv5#area15#page4" name="Edit item - modal" ignoreMasterPage="true" layout:pageLayout="WRDefault/Empty" gr:x="535" gr:y="40">
+  <ContentUnits>
+    <EntryUnit id="sv5#area15#page4#enu3" name="Edit Item Form" linkOrder="sv5#area15#page4#enu3#ln50" gr:x="0" gr:y="0" fieldOrder="sv5#area15#page4#enu3#fld23 sv5#area15#page4#enu3#fld24 sv5#area15#page4#enu3#fld25 sv5#area15#page4#enu3#fld26" entity="ent9">
+      <Link id="sv5#area15#page4#enu3#ln50" name="Save" to="sv5#area15#miu13" type="normal" validate="true">
+        <LinkParameter id="sv5#area15#page4#enu3#ln50#par197" name="category_category" source="sv5#area15#page4#enu3#fld25" target="sv5#area15#miu13.mov1#opm13#icu13#icp50"/>
+        <LinkParameter id="sv5#area15#page4#enu3#ln50#par198" name="description_description" source="sv5#area15#page4#enu3#fld24" target="sv5#area15#miu13.mov1#opm13#icu13#icp51"/>
+        <LinkParameter id="sv5#area15#page4#enu3#ln50#par199" name="name_name" source="sv5#area15#page4#enu3#fld23" target="sv5#area15#miu13.mov1#opm13#icu13#icp48"/>
+        <LinkParameter id="sv5#area15#page4#enu3#ln50#par200" name="price_price" source="sv5#area15#page4#enu3#fld26" target="sv5#area15#miu13.mov1#opm13#icu13#icp49"/>
+        <LinkParameter id="sv5#area15#page4#enu3#ln50#par201" name="Key [oid]_item_key" source="key.ent9#att31" target="sv5#area15#miu13.mov1#opm13#icu13#icp52"/>
+      </Link>
+      <Field id="sv5#area15#page4#enu3#fld23" name="name" type="string" modifiable="true" attribute="ent9#att32">
+        <VRules>
+          <MandatoryValidationRule id="sv5#area15#page4#enu3#fld23#mnd7" name="Mandatory7"/>
+        </VRules>
+      </Field>
+      <Field id="sv5#area15#page4#enu3#fld24" name="description" type="text" modifiable="true" attribute="ent9#att33">
+        <VRules>
+          <MandatoryValidationRule id="sv5#area15#page4#enu3#fld24#mnd6" name="Mandatory6"/>
+        </VRules>
+      </Field>
+      <Field id="sv5#area15#page4#enu3#fld25" name="category" type="string" modifiable="true" attribute="ent9#att34">
+        <VRules>
+          <MandatoryValidationRule id="sv5#area15#page4#enu3#fld25#mnd5" name="Mandatory5"/>
+        </VRules>
+      </Field>
+      <Field id="sv5#area15#page4#enu3#fld26" name="price" type="float" modifiable="true" attribute="ent9#att35">
+        <VRules>
+          <MandatoryValidationRule id="sv5#area15#page4#enu3#fld26#mnd8" name="Mandatory8"/>
+          <CompareValidationRule id="sv5#area15#page4#enu3#fld26#cmp1" name="price &gt;= 0" predicate="gteq" value="0"/>
+        </VRules>
+      </Field>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv5#area15#page4#enu3">
+          <layout:Link link="sv5#area15#page4#enu3#ln50"/>
+          <layout:Field field="sv5#area15#page4#enu3#fld23"/>
+          <layout:Field field="sv5#area15#page4#enu3#fld24"/>
+          <layout:Field field="sv5#area15#page4#enu3#fld25"/>
+          <layout:Field field="sv5#area15#page4#enu3#fld26"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

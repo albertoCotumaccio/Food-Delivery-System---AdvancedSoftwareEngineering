@@ -1,0 +1,87 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="410" gr:y="70" id="mov4#opm6" name="Finalize order">
+  <OperationUnits>
+    <InputCollectorUnit id="mov4#opm6#icu6" gr:x="30" gr:y="60" linkOrder="mov4#opm6#icu6#ln139 mov4#opm6#icu6#ln145">
+      <InputCollectorParameter id="mov4#opm6#icu6#icp2" name="order"/>
+      <OKLink id="mov4#opm6#icu6#oln12" name="OKFlow12" to="mov4#opm6#qu5" gr:bendpoints="255,44,-185,-6">
+        <LinkParameter id="mov4#opm6#icu6#oln12#par7" name="order_ordine" target="mov4#opm6#qu5.mov4#opm6#qu5#qi7" source="mov4#opm6#icu6#icp2"/>
+      </OKLink>
+      <Link id="mov4#opm6#icu6#ln46" name="Flow46" to="mov4#opm6#mfu6" type="transport" validate="true">
+        <LinkParameter id="mov4#opm6#icu6#ln46#par14" name="order_KeyCondition9 [oid]" source="mov4#opm6#icu6#icp2" target="mov4#opm6#mfu6#su16#kcond9.ent5#att6"/>
+        <LinkParameter id="mov4#opm6#icu6#ln46#par117" name="4_RiderUser.oid(OrderToRiderUser)" sourceValue="4" target="mov4#opm6#mfu6.rel12#role24.userOID"/>
+      </Link>
+      <Link id="mov4#opm6#icu6#ln139" name="Flow139" to="mov4#opm6#qu18" type="transport" validate="true">
+        <LinkParameter id="mov4#opm6#icu6#ln139#par394" name="order_orderID" source="mov4#opm6#icu6#icp2" target="mov4#opm6#qu18.mov4#opm6#qu18#qi18"/>
+      </Link>
+      <Link id="mov4#opm6#icu6#ln145" name="Flow145" to="mov4#opm6#dlu4" type="transport" validate="true" gr:bendpoints="423,-94,-507,-324">
+        <LinkParameter id="mov4#opm6#icu6#ln145#par402" name="order_KeyCondition35 [oid]" source="mov4#opm6#icu6#icp2" target="mov4#opm6#dlu4#su49#kcond35.ent5#att6"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="1365" gr:y="60" id="mov4#opm6#okcu4" name="OK Port4">
+      <OutputCollectorParameter id="mov4#opm6#okcu4#ocp15" name="message" value="order created"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="1365" gr:y="400" id="mov4#opm6#kocu6" name="KO Port6">
+      <OutputCollectorParameter id="mov4#opm6#kocu6#ocp16" name="message"/>
+    </KOCollectorUnit>
+    <QueryUnit gr:x="415" gr:y="65" id="mov4#opm6#qu5" name="get total of order" mode="select" language="SQL" db="db6">
+      <QueryInput id="mov4#opm6#qu5#qi7" name="ordine" required="true"/>
+      <QueryText xml:space="preserve">select sum(quantity*price)+ restaurantuser.delivery_fee as total
+from orderitem, item, restaurantuser
+where orderitem.order_oid = :ordine and orderitem.item_oid = item.oid and item.restaurantuser_oid = restaurantuser.user_oid</QueryText>
+      <QueryOutput id="mov4#opm6#qu5#qo2" name="total" type="float"/>
+      <OKLink id="mov4#opm6#qu5#oln21" name="OKFlow21" to="mov4#opm6#mfu6">
+        <LinkParameter id="mov4#opm6#qu5#oln21#par15" name="total_total" source="data[].total" target="mov4#opm6#mfu6.ent5#att39"/>
+      </OKLink>
+    </QueryUnit>
+    <ModifyUnit gr:x="290" gr:y="220" id="mov4#opm6#mfu6" name="update total of order" entity="ent5">
+      <Selector id="mov4#opm6#mfu6#su16" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov4#opm6#mfu6#su16#kcond9" name="KeyCondition9" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov4#opm6#mfu6#oln36" name="OKFlow36" to="mov4#opm6#seu20" automaticCoupling="true"/>
+    </ModifyUnit>
+    <SelectorUnit gr:x="265" gr:y="355" id="mov4#opm6#seu20" name="check total &gt;" entity="ent5">
+      <Selector id="mov4#opm6#seu20#su25" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov4#opm6#seu20#su25#kcond10" name="KeyCondition10" predicate="in" implied="false"/>
+        <AttributesCondition id="mov4#opm6#seu20#su25#acond14" name="AttCondition14" predicate="gt" booleanOperator="or" implied="false" value="0" attributes="ent5#att39"/>
+      </Selector>
+      <OKLink id="mov4#opm6#seu20#oln37" name="OKFlow37" to="mov4#opm6#inn7">
+        <LinkParameter id="mov4#opm6#seu20#oln37#par10" name="oid_Input" source="ent5#att6Array" target="mov4#opm6#inn7.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="490" gr:y="365" id="mov4#opm6#inn7" name="Is Not Null7">
+      <KOLink id="mov4#opm6#inn7#kln61" name="KOFlow61" to="mov4#opm6#kocu6">
+        <LinkParameter id="mov4#opm6#inn7#kln61#par405" name="Please insert at least one item!_message" sourceValue="Please insert at least one item!" target="mov4#opm6#kocu6#ocp16"/>
+      </KOLink>
+      <OKLink id="mov4#opm6#inn7#oln132" name="OKFlow132" to="mov4#opm6#qu18" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <GetUnit gr:x="730" gr:y="50" id="mov4#opm6#gtu14" name="Get14" contextParameters="UserCtxParam" linkOrder="mov4#opm6#gtu14#ln143">
+      <Link id="mov4#opm6#gtu14#ln143" name="Flow143" to="mov4#opm6#qu18" type="transport" validate="true">
+        <LinkParameter id="mov4#opm6#gtu14#ln143#par398" name="UserCtxParam.oid_userID" source="mov4#opm6#gtu14.UserCtxParam" target="mov4#opm6#qu18.mov4#opm6#qu18#qi19"/>
+      </Link>
+    </GetUnit>
+    <QueryUnit gr:x="555" gr:y="225" id="mov4#opm6#qu18" name="Query18" mode="select" language="SQL" db="db6">
+      <QueryText xml:space="preserve">select o.oid
+from sapienza_delivery.order o, sapienza_delivery.user u, orderitem oi, item i, restaurantuser r
+where o.oid = :orderID and u.oid = :userID and oi.order_oid = :orderID and i.oid = oi.item_oid and i.restaurantuser_oid = r.user_oid
+and o.total&lt;=u.balance and r.minimum_spend &lt;= o.total;</QueryText>
+      <QueryInput id="mov4#opm6#qu18#qi18" name="orderID" required="true" type="integer"/>
+      <QueryInput id="mov4#opm6#qu18#qi19" name="userID" required="true" type="integer"/>
+      <QueryOutput id="mov4#opm6#qu18#qo26" name="out" type="integer"/>
+      <OKLink id="mov4#opm6#qu18#oln134" name="OKFlow134" to="mov4#opm6#inn10">
+        <LinkParameter id="mov4#opm6#qu18#oln134#par399" name="out_Input" source="data[].out" target="mov4#opm6#inn10.isnotnull"/>
+      </OKLink>
+    </QueryUnit>
+    <IsNotNullUnit gr:x="725" gr:y="225" id="mov4#opm6#inn10" name="Is Not Null10">
+      <OKLink id="mov4#opm6#inn10#oln135" name="OKFlow135" to="mov4#opm6#okcu4" automaticCoupling="true"/>
+      <KOLink id="mov4#opm6#inn10#kln64" name="KOFlow64" to="mov4#opm6#dlu4" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <DeleteUnit gr:x="1025" gr:y="285" id="mov4#opm6#dlu4" name="Delete4" entity="ent5">
+      <Selector id="mov4#opm6#dlu4#su49" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov4#opm6#dlu4#su49#kcond35" name="KeyCondition35" predicate="in" implied="false"/>
+      </Selector>
+      <CascadeDeleteRole id="mov4#opm6#dlu4#cdr1" name="Cascade Delete Role1" role="rel4#role7"/>
+      <OKLink id="mov4#opm6#dlu4#oln139" name="OKFlow139" to="mov4#opm6#kocu6">
+        <LinkParameter id="mov4#opm6#dlu4#oln139#par404" name="You did not reach the minimum spend or don't have enough money on your balance!_message" sourceValue="You did not reach the minimum spend or don't have enough money on your balance!" target="mov4#opm6#kocu6#ocp16"/>
+      </OKLink>
+    </DeleteUnit>
+  </OperationUnits>
+</OperationModule>

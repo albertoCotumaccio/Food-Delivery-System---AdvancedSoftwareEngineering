@@ -1,0 +1,40 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="320" gr:y="80" id="mov4#opm26#opg6" name="Operation Group 6" transaction="true">
+  <OperationUnits>
+    <ModifyUnit gr:x="0" gr:y="155" id="mov4#opm26#opg6#mfu21" name="Update order with feedback" entity="ent5">
+      <Selector id="mov4#opm26#opg6#mfu21#su59" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov4#opm26#opg6#mfu21#su59#kcond34" name="KeyCondition32" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov4#opm26#opg6#mfu21#oln129" name="OKFlow125" to="mov4#opm26#opg6#qu31" automaticCoupling="true"/>
+    </ModifyUnit>
+    <ModifyUnit gr:x="775" gr:y="5" id="mov4#opm26#opg6#mfu22" name="Update rating restaurant" entity="ent3">
+      <Selector id="mov4#opm26#opg6#mfu22#su60" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov4#opm26#opg6#mfu22#su60#kcond36" name="KeyCondition33" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov4#opm26#opg6#mfu22#oln130" name="OKFlow128" to="mov4#opm26#okcu25" automaticCoupling="true"/>
+    </ModifyUnit>
+    <QueryUnit gr:x="180" gr:y="15" id="mov4#opm26#opg6#qu31" name="get restaurant of order" mode="select" language="SQL" db="db6">
+      <QueryText xml:space="preserve">select distinct r.user_oid 
+from sapienza_delivery.order o, orderitem oi, item i, restaurantuser r
+where o.oid = :orderID and oi.order_oid = o.oid and oi.item_oid = i.oid and i.restaurantuser_oid = r.user_oid;</QueryText>
+      <QueryInput id="mov4#opm26#opg6#qu31#qi35" name="orderID" required="true" type="integer"/>
+      <QueryOutput id="mov4#opm26#opg6#qu31#qo82" name="restaurantID" type="integer"/>
+      <OKLink id="mov4#opm26#opg6#qu31#oln131" name="OKFlow126" to="mov4#opm26#opg6#qu32">
+        <LinkParameter id="mov4#opm26#opg6#qu31#oln131#par407" name="restaurantID_restaurantID" source="data[].restaurantID" target="mov4#opm26#opg6#qu32.mov4#opm26#opg6#qu32#qi36"/>
+      </OKLink>
+      <Link id="mov4#opm26#opg6#qu31#ln162" name="Flow161" to="mov4#opm26#opg6#mfu22" type="transport" validate="true" gr:bendpoints="311,80,-274,65">
+        <LinkParameter id="mov4#opm26#opg6#qu31#ln162#par410" name="restaurantID_KeyCondition33 [oid]" source="data[].restaurantID" target="mov4#opm26#opg6#mfu22#su60#kcond36.userOID"/>
+      </Link>
+    </QueryUnit>
+    <QueryUnit gr:x="460" gr:y="0" id="mov4#opm26#opg6#qu32" name="get rating" mode="select" language="SQL" db="db6">
+      <QueryInput id="mov4#opm26#opg6#qu32#qi36" name="restaurantID" required="true" type="integer"/>
+      <QueryText xml:space="preserve">select avg(o.feedback_to_restaurant)
+from sapienza_delivery.order o, orderitem oi, item i, restaurantuser r
+where i.restaurantuser_oid = :restaurantID and oi.item_oid = i.oid and oi.order_oid = o.oid;</QueryText>
+      <OKLink id="mov4#opm26#opg6#qu32#oln133" name="OKFlow127" to="mov4#opm26#opg6#mfu22">
+        <LinkParameter id="mov4#opm26#opg6#qu32#oln133#par413" name="rating_rating" source="data[].rating" target="mov4#opm26#opg6#mfu22.ent3#att22"/>
+      </OKLink>
+      <QueryOutput id="mov4#opm26#opg6#qu32#qo83" name="rating" type="float"/>
+    </QueryUnit>
+  </OperationUnits>
+  <KOLink id="mov4#opm26#opg6#kln71" name="KOFlow71" to="mov4#opm26#kocu27" automaticCoupling="true"/>
+</OperationGroup>

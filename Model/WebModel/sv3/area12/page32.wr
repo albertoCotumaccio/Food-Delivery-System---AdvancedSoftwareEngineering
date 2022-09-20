@@ -1,0 +1,58 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#area12#page32" name="Details order" ignoreMasterPage="true" layout:pageLayout="WRDefault/Empty" gr:x="545" gr:y="155">
+  <ContentUnits>
+    <QueryUnit id="sv3#area12#page32#qu15" name="customer info" gr:x="10" gr:y="0" mode="select" language="SQL" db="db6">
+      <QueryText xml:space="preserve">select c.name, c.surname, c.address, u.phone
+from sapienza_delivery.order o, customeruser c, sapienza_delivery.user u
+where o.customeruser_oid = c.user_oid and o.oid = :orderID and u.oid = c.user_oid;</QueryText>
+      <QueryInput id="sv3#area12#page32#qu15#qi16" name="orderID" required="true"/>
+      <QueryOutput id="sv3#area12#page32#qu15#qo45" name="name" type="string"/>
+      <QueryOutput id="sv3#area12#page32#qu15#qo46" name="surname" type="string"/>
+      <QueryOutput id="sv3#area12#page32#qu15#qo47" name="address" type="string"/>
+      <QueryOutput id="sv3#area12#page32#qu15#qo51" name="phone" type="string"/>
+    </QueryUnit>
+    <QueryUnit id="sv3#area12#page32#qu16" name="restaurant info" gr:x="0" gr:y="125" mode="select" language="SQL" db="db6">
+      <QueryInput id="sv3#area12#page32#qu16#qi17" name="orderID" required="true"/>
+      <QueryText xml:space="preserve">select distinct r.name, r.address, o.total, u.phone
+from sapienza_delivery.order o, orderitem oi, item i, restaurantuser r, sapienza_delivery.user u
+where o.oid = :orderID and oi.order_oid = o.oid and oi.item_oid = i.oid and i.restaurantuser_oid = r.user_oid and u.oid = r.user_oid;</QueryText>
+      <QueryOutput id="sv3#area12#page32#qu16#qo52" name="name" type="string"/>
+      <QueryOutput id="sv3#area12#page32#qu16#qo53" name="address" type="string"/>
+      <QueryOutput id="sv3#area12#page32#qu16#qo54" name="total" type="float"/>
+      <QueryOutput id="sv3#area12#page32#qu16#qo55" name="phone" type="string"/>
+    </QueryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area12#page32#qu15"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area12#page32#qu16"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

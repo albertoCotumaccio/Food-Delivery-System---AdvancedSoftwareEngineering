@@ -1,0 +1,37 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov3#mpkg1#opm14" name="RegisterCustomer" gr:x="0" gr:y="0">
+  <OperationUnits>
+    <InputCollectorUnit id="mov3#mpkg1#opm14#icu14" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov3#mpkg1#opm14#icu14#icp73" name="city"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm14#icu14#icp74" name="phone"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm14#icu14#icp75" name="email"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm14#icu14#icp76" name="password"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm14#icu14#icp77" name="username"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm14#icu14#icp78" name="address"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm14#icu14#icp79" name="surname"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm14#icu14#icp80" name="name"/>
+      <OKLink id="mov3#mpkg1#opm14#icu14#oln34" name="OKFlow20" to="mov3#mpkg1#opm14#cru25">
+        <LinkParameter id="mov3#mpkg1#opm14#icu14#oln34#par265" name="address_address" source="mov3#mpkg1#opm14#icu14#icp78" target="mov3#mpkg1#opm14#cru25.ent1#att4"/>
+        <LinkParameter id="mov3#mpkg1#opm14#icu14#oln34#par266" name="0.0_balance" target="mov3#mpkg1#opm14#cru25.User#att1" sourceValue="0.0"/>
+        <LinkParameter id="mov3#mpkg1#opm14#icu14#oln34#par267" name="city_City.name(UserToCity)" source="mov3#mpkg1#opm14#icu14#icp73" target="mov3#mpkg1#opm14#cru25.rel11#role21.ent7#att18"/>
+        <LinkParameter id="mov3#mpkg1#opm14#icu14#oln34#par268" name="email_email" source="mov3#mpkg1#opm14#icu14#icp75" target="mov3#mpkg1#opm14#cru25.email"/>
+        <LinkParameter id="mov3#mpkg1#opm14#icu14#oln34#par269" name="customer_Group.oid(defaultGroup)" target="mov3#mpkg1#opm14#cru25.User2DefaultGroup.groupOID" sourceValue="2"/>
+        <LinkParameter id="mov3#mpkg1#opm14#icu14#oln34#par270" name="customer_Group.oid(groups)" target="mov3#mpkg1#opm14#cru25.User2Group.groupOID" sourceValue="2"/>
+        <LinkParameter id="mov3#mpkg1#opm14#icu14#oln34#par271" name="name_name" source="mov3#mpkg1#opm14#icu14#icp80" target="mov3#mpkg1#opm14#cru25.ent1#att12"/>
+        <LinkParameter id="mov3#mpkg1#opm14#icu14#oln34#par272" name="password_password" source="mov3#mpkg1#opm14#icu14#icp76" target="mov3#mpkg1#opm14#cru25.password"/>
+        <LinkParameter id="mov3#mpkg1#opm14#icu14#oln34#par273" name="phone_phone" source="mov3#mpkg1#opm14#icu14#icp74" target="mov3#mpkg1#opm14#cru25.User#att29"/>
+        <LinkParameter id="mov3#mpkg1#opm14#icu14#oln34#par274" name="surname_surname" source="mov3#mpkg1#opm14#icu14#icp79" target="mov3#mpkg1#opm14#cru25.ent1#att3"/>
+        <LinkParameter id="mov3#mpkg1#opm14#icu14#oln34#par275" name="username_userName" source="mov3#mpkg1#opm14#icu14#icp77" target="mov3#mpkg1#opm14#cru25.userName"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov3#mpkg1#opm14#okcu12" name="OK Port4" gr:x="865" gr:y="100">
+      <OutputCollectorParameter id="mov3#mpkg1#opm14#okcu12#ocp24" name="message" value="Successfully registered"/>
+    </OKCollectorUnit>
+    <CreateUnit id="mov3#mpkg1#opm14#cru25" name="Customer" gr:x="460" gr:y="135" entity="ent1">
+      <OKLink id="mov3#mpkg1#opm14#cru25#oln35" name="OKFlow21" to="mov3#mpkg1#opm14#okcu12" automaticCoupling="true"/>
+      <KOLink id="mov3#mpkg1#opm14#cru25#kln31" name="KOFlow6" to="mov3#mpkg1#opm14#kocu14" automaticCoupling="true"/>
+    </CreateUnit>
+    <KOCollectorUnit id="mov3#mpkg1#opm14#kocu14" name="KO Port6" gr:x="880" gr:y="270">
+      <OutputCollectorParameter id="mov3#mpkg1#opm14#kocu14#ocp25" name="message" value="Error: something went wrong.."/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

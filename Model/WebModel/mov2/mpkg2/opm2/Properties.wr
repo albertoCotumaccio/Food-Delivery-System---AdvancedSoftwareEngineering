@@ -1,0 +1,28 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="225" gr:y="5" id="mov2#mpkg2#opm2" name="Save group">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg2#opm2#icu2" gr:x="40" gr:y="210">
+      <InputCollectorParameter id="mov2#mpkg2#opm2#icu2#icp3" name="module_group"/>
+      <InputCollectorParameter id="mov2#mpkg2#opm2#icu2#icp4" name="name_group"/>
+      <InputCollectorParameter id="mov2#mpkg2#opm2#icu2#icp6" name="oid_group"/>
+      <OKLink id="mov2#mpkg2#opm2#icu2#oln15" name="OKFlow15" to="mov2#mpkg2#opm2#mfu1">
+        <LinkParameter id="mov2#mpkg2#opm2#icu2#oln15#par46" name="groupName_groupName" source="mov2#mpkg2#opm2#icu2#icp4" target="mov2#mpkg2#opm2#mfu1.groupName"/>
+        <LinkParameter id="mov2#mpkg2#opm2#icu2#oln15#par47" name="defaultModule_Module.oid(defaultModule)" source="mov2#mpkg2#opm2#icu2#icp3" target="mov2#mpkg2#opm2#mfu1.Group2DefaultModule.moduleOID"/>
+        <LinkParameter id="mov2#mpkg2#opm2#icu2#oln15#par48" name="defaultModule_Module.oid(modules)" source="mov2#mpkg2#opm2#icu2#icp3" target="mov2#mpkg2#opm2#mfu1.Group2Module.moduleOID"/>
+        <LinkParameter id="mov2#mpkg2#opm2#icu2#oln15#par49" name="oidGroup_AttCondition3" source="mov2#mpkg2#opm2#icu2#icp6" target="mov2#mpkg2#opm2#mfu1#su5#acond3"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <ModifyUnit gr:x="540" gr:y="180" id="mov2#mpkg2#opm2#mfu1" name="Modify group" entity="Group">
+      <Selector id="mov2#mpkg2#opm2#mfu1#su5" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#mpkg2#opm2#mfu1#su5#acond3" name="AttCondition3" predicate="eq" booleanOperator="or" implied="false" attributes="groupOID"/>
+      </Selector>
+      <OKLink id="mov2#mpkg2#opm2#mfu1#oln7" name="OKFlow7" to="mov2#mpkg2#opm2#okcu2" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg2#opm2#mfu1#kln4" name="KOFlow4" to="mov2#mpkg2#opm2#kocu2" automaticCoupling="true"/>
+    </ModifyUnit>
+    <OKCollectorUnit gr:x="1085" gr:y="90" id="mov2#mpkg2#opm2#okcu2" name="OK Port2">
+      <OutputCollectorParameter id="mov2#mpkg2#opm2#okcu2#ocp1" name="Message" value="Group saved"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="1085" gr:y="345" id="mov2#mpkg2#opm2#kocu2" name="KO Port2">
+      <OutputCollectorParameter id="mov2#mpkg2#opm2#kocu2#ocp2" name="Message" value="Group not saved"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,25 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="415" gr:y="5" id="mov2#mpkg2#opm3" name="Create group">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg2#opm3#icu3" gr:x="35" gr:y="140">
+      <InputCollectorParameter id="mov2#mpkg2#opm3#icu3#icp7" name="oid_group"/>
+      <InputCollectorParameter id="mov2#mpkg2#opm3#icu3#icp8" name="name_group"/>
+      <InputCollectorParameter id="mov2#mpkg2#opm3#icu3#icp9" name="module"/>
+      <OKLink id="mov2#mpkg2#opm3#icu3#oln14" name="OKFlow14" to="mov2#mpkg2#opm3#cru2">
+        <LinkParameter id="mov2#mpkg2#opm3#icu3#oln14#par34" name="name_group_groupName" source="mov2#mpkg2#opm3#icu3#icp8" target="mov2#mpkg2#opm3#cru2.groupName"/>
+        <LinkParameter id="mov2#mpkg2#opm3#icu3#oln14#par35" name="module_Module.oid(defaultModule)" source="mov2#mpkg2#opm3#icu3#icp9" target="mov2#mpkg2#opm3#cru2.Group2DefaultModule.moduleOID"/>
+        <LinkParameter id="mov2#mpkg2#opm3#icu3#oln14#par36" name="module_Module.oid(modules)" source="mov2#mpkg2#opm3#icu3#icp9" target="mov2#mpkg2#opm3#cru2.Group2Module.moduleOID"/>
+        <LinkParameter id="mov2#mpkg2#opm3#icu3#oln14#par37" name="oid_group_oid" source="mov2#mpkg2#opm3#icu3#icp7" target="mov2#mpkg2#opm3#cru2.groupOID"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="890" gr:y="85" id="mov2#mpkg2#opm3#okcu3" name="OK Port3">
+      <OutputCollectorParameter id="mov2#mpkg2#opm3#okcu3#ocp3" name="Message" value="Group created"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="890" gr:y="320" id="mov2#mpkg2#opm3#kocu3" name="KO Port3">
+      <OutputCollectorParameter id="mov2#mpkg2#opm3#kocu3#ocp4" name="Message" value="Group not created"/>
+    </KOCollectorUnit>
+    <CreateUnit gr:x="460" gr:y="145" id="mov2#mpkg2#opm3#cru2" name="Create group" entity="Group">
+      <OKLink id="mov2#mpkg2#opm3#cru2#oln13" name="OKFlow13" to="mov2#mpkg2#opm3#okcu3" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg2#opm3#cru2#kln10" name="KOFlow10" to="mov2#mpkg2#opm3#kocu3" automaticCoupling="true"/>
+    </CreateUnit>
+  </OperationUnits>
+</OperationModule>

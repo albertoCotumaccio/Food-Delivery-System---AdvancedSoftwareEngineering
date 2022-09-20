@@ -1,0 +1,96 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv4#area6#page8" name="Balance">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="150" id="sv4#area6#page8#enu13" name="Update balance" entity="User" fieldOrder="sv4#area6#page8#enu13#fld40" linkOrder="sv4#area6#page8#enu13#ln15">
+      <Field id="sv4#area6#page8#enu13#fld40" name="amount" type="float" modifiable="true" attribute="User#att1">
+        <VRules>
+          <TypeValidationRule id="sv4#area6#page8#enu13#fld40#tvr2" name="Type Validation2" type="float"/>
+          <MandatoryValidationRule id="sv4#area6#page8#enu13#fld40#mnd35" name="Mandatory35"/>
+          <CompareValidationRule id="sv4#area6#page8#enu13#fld40#cmp3" name="Compare3" predicate="gt" value="0"/>
+        </VRules>
+      </Field>
+      <Link id="sv4#area6#page8#enu13#ln15" name="Load money" to="sv4#area6#miu16" type="normal" validate="true">
+        <LinkParameter id="sv4#area6#page8#enu13#ln15#par85" name="amount_toSum" source="sv4#area6#page8#enu13#fld40" target="sv4#area6#miu16.mov4#opm23#icu23#icp15"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="110" gr:y="270" id="sv4#area6#page8#mssu21" name="Message21"/>
+    <PowerIndexUnit gr:x="350" gr:y="90" id="sv4#area6#page8#pwu7" name="display balance" sortable="true" checkable="false" useCountQuery="false" entity="User" displayAttributes="User#att1">
+      <Selector id="sv4#area6#page8#pwu7#su31" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area6#page8#pwu7#su31#kcond19" name="KeyCondition19" predicate="in" implied="false"/>
+      </Selector>
+    </PowerIndexUnit>
+    <GetUnit gr:x="115" gr:y="0" id="sv4#area6#page8#gtu13" name="get customerID" contextParameters="UserCtxParam">
+      <Link id="sv4#area6#page8#gtu13#ln56" name="Flow56" to="sv4#area6#page8#pwu7" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page8#gtu13#ln56#par135" name="UserCtxParam.oid_KeyCondition19 [oid]" source="sv4#area6#page8#gtu13.UserCtxParam" target="sv4#area6#page8#pwu7#su31#kcond19.userOID"/>
+      </Link>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="7">
+        <layout:Unit unitId="sv4#area6#page8#enu13">
+          <layout:Field field="sv4#area6#page8#enu13#fld40"/>
+          <layout:Link link="sv4#area6#page8#enu13#ln15"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="5">
+        <layout:Unit unitId="sv4#area6#page8#pwu7">
+          <layout:Attribute attribute="User#att1"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area6#page8#mssu21"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

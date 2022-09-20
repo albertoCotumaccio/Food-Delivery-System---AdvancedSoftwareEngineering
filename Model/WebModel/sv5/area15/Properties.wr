@@ -1,0 +1,28 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv5#area15" name="Menu" defaultPage="sv5#area15#page18" landmark="true" gr:x="10" gr:y="95">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="505" gr:y="455" id="sv5#area15#miu9" action="true" name="create item " moduleId="mov1#opm11">
+      <OKLink id="sv5#area15#miu9#oln39" name="OKFlow39" to="sv5#area15#page18#mssu4">
+        <LinkParameter id="sv5#area15#miu9#oln39#par132" name="Message_Shown Messages" source="mov1#opm11#okcu9#ocp9" target="sv5#area15#page18#mssu4.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv5#area15#miu9#kln20" name="KOFlow20" to="sv5#area15#page18#mssu4" gr:bendpoints="-51,-107,113,83">
+        <LinkParameter id="sv5#area15#miu9#kln20#par141" name="Message_Shown Messages" source="mov1#opm11#kocu11#ocp10" target="sv5#area15#page18#mssu4.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="335" gr:y="35" id="sv5#area15#miu10" action="true" name="delete item" moduleId="mov1#opm12">
+      <OKLink id="sv5#area15#miu10#oln44" name="OKFlow44" to="sv5#area15#page18#mssu4">
+        <LinkParameter id="sv5#area15#miu10#oln44#par174" name="message_Shown Messages" source="mov1#opm12#okcu10#ocp11" target="sv5#area15#page18#mssu4.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv5#area15#miu10#kln23" name="KOFlow23" to="sv5#area15#page18#mssu4" gr:bendpoints="-87,77,138,-23">
+        <LinkParameter id="sv5#area15#miu10#kln23#par175" name="message_Shown Messages" source="mov1#opm12#kocu12#ocp12" target="sv5#area15#page18#mssu4.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="495" gr:y="285" id="sv5#area15#miu13" action="true" name="edit item" moduleId="mov1#opm13">
+      <OKLink id="sv5#area15#miu13#oln53" name="OKFlow53" to="sv5#area15#page18#mssu4" gr:bendpoints="-144,-121,186,19">
+        <LinkParameter id="sv5#area15#miu13#oln53#par208" name="message_Shown Messages" source="mov1#opm13#okcu11#ocp19" target="sv5#area15#page18#mssu4.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv5#area15#miu13#kln26" name="KOFlow26" to="sv5#area15#page18#mssu4" gr:bendpoints="-160,-99,170,41">
+        <LinkParameter id="sv5#area15#miu13#kln26#par207" name="message_Shown Messages" source="mov1#opm13#kocu13#ocp20" target="sv5#area15#page18#mssu4.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</Area>

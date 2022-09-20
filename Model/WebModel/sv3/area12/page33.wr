@@ -1,0 +1,115 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#area12#page33" name="Available orders" gr:x="0" gr:y="0">
+  <ContentUnits>
+    <MultiMessageUnit id="sv3#area12#page33#mssu18" name="title" gr:x="20" gr:y="0">
+      <Message xml:space="preserve">Available orders</Message>
+    </MultiMessageUnit>
+    <PowerIndexUnit id="sv3#area12#page33#pwu6" name="List of available orders" linkOrder="sv3#area12#page33#pwu6#ln102 sv3#area12#page33#pwu6#ln103 sv3#area12#page33#pwu6#ln94" gr:x="155" gr:y="240" sortable="true" checkable="false" useCountQuery="false" displayAttributes="ent5#att6 ent5#att39" entity="ent5">
+      <Selector id="sv3#area12#page33#pwu6#su30" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv3#area12#page33#pwu6#su30#acond13" name="accepted != 0" predicate="eq" booleanOperator="or" implied="false" attributes="ent5#att10" value="1"/>
+        <RelationshipRoleCondition id="sv3#area12#page33#pwu6#su30#rcond17" name="rider is not assigned" predicate="in" implied="false" role="rel12#role23"/>
+      </Selector>
+      <Link id="sv3#area12#page33#pwu6#ln102" name="customer info" to="sv3#area12#page32#qu15" type="normal" validate="true" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowTitle="Customer info" ajaxWindowResizable="false" ajaxWindowAutoResizing="true" ajaxWindowClosable="true" ajaxWindowModal="true">
+        <LinkParameter id="sv3#area12#page33#pwu6#ln102#par252" name="oid_orderID" source="data[].ent5#att6" target="sv3#area12#page32#qu15.sv3#area12#page32#qu15#qi16"/>
+      </Link>
+      <Link id="sv3#area12#page33#pwu6#ln103" name="restaurant info" to="sv3#area12#page32#qu16" type="normal" validate="true" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowTitle="Restaurant info" ajaxWindowResizable="false" ajaxWindowAutoResizing="true" ajaxWindowClosable="true" ajaxWindowModal="true">
+        <LinkParameter id="sv3#area12#page33#pwu6#ln103#par253" name="oid_orderID" source="data[].ent5#att6" target="sv3#area12#page32#qu16.sv3#area12#page32#qu16#qi17"/>
+      </Link>
+      <Link id="sv3#area12#page33#pwu6#ln94" name="Take the order" to="sv3#miu15" type="normal" validate="true" gr:bendpoints="217,-185,-383,125">
+        <LinkParameter id="sv3#area12#page33#pwu6#ln94#par245" name="oid_orderID" source="data[].ent5#att6" target="sv3#miu15.mov5#opm20#icu20#icp13"/>
+      </Link>
+    </PowerIndexUnit>
+    <SelectorUnit gr:x="0" gr:y="105" id="sv3#area12#page33#seu18" name="rider not assigned" entity="ent2">
+      <Selector id="sv3#area12#page33#seu18#su32" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv3#area12#page33#seu18#su32#acond19" name="AttCondition19" predicate="eq" booleanOperator="or" implied="false" attributes="userOID" value="4"/>
+      </Selector>
+      <Link id="sv3#area12#page33#seu18#ln101" name="Flow101" to="sv3#area12#page33#pwu6" type="transport" validate="true">
+        <LinkParameter id="sv3#area12#page33#seu18#ln101#par250" name="oid_rider is not assigned [oid]" source="userOIDArray" target="sv3#area12#page33#pwu6#su30#rcond17.userOID"/>
+      </Link>
+    </SelectorUnit>
+    <MultiMessageUnit gr:x="250" gr:y="90" id="sv3#area12#page33#mssu3" name="feedback"/>
+    <GetUnit id="sv3#area12#page33#gtu19" name="get riderID" gr:x="20" gr:y="420" contextParameters="UserCtxParam">
+      <Link id="sv3#area12#page33#gtu19#ln93" name="Flow56" to="sv3#area12#page33#pwu11" type="transport" validate="true">
+        <LinkParameter id="sv3#area12#page33#gtu19#ln93#par248" name="UserCtxParam.oid_KeyCondition19 [oid]" source="sv3#area12#page33#gtu19.UserCtxParam" target="sv3#area12#page33#pwu11#su41#kcond23.userOID"/>
+      </Link>
+    </GetUnit>
+    <PowerIndexUnit id="sv3#area12#page33#pwu11" name="display balance" gr:x="255" gr:y="510" sortable="true" checkable="false" useCountQuery="false" entity="User" displayAttributes="User#att1">
+      <Selector id="sv3#area12#page33#pwu11#su41" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#area12#page33#pwu11#su41#kcond23" name="KeyCondition19" predicate="in" implied="false"/>
+      </Selector>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="9">
+        <layout:Unit unitId="sv3#area12#page33#mssu18"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="3">
+        <layout:Unit unitId="sv3#area12#page33#pwu11">
+          <layout:Attribute attribute="User#att1"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area12#page33#pwu6">
+          <layout:Attribute attribute="ent5#att6"/>
+          <layout:Attribute attribute="ent5#att39"/>
+          <layout:Link link="sv3#area12#page33#pwu6#ln102"/>
+          <layout:Link link="sv3#area12#page33#pwu6#ln103"/>
+          <layout:Link link="sv3#area12#page33#pwu6#ln94"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area12#page33#mssu3"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,0 +1,129 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page20" name="RegisterRider" gr:x="1015" gr:y="520">
+  <ContentUnits>
+    <EntryUnit id="sv2#page20#enu8" name="FormRegisterRider" gr:x="105" gr:y="0" fieldOrder="sv2#page20#enu8#fld57 sv2#page20#enu8#fld56 sv2#page20#enu8#fld51 sv2#page20#enu8#fld52 sv2#page20#enu8#fld53 sv2#page20#enu8#fld54 sv2#page20#enu8#sfld10 sv2#page20#enu8#sfld12" linkOrder="sv2#page20#enu8#ln45">
+      <Field id="sv2#page20#enu8#fld51" name="username" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv2#page20#enu8#fld51#mnd30" name="Mandatory30"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#page20#enu8#fld52" name="password" type="password" modifiable="true">
+        <VRules>
+          <PasswordStrengthValidationRule id="sv2#page20#enu8#fld52#psvr2" name="Password Strength2" securityLevel="low"/>
+          <MandatoryValidationRule id="sv2#page20#enu8#fld52#mnd27" name="Mandatory27"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#page20#enu8#fld53" name="email" type="string" modifiable="true">
+        <VRules>
+          <EMailValidationRule id="sv2#page20#enu8#fld53#email2" name="EMail2"/>
+          <MandatoryValidationRule id="sv2#page20#enu8#fld53#mnd24" name="Mandatory24"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#page20#enu8#fld54" name="phone" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv2#page20#enu8#fld54#mnd28" name="Mandatory28"/>
+        </VRules>
+      </Field>
+      <SelectionField id="sv2#page20#enu8#sfld10" name="city" type="string">
+        <VRules>
+          <MandatoryValidationRule id="sv2#page20#enu8#sfld10#mnd23" name="Mandatory23"/>
+        </VRules>
+      </SelectionField>
+      <Field id="sv2#page20#enu8#fld56" name="surname" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv2#page20#enu8#fld56#mnd29" name="Mandatory29"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#page20#enu8#fld57" name="name" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv2#page20#enu8#fld57#mnd26" name="Mandatory26"/>
+        </VRules>
+      </Field>
+      <SelectionField id="sv2#page20#enu8#sfld12" name="mean of transport" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv2#page20#enu8#sfld12#mnd25" name="Mandatory25"/>
+        </VRules>
+      </SelectionField>
+      <Link id="sv2#page20#enu8#ln45" name="Submit" to="sv2#miu3" type="normal" validate="true" gr:bendpoints="-51,207,-121,-143">
+        <LinkParameter id="sv2#page20#enu8#ln45#par329" name="city_city" source="sv2#page20#enu8#sfld10" target="sv2#miu3.mov3#mpkg1#opm17#icu16#icp85"/>
+        <LinkParameter id="sv2#page20#enu8#ln45#par330" name="email_email" source="sv2#page20#enu8#fld53" target="sv2#miu3.mov3#mpkg1#opm17#icu16#icp87"/>
+        <LinkParameter id="sv2#page20#enu8#ln45#par331" name="mean of transport_mean of transport " source="sv2#page20#enu8#sfld12" target="sv2#miu3.mov3#mpkg1#opm17#icu16#icp92"/>
+        <LinkParameter id="sv2#page20#enu8#ln45#par332" name="name_name" source="sv2#page20#enu8#fld57" target="sv2#miu3.mov3#mpkg1#opm17#icu16#icp91"/>
+        <LinkParameter id="sv2#page20#enu8#ln45#par333" name="password_password" source="sv2#page20#enu8#fld52" target="sv2#miu3.mov3#mpkg1#opm17#icu16#icp88"/>
+        <LinkParameter id="sv2#page20#enu8#ln45#par334" name="phone_phone" source="sv2#page20#enu8#fld54" target="sv2#miu3.mov3#mpkg1#opm17#icu16#icp86"/>
+        <LinkParameter id="sv2#page20#enu8#ln45#par335" name="surname_surname" source="sv2#page20#enu8#fld56" target="sv2#miu3.mov3#mpkg1#opm17#icu16#icp90"/>
+        <LinkParameter id="sv2#page20#enu8#ln45#par336" name="username_username" source="sv2#page20#enu8#fld51" target="sv2#miu3.mov3#mpkg1#opm17#icu16#icp89"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit id="sv2#page20#seu11" name="Cities" gr:x="0" gr:y="95" entity="ent7">
+      <Link id="sv2#page20#seu11#ln32" name="Flow6" to="sv2#page20#enu8" type="transport" validate="true">
+        <LinkParameter id="sv2#page20#seu11#ln32#par66" name="name_UserToCity [label]" source="ent7#att18Array" target="sv2#page20#enu8#sfld10_label"/>
+        <LinkParameter id="sv2#page20#seu11#ln32#par67" name="name_UserToCity [output]" source="ent7#att18Array" target="sv2#page20#enu8#sfld10_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="190" gr:y="160" id="sv2#page20#seu12" name="Mean of transport" entity="ent4">
+      <Link id="sv2#page20#seu12#ln34" name="Flow34" to="sv2#page20#enu8" type="transport" validate="true">
+        <LinkParameter id="sv2#page20#seu12#ln34#par68" name="name_mean of transport [label]" source="ent4#att8Array" target="sv2#page20#enu8#sfld12_label"/>
+        <LinkParameter id="sv2#page20#seu12#ln34#par69" name="name_mean of transport [output]" source="ent4#att8Array" target="sv2#page20#enu8#sfld12_output"/>
+      </Link>
+    </SelectorUnit>
+    <MultiMessageUnit id="sv2#page20#mssu14" name="Notification error registration" gr:x="355" gr:y="260"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page20#enu8">
+          <layout:Field field="sv2#page20#enu8#fld57"/>
+          <layout:Field field="sv2#page20#enu8#fld56"/>
+          <layout:Field field="sv2#page20#enu8#fld51"/>
+          <layout:Field field="sv2#page20#enu8#fld52"/>
+          <layout:Field field="sv2#page20#enu8#fld53"/>
+          <layout:Field field="sv2#page20#enu8#fld54"/>
+          <layout:Field field="sv2#page20#enu8#sfld10"/>
+          <layout:Field field="sv2#page20#enu8#sfld12"/>
+          <layout:Link link="sv2#page20#enu8#ln45"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page20#mssu14"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

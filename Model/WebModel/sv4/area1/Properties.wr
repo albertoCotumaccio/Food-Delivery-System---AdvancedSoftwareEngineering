@@ -1,0 +1,44 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="35" gr:y="15" id="sv4#area1" name="Available restaurants" landmark="true" defaultPage="sv4#area1#page23">
+  <OperationUnits>
+    <ModuleInstanceUnit id="sv4#area1#miu23" gr:x="270" gr:y="685" action="true" moduleId="mov4#opm21">
+      <Link id="sv4#area1#miu23#ln58" name="Flow58" to="sv4#area1#page12#pwu5" type="transport" validate="true">
+        <LinkParameter id="sv4#area1#miu23#ln58#par41" name="OK Port16.rest_key_RoleCondition9 [oid]" source="mov4#opm21#okcu16#ocp32" target="sv4#area1#page12#pwu5#su10#rcond9.userOID"/>
+      </Link>
+      <OKLink id="sv4#area1#miu23#oln25" name="OKFlow25" to="sv4#area1#page12#qu1">
+        <LinkParameter id="sv4#area1#miu23#oln25#par60" name="rest_key_rest_key" source="mov4#opm21#okcu16#ocp32" target="sv4#area1#page12#qu1.sv4#area1#page12#qu1#qi1"/>
+      </OKLink>
+      <KOLink id="sv4#area1#miu23#kln6" name="KOFlow6" to="sv4#area1#page23#mssu11">
+        <LinkParameter id="sv4#area1#miu23#kln6#par11" name="message_Shown Messages" source="mov4#opm21#kocu21#ocp17" target="sv4#area1#page23#mssu11.shownMessages"/>
+        <LinkParameter id="sv4#area1#miu23#kln6#par61" name="customer_creator_Shown Messages" source="mov4#opm21#kocu21#ocp18" target="sv4#area1#page23#mssu11.shownMessages"/>
+      </KOLink>
+      <KOLink id="sv4#area1#miu23#kln18" name="KOFlow6" to="sv4#area1#page23#mssu13">
+        <LinkParameter id="sv4#area1#miu23#kln18#par80" name="rest_key_Shown Messages" source="mov4#opm21#kocu21#ocp31" target="sv4#area1#page23#mssu13.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <GetUnit id="sv4#area1#gtu12" name="get customerID" gr:x="595" gr:y="810" contextParameters="UserCtxParam">
+      <Link id="sv4#area1#gtu12#ln117" name="Flow64" to="sv4#area1#miu23" type="transport" validate="true">
+        <LinkParameter id="sv4#area1#gtu12#ln117#par412" name="UserCtxParam.oid_customer_creator" source="sv4#area1#gtu12.UserCtxParam" target="sv4#area1#miu23.mov4#opm21#icu21#icp108"/>
+      </Link>
+      <Link id="sv4#area1#gtu12#ln111" name="Flow111" to="sv4#area1#miu27" type="transport" validate="true">
+        <LinkParameter id="sv4#area1#gtu12#ln111#par283" name="UserCtxParam.oid_customerID" source="sv4#area1#gtu12.UserCtxParam" target="sv4#area1#miu27.mov4#opm24#icu24#icp16"/>
+      </Link>
+      <Link id="sv4#area1#gtu12#ln118" name="Flow118" to="sv4#area1#miu28" type="transport" validate="true">
+        <LinkParameter id="sv4#area1#gtu12#ln118#par286" name="UserCtxParam.oid_customerID" source="sv4#area1#gtu12.UserCtxParam" target="sv4#area1#miu28.mov4#opm25#icu25#icp18"/>
+      </Link>
+    </GetUnit>
+    <ModuleInstanceUnit gr:x="1430" gr:y="300" id="sv4#area1#miu24" action="true" moduleId="mov4#opm6">
+      <OKLink id="sv4#area1#miu24#oln66" name="OKFlow66" to="sv4#area8#page17" automaticCoupling="true"/>
+      <KOLink id="sv4#area1#miu24#kln65" name="KOFlow39" to="sv4#area1#page23#mssu31" gr:bendpoints="-184,-119,371,-164">
+        <LinkParameter id="sv4#area1#miu24#kln65#par403" name="message_Shown Messages" source="mov4#opm6#kocu6#ocp16" target="sv4#area1#page23#mssu31.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit id="sv4#area1#miu27" name="add item" gr:x="850" gr:y="705" action="true" moduleId="mov4#opm24">
+      <OKLink id="sv4#area1#miu27#oln120" name="OKFlow120" to="sv4#area1#page12" automaticCoupling="true"/>
+      <KOLink id="sv4#area1#miu27#kln66" name="KOFlow66" to="sv4#area1#page12" automaticCoupling="true" gr:bendpoints="161,29,-379,-21"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="1165" gr:y="905" id="sv4#area1#miu28" action="true" name="remove item" moduleId="mov4#opm25">
+      <OKLink id="sv4#area1#miu28#oln121" name="OKFlow121" to="sv4#area1#page12" automaticCoupling="true"/>
+      <KOLink id="sv4#area1#miu28#kln63" name="KOFlow63" to="sv4#area1#page12" automaticCoupling="true" gr:bendpoints="145,-41,-345,149"/>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</Area>

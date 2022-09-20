@@ -1,0 +1,17 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="1100" gr:y="110" id="mov5#opm20#opg5" name="Update" transaction="true">
+  <OperationUnits>
+    <ModifyUnit gr:x="295" gr:y="10" id="mov5#opm20#opg5#mfu13" name="Update rider busy" entity="ent2">
+      <Selector id="mov5#opm20#opg5#mfu13#su34" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov5#opm20#opg5#mfu13#su34#kcond17" name="KeyCondition16" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov5#opm20#opg5#mfu13#oln90" name="OKFlow90" to="mov5#opm20#okcu19" automaticCoupling="true"/>
+    </ModifyUnit>
+    <ModifyUnit gr:x="0" gr:y="0" id="mov5#opm20#opg5#mfu14" name="Update order with new rider" entity="ent5">
+      <Selector id="mov5#opm20#opg5#mfu14#su35" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov5#opm20#opg5#mfu14#su35#kcond18" name="KeyCondition15" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov5#opm20#opg5#mfu14#oln89" name="OKFlow88" to="mov5#opm20#opg5#mfu13" automaticCoupling="true"/>
+    </ModifyUnit>
+  </OperationUnits>
+  <KOLink id="mov5#opm20#opg5#kln45" name="KOFlow45" to="mov5#opm20#kocu20" automaticCoupling="true"/>
+</OperationGroup>

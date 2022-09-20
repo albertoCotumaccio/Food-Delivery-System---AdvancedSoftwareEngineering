@@ -1,0 +1,86 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#area9#page15" name="Slot management" gr:x="0" gr:y="0">
+  <ContentUnits>
+    <PowerIndexUnit id="sv3#area9#page15#pwu4" name="Slots" linkOrder="sv3#area9#page15#pwu4#ln62" gr:x="5" gr:y="0" sortable="true" checkable="false" useCountQuery="false" displayAttributes="ent6#att14 ent6#att15 ent6#att16" entity="ent6">
+      <Selector id="sv3#area9#page15#pwu4#su24" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#area9#page15#pwu4#su24#rcond12" name="RoleCondition4" predicate="in" implied="false" role="rel2#role3"/>
+      </Selector>
+      <Link id="sv3#area9#page15#pwu4#ln62" name="edit" to="sv3#area9#page27#enu9" type="normal" validate="true" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowTitle="Edit slot" ajaxWindowWidth="800" ajaxWindowHeight="600" ajaxWindowClosable="true" ajaxWindowMaximizable="false" ajaxWindowMinimizable="false" ajaxWindowModal="true" ajaxWindowShowEffect="Effect.BlindDown">
+        <LinkParameter id="sv3#area9#page15#pwu4#ln62#par111" name="oid_Key Condition [oid]" source="data[].ent6#att13" target="sv3#area9#page27#enu9.ent6#att13"/>
+        <LinkParameter id="sv3#area9#page15#pwu4#ln62#par112" name="day_Day" source="data[].ent6#att14" target="sv3#area9#page27#enu9#fld39_slot"/>
+      </Link>
+    </PowerIndexUnit>
+    <GetUnit id="sv3#area9#page15#gtu7" name="get riderID" customDescriptor="false" gr:x="0" gr:y="155" contextParameters="UserCtxParam">
+      <Link id="sv3#area9#page15#gtu7#ln63" name="Flow7" to="sv3#area9#page15#pwu4" type="transport" validate="true">
+        <LinkParameter id="sv3#area9#page15#gtu7#ln63#par114" name="UserCtxParam.oid_RoleCondition4 [oid]" source="sv3#area9#page15#gtu7.UserCtxParam" target="sv3#area9#page15#pwu4#su24#rcond12.userOID"/>
+      </Link>
+    </GetUnit>
+    <MultiMessageUnit id="sv3#area9#page15#mssu16" name="Notification" gr:x="155" gr:y="210"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area9#page15#pwu4">
+          <layout:Attribute attribute="ent6#att14"/>
+          <layout:Attribute attribute="ent6#att15"/>
+          <layout:Attribute attribute="ent6#att16"/>
+          <layout:Link link="sv3#area9#page15#pwu4#ln62"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area9#page15#mssu16"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,0 +1,44 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov3#mpkg1#opm18" name="RegisterRestaurant" gr:x="0" gr:y="140">
+  <OperationUnits>
+    <InputCollectorUnit id="mov3#mpkg1#opm18#icu17" gr:x="5" gr:y="60">
+      <InputCollectorParameter id="mov3#mpkg1#opm18#icu17#icp93" name="city"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm18#icu17#icp94" name="phone"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm18#icu17#icp95" name="email"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm18#icu17#icp96" name="password"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm18#icu17#icp97" name="name"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm18#icu17#icp98" name="logo"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm18#icu17#icp99" name="delivery time"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm18#icu17#icp100" name="delivery fee"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm18#icu17#icp101" name="cuisine type"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm18#icu17#icp102" name="bio"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm18#icu17#icp103" name="address"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm18#icu17#icp104" name="minimum spend"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm18#icu17#icp105" name="username"/>
+      <OKLink id="mov3#mpkg1#opm18#icu17#oln38" name="OKFlow20" to="mov3#mpkg1#opm18#opg3#cru29">
+        <LinkParameter id="mov3#mpkg1#opm18#icu17#oln38#par287" name="0.0_balance" target="mov3#mpkg1#opm18#opg3#cru29.User#att1" sourceValue="0.0"/>
+        <LinkParameter id="mov3#mpkg1#opm18#icu17#oln38#par288" name="city_City.name(UserToCity)" source="mov3#mpkg1#opm18#icu17#icp93" target="mov3#mpkg1#opm18#opg3#cru29.rel11#role21.ent7#att18"/>
+        <LinkParameter id="mov3#mpkg1#opm18#icu17#oln38#par289" name="email_email" source="mov3#mpkg1#opm18#icu17#icp95" target="mov3#mpkg1#opm18#opg3#cru29.email"/>
+        <LinkParameter id="mov3#mpkg1#opm18#icu17#oln38#par290" name="customer_Group.oid(defaultGroup)" target="mov3#mpkg1#opm18#opg3#cru29.User2DefaultGroup.groupOID" sourceValue="1"/>
+        <LinkParameter id="mov3#mpkg1#opm18#icu17#oln38#par291" name="customer_Group.oid(groups)" target="mov3#mpkg1#opm18#opg3#cru29.User2Group.groupOID" sourceValue="1"/>
+        <LinkParameter id="mov3#mpkg1#opm18#icu17#oln38#par292" name="password_password" source="mov3#mpkg1#opm18#icu17#icp96" target="mov3#mpkg1#opm18#opg3#cru29.password"/>
+        <LinkParameter id="mov3#mpkg1#opm18#icu17#oln38#par293" name="phone_phone" source="mov3#mpkg1#opm18#icu17#icp94" target="mov3#mpkg1#opm18#opg3#cru29.User#att29"/>
+        <LinkParameter id="mov3#mpkg1#opm18#icu17#oln38#par294" name="address_address" source="mov3#mpkg1#opm18#icu17#icp103" target="mov3#mpkg1#opm18#opg3#cru29.ent3#att5"/>
+        <LinkParameter id="mov3#mpkg1#opm18#icu17#oln38#par295" name="bio_bio" source="mov3#mpkg1#opm18#icu17#icp102" target="mov3#mpkg1#opm18#opg3#cru29.ent3#att21"/>
+        <LinkParameter id="mov3#mpkg1#opm18#icu17#oln38#par296" name="cuisine type_Cuisine type.name(RestaurantUserToCuisine type)" source="mov3#mpkg1#opm18#icu17#icp101" target="mov3#mpkg1#opm18#opg3#cru29.rel7#role13.ent8#att30"/>
+        <LinkParameter id="mov3#mpkg1#opm18#icu17#oln38#par297" name="delivery fee_delivery fee" source="mov3#mpkg1#opm18#icu17#icp100" target="mov3#mpkg1#opm18#opg3#cru29.ent3#att24"/>
+        <LinkParameter id="mov3#mpkg1#opm18#icu17#oln38#par298" name="delivery time_delivery time" source="mov3#mpkg1#opm18#icu17#icp99" target="mov3#mpkg1#opm18#opg3#cru29.ent3#att27"/>
+        <LinkParameter id="mov3#mpkg1#opm18#icu17#oln38#par299" name="logo_logo" source="mov3#mpkg1#opm18#icu17#icp98" target="mov3#mpkg1#opm18#opg3#cru29.ent3#att20"/>
+        <LinkParameter id="mov3#mpkg1#opm18#icu17#oln38#par300" name="logo_logo [file name]" source="mov3#mpkg1#opm18#icu17#icp98" target="mov3#mpkg1#opm18#opg3#cru29.ent3#att20_name"/>
+        <LinkParameter id="mov3#mpkg1#opm18#icu17#oln38#par301" name="name_name" source="mov3#mpkg1#opm18#icu17#icp97" target="mov3#mpkg1#opm18#opg3#cru29.ent3#att23"/>
+        <LinkParameter id="mov3#mpkg1#opm18#icu17#oln38#par302" name="minimum spend_minimum spend" source="mov3#mpkg1#opm18#icu17#icp104" target="mov3#mpkg1#opm18#opg3#cru29.ent3#att37"/>
+        <LinkParameter id="mov3#mpkg1#opm18#icu17#oln38#par303" name="username_userName" source="mov3#mpkg1#opm18#icu17#icp105" target="mov3#mpkg1#opm18#opg3#cru29.userName"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov3#mpkg1#opm18#okcu15" name="OK Port4" gr:x="1320" gr:y="175">
+      <OutputCollectorParameter id="mov3#mpkg1#opm18#okcu15#ocp28" name="message" value="Successfully registered"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit id="mov3#mpkg1#opm18#kocu18" name="KO Port6" gr:x="1320" gr:y="415">
+      <OutputCollectorParameter id="mov3#mpkg1#opm18#kocu18#ocp29" name="message" value="Error: something went wrong.."/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,12 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3#area9" name="Slot Management" defaultPage="sv3#area9#page15" landmark="true" gr:x="1480" gr:y="85">
+  <OperationUnits>
+    <ModuleInstanceUnit id="sv3#area9#miu22" gr:x="400" gr:y="270" action="true" moduleId="mov1#opm7">
+      <OKLink id="sv3#area9#miu22#oln63" name="OKFlow5" to="sv3#area9#page15#mssu16">
+        <LinkParameter id="sv3#area9#miu22#oln63#par106" name="Message_Shown Messages" source="mov1#opm7#okcu5#ocp7" target="sv3#area9#page15#mssu16.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv3#area9#miu22#kln41" name="KOFlow5" to="sv3#area9#page15#mssu16" gr:bendpoints="-141,33,109,63">
+        <LinkParameter id="sv3#area9#miu22#kln41#par110" name="Message_Shown Messages" source="mov1#opm7#kocu7#ocp8" target="sv3#area9#page15#mssu16.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</Area>

@@ -1,0 +1,53 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="320" gr:y="175" id="mov1#opm8" name="update info restaurant">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm8#icu8" gr:x="30" gr:y="60">
+      <OKLink id="mov1#opm8#icu8#oln1" name="OKFlow1" to="mov1#opm8#mfu4" automaticCoupling="false">
+        <LinkParameter id="mov1#opm8#icu8#oln1#par92" name="City.name(UserToCity)" source="mov1#opm8#icu8#icp53" target="mov1#opm8#mfu4.rel11#role21.ent7#att18"/>
+        <LinkParameter id="mov1#opm8#icu8#oln1#par93" name="Cuisine type.name(RestaurantUserToCuisine type)" source="mov1#opm8#icu8#icp54" target="mov1#opm8#mfu4.rel7#role13.ent8#att30"/>
+        <LinkParameter id="mov1#opm8#icu8#oln1#par94" name="KeyCondition7 [oid]" source="mov1#opm8#icu8#icp57" target="mov1#opm8#mfu4#su13#kcond7.userOID"/>
+        <LinkParameter id="mov1#opm8#icu8#oln1#par95" name="address" source="mov1#opm8#icu8#icp58" target="mov1#opm8#mfu4.ent3#att5"/>
+        <LinkParameter id="mov1#opm8#icu8#oln1#par109" name="balance" source="mov1#opm8#icu8#icp59" target="mov1#opm8#mfu4.User#att1"/>
+        <LinkParameter id="mov1#opm8#icu8#oln1#par115" name="bio" source="mov1#opm8#icu8#icp60" target="mov1#opm8#mfu4.ent3#att21"/>
+        <LinkParameter id="mov1#opm8#icu8#oln1#par118" name="delivery fee" source="mov1#opm8#icu8#icp61" target="mov1#opm8#mfu4.ent3#att24"/>
+        <LinkParameter id="mov1#opm8#icu8#oln1#par177" name="delivery time" source="mov1#opm8#icu8#icp62" target="mov1#opm8#mfu4.ent3#att27"/>
+        <LinkParameter id="mov1#opm8#icu8#oln1#par178" name="email" source="mov1#opm8#icu8#icp63" target="mov1#opm8#mfu4.email"/>
+        <LinkParameter id="mov1#opm8#icu8#oln1#par179" name="logo" source="mov1#opm8#icu8#icp64" target="mov1#opm8#mfu4.ent3#att20"/>
+        <LinkParameter id="mov1#opm8#icu8#oln1#par180" name="logo [file name]" source="mov1#opm8#icu8#icp65" target="mov1#opm8#mfu4.ent3#att20_name"/>
+        <LinkParameter id="mov1#opm8#icu8#oln1#par181" name="minimum spend" source="mov1#opm8#icu8#icp66" target="mov1#opm8#mfu4.ent3#att37"/>
+        <LinkParameter id="mov1#opm8#icu8#oln1#par182" name="name" source="mov1#opm8#icu8#icp67" target="mov1#opm8#mfu4.ent3#att23"/>
+        <LinkParameter id="mov1#opm8#icu8#oln1#par183" name="password" source="mov1#opm8#icu8#icp68" target="mov1#opm8#mfu4.password"/>
+        <LinkParameter id="mov1#opm8#icu8#oln1#par184" name="phone" source="mov1#opm8#icu8#icp69" target="mov1#opm8#mfu4.User#att29"/>
+        <LinkParameter id="mov1#opm8#icu8#oln1#par185" name="userName" source="mov1#opm8#icu8#icp70" target="mov1#opm8#mfu4.userName"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#opm8#icu8#icp53" name="City.name(UserToCity)"/>
+      <InputCollectorParameter id="mov1#opm8#icu8#icp54" name="Cuisine type.name(RestaurantUserToCuisine type)"/>
+      <InputCollectorParameter id="mov1#opm8#icu8#icp57" name="KeyCondition7 [oid]"/>
+      <InputCollectorParameter id="mov1#opm8#icu8#icp58" name="address"/>
+      <InputCollectorParameter id="mov1#opm8#icu8#icp59" name="balance"/>
+      <InputCollectorParameter id="mov1#opm8#icu8#icp60" name="bio"/>
+      <InputCollectorParameter id="mov1#opm8#icu8#icp61" name="delivery fee"/>
+      <InputCollectorParameter id="mov1#opm8#icu8#icp62" name="delivery time"/>
+      <InputCollectorParameter id="mov1#opm8#icu8#icp63" name="email"/>
+      <InputCollectorParameter id="mov1#opm8#icu8#icp64" name="logo"/>
+      <InputCollectorParameter id="mov1#opm8#icu8#icp65" name="logo [file name]"/>
+      <InputCollectorParameter id="mov1#opm8#icu8#icp66" name="minimum spend"/>
+      <InputCollectorParameter id="mov1#opm8#icu8#icp67" name="name"/>
+      <InputCollectorParameter id="mov1#opm8#icu8#icp68" name="password"/>
+      <InputCollectorParameter id="mov1#opm8#icu8#icp69" name="phone"/>
+      <InputCollectorParameter id="mov1#opm8#icu8#icp70" name="userName"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="955" gr:y="70" id="mov1#opm8#okcu8" name="OK Port8">
+      <OutputCollectorParameter id="mov1#opm8#okcu8#ocp21" name="message" value="Updated"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="955" gr:y="290" id="mov1#opm8#kocu10" name="KO Port10">
+      <OutputCollectorParameter id="mov1#opm8#kocu10#ocp22" name="message" value="error"/>
+    </KOCollectorUnit>
+    <ModifyUnit gr:x="580" gr:y="160" id="mov1#opm8#mfu4" name="update info" entity="ent3">
+      <Selector id="mov1#opm8#mfu4#su13" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm8#mfu4#su13#kcond7" name="KeyCondition7" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm8#mfu4#oln4" name="OKFlow4" to="mov1#opm8#okcu8" automaticCoupling="true"/>
+      <KOLink id="mov1#opm8#mfu4#kln2" name="KOFlow2" to="mov1#opm8#kocu10" automaticCoupling="true"/>
+    </ModifyUnit>
+  </OperationUnits>
+</OperationModule>

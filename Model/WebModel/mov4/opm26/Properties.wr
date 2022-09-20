@@ -1,0 +1,17 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="895" gr:y="85" id="mov4#opm26" name="give feedback">
+  <OperationUnits>
+    <InputCollectorUnit id="mov4#opm26#icu26" gr:x="30" gr:y="60" linkOrder="mov4#opm26#icu26#ln160">
+      <InputCollectorParameter id="mov4#opm26#icu26#icp20" name="orderID"/>
+      <InputCollectorParameter id="mov4#opm26#icu26#icp21" name="feedback"/>
+      <OKLink id="mov4#opm26#icu26#oln123" name="OKFlow123" to="mov4#opm26#opg6#mfu21">
+        <LinkParameter id="mov4#opm26#icu26#oln123#par395" name="orderID_KeyCondition32 [oid]" source="mov4#opm26#icu26#icp20" target="mov4#opm26#opg6#mfu21#su59#kcond34.ent5#att6"/>
+        <LinkParameter id="mov4#opm26#icu26#oln123#par396" name="feedback_feedback_to_restaurant" source="mov4#opm26#icu26#icp21" target="mov4#opm26#opg6#mfu21.ent5#att26"/>
+      </OKLink>
+      <Link id="mov4#opm26#icu26#ln160" name="Flow160" to="mov4#opm26#opg6#qu31" type="transport" validate="true">
+        <LinkParameter id="mov4#opm26#icu26#ln160#par397" name="orderID_orderID" source="mov4#opm26#icu26#icp20" target="mov4#opm26#opg6#qu31.mov4#opm26#opg6#qu31#qi35"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="1425" gr:y="95" id="mov4#opm26#okcu25" name="OK Port25"/>
+    <KOCollectorUnit gr:x="1425" gr:y="265" id="mov4#opm26#kocu27" name="KO Port27"/>
+  </OperationUnits>
+</OperationModule>

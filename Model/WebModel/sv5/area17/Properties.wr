@@ -1,0 +1,16 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv5#area17" name="Orders Management" landmark="true" gr:x="780" gr:y="55" defaultPage="sv5#area17#page21">
+  <OperationUnits>
+    <ModuleInstanceUnit id="sv5#area17#miu18" gr:x="520" gr:y="0" action="true" name="accept order" moduleId="mov1#opm10">
+      <OKLink id="sv5#area17#miu18#oln18" name="OKFlow18" to="sv5#area17#page21#mssu32" gr:bendpoints="-143,26,247,-199">
+        <LinkParameter id="sv5#area17#miu18#oln18#par423" name="message_Shown Messages" source="mov1#opm10#okcu7#ocp35" target="sv5#area17#page21#mssu32.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv5#area17#miu18#kln12" name="KOFlow12" to="sv5#area17#page21#mssu32" gr:bendpoints="-153,4,237,-221">
+        <LinkParameter id="sv5#area17#miu18#kln12#par424" name="message_Shown Messages" source="mov1#opm10#kocu9#ocp36" target="sv5#area17#page21#mssu32.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="525" gr:y="490" id="sv5#area17#miu21" action="true" name="reject order" moduleId="mov1#opm19">
+      <OKLink id="sv5#area17#miu21#oln62" name="OKFlow62" to="sv5#area17#page21" automaticCoupling="true" gr:bendpoints="-121,-40,269,225"/>
+      <KOLink id="sv5#area17#miu21#kln40" name="KOFlow40" to="sv5#area17#page21" automaticCoupling="true" gr:bendpoints="-131,-22,259,243"/>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</Area>

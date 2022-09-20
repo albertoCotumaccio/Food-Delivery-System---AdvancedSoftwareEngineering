@@ -1,0 +1,72 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area8#page39" name="Give feedback - modal" layout:pageLayout="WRDefault/Empty" gr:x="20" gr:y="390">
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area8#page39#mssu24"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area8#page39#enu16">
+          <layout:Field field="sv4#area8#page39#enu16#fld44"/>
+          <layout:Link link="sv4#area8#page39#enu16#ln159"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv4#area8#page39#enu16" name="form feedback" entity="ent5" fieldOrder="sv4#area8#page39#enu16#fld44" linkOrder="sv4#area8#page39#enu16#ln159">
+      <Field id="sv4#area8#page39#enu16#fld43" name="oid" type="integer" modifiable="true" attribute="ent5#att6" hidden="true"/>
+      <Field id="sv4#area8#page39#enu16#fld44" type="integer" modifiable="true" attribute="ent5#att26">
+        <VRules>
+          <CompareValidationRule id="sv4#area8#page39#enu16#fld44#cmp5" name="Compare5" predicate="gteq" value="1"/>
+          <CompareValidationRule id="sv4#area8#page39#enu16#fld44#cmp6" name="Compare6" predicate="lteq" value="5"/>
+          <MandatoryValidationRule id="sv4#area8#page39#enu16#fld44#mnd39" name="Mandatory39"/>
+        </VRules>
+      </Field>
+      <Link id="sv4#area8#page39#enu16#ln159" to="sv4#area8#miu34" type="normal" validate="true" name="Submit">
+        <LinkParameter id="sv4#area8#page39#enu16#ln159#par392" name="sv4#area8#page39#enu16#fld44_feedback" source="sv4#area8#page39#enu16#fld44" target="sv4#area8#miu34.mov4#opm26#icu26#icp21"/>
+        <LinkParameter id="sv4#area8#page39#enu16#ln159#par393" name="oid_orderID" source="sv4#area8#page39#enu16#fld43" target="sv4#area8#miu34.mov4#opm26#icu26#icp20"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="200" gr:y="35" id="sv4#area8#page39#mssu24" name="title">
+      <Message xml:space="preserve">Give a feedback from 1 to 5</Message>
+    </MultiMessageUnit>
+  </ContentUnits>
+</Page>

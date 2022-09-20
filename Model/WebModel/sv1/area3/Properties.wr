@@ -1,0 +1,28 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="120" gr:y="75" id="sv1#area3" name="Groups" landmark="true" defaultPage="sv1#area3#page1" landmarks="sv1#area3#page6 sv1#area3#page1">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="0" gr:y="515" id="sv1#area3#miu4" moduleId="mov2#mpkg2#opm1" action="true" name="Delete group">
+      <OKLink id="sv1#area3#miu4#oln9" name="OK delete" to="sv1#area3#page1#mssu2" gr:bendpoints="94,-169,-131,31">
+        <LinkParameter id="sv1#area3#miu4#oln9#par51" name="Message_Shown Messages" source="mov2#mpkg2#opm1#okcu1#ocp5" target="sv1#area3#page1#mssu2.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv1#area3#miu4#kln14" name="KOFlow14" to="sv1#area3#page1#mssu2">
+        <LinkParameter id="sv1#area3#miu4#kln14#par50" name="Message_Shown Messages" source="mov2#mpkg2#opm1#kocu1#ocp6" target="sv1#area3#page1#mssu2.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="670" gr:y="450" id="sv1#area3#miu6" action="true" moduleId="mov2#mpkg2#opm2" name="Save group">
+      <OKLink id="sv1#area3#miu6#oln10" name="OKFlow10" to="sv1#area3#page1#mssu2" gr:bendpoints="-172,-95,238,85">
+        <LinkParameter id="sv1#area3#miu6#oln10#par55" name="Message_Shown Messages" source="mov2#mpkg2#opm2#okcu2#ocp1" target="sv1#area3#page1#mssu2.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv1#area3#miu6#kln13" name="KOFlow13" to="sv1#area3#page1#mssu2" gr:bendpoints="-195,-44,215,136">
+        <LinkParameter id="sv1#area3#miu6#kln13#par54" name="Message_Shown Messages" source="mov2#mpkg2#opm2#kocu2#ocp2" target="sv1#area3#page1#mssu2.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="550" gr:y="590" id="sv1#area3#miu7" action="true" moduleId="mov2#mpkg2#opm3">
+      <OKLink id="sv1#area3#miu7#oln11" name="OKFlow11" to="sv1#area3#page1#mssu2" gr:bendpoints="-214,-127,11,123">
+        <LinkParameter id="sv1#area3#miu7#oln11#par52" name="Message_Shown Messages" source="mov2#mpkg2#opm3#okcu3#ocp3" target="sv1#area3#page1#mssu2.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv1#area3#miu7#kln11" name="KOFlow11" to="sv1#area3#page1#mssu2" gr:bendpoints="-193,-157,82,133">
+        <LinkParameter id="sv1#area3#miu7#kln11#par53" name="Message_Shown Messages" source="mov2#mpkg2#opm3#kocu3#ocp4" target="sv1#area3#page1#mssu2.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</Area>

@@ -1,0 +1,23 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="600" gr:y="180" id="mov1#opm12" name="delete item">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm12#icu12" gr:x="30" gr:y="60">
+      <OKLink id="mov1#opm12#icu12#oln42" name="OKFlow42" to="mov1#opm12#dlu2">
+        <LinkParameter id="mov1#opm12#icu12#oln42#par176" name="key_item_KeyCondition1 [oid]" source="mov1#opm12#icu12#icp47" target="mov1#opm12#dlu2#su2#kcond1.ent9#att31"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#opm12#icu12#icp47" name="key_item"/>
+    </InputCollectorUnit>
+    <KOCollectorUnit gr:x="1050" gr:y="290" id="mov1#opm12#kocu12" name="KO Port12">
+      <OutputCollectorParameter id="mov1#opm12#kocu12#ocp12" name="message" value="error"/>
+    </KOCollectorUnit>
+    <OKCollectorUnit gr:x="1050" gr:y="110" id="mov1#opm12#okcu10" name="OK Port10">
+      <OutputCollectorParameter id="mov1#opm12#okcu10#ocp11" name="message" value="item deleted"/>
+    </OKCollectorUnit>
+    <DeleteUnit gr:x="560" gr:y="175" id="mov1#opm12#dlu2" name="delete item" entity="ent9">
+      <Selector id="mov1#opm12#dlu2#su2" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm12#dlu2#su2#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm12#dlu2#oln43" name="OKFlow43" to="mov1#opm12#okcu10" automaticCoupling="true"/>
+      <KOLink id="mov1#opm12#dlu2#kln22" name="KOFlow22" to="mov1#opm12#kocu12" automaticCoupling="true"/>
+    </DeleteUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,45 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="645" gr:y="0" id="sv1#area3#page5" name="Edit group">
+  <ContentUnits>
+    <EntryUnit id="sv1#area3#page5#enu7" name="Group Form" linkOrder="sv1#area3#page5#enu7#ln10 sv1#area3#page5#enu7#ln23" gr:x="0" gr:y="0" entity="Group" fieldOrder="sv1#area3#page5#enu7#fld10 sv1#area3#page5#enu7#fld11 sv1#area3#page5#enu7#sfld3">
+      <Link id="sv1#area3#page5#enu7#ln10" name="Cancel" to="sv1#area3#page1" type="normal" automaticCoupling="true" validate="false" gr:bendpoints="-85,-206,45,-266"/>
+      <Field id="sv1#area3#page5#enu7#fld10" name="oid" type="integer" modifiable="false" attribute="groupOID"/>
+      <Field id="sv1#area3#page5#enu7#fld11" name="name" type="string" modifiable="true" attribute="groupName"/>
+      <SelectionField id="sv1#area3#page5#enu7#sfld3" name="module" type="string" role="Group2DefaultModule"/>
+      <Link id="sv1#area3#page5#enu7#ln23" name="Save" to="sv1#area3#miu6" type="normal" validate="true" gr:bendpoints="127,120,82,-285">
+        <LinkParameter id="sv1#area3#page5#enu7#ln23#par43" name="module_defaultModule" source="sv1#area3#page5#enu7#sfld3" target="sv1#area3#miu6.mov2#mpkg2#opm2#icu2#icp3"/>
+        <LinkParameter id="sv1#area3#page5#enu7#ln23#par44" name="name_groupName" source="sv1#area3#page5#enu7#fld11" target="sv1#area3#miu6.mov2#mpkg2#opm2#icu2#icp4"/>
+        <LinkParameter id="sv1#area3#page5#enu7#ln23#par45" name="Key [oid]_oidGroup" source="key.groupOID" target="sv1#area3#miu6.mov2#mpkg2#opm2#icu2#icp6"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit id="sv1#area3#page5#seu6" name="Modules" gr:x="15" gr:y="205" entity="Module">
+      <Link id="sv1#area3#page5#seu6#ln17" name="Flow17" to="sv1#area3#page5#enu7" type="transport" validate="true">
+        <LinkParameter id="sv1#area3#page5#seu6#ln17#par25" name="moduleName_defaultModule [label]" source="moduleNameArray" target="sv1#area3#page5#enu7#sfld3_label"/>
+        <LinkParameter id="sv1#area3#page5#seu6#ln17#par40" name="oid_module [output]" source="moduleOIDArray" target="sv1#area3#page5#enu7#sfld3_output"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area3#page5#enu7">
+          <layout:Link link="sv1#area3#page5#enu7#ln10"/>
+          <layout:Link link="sv1#area3#page5#enu7#ln23"/>
+          <layout:Field field="sv1#area3#page5#enu7#fld10"/>
+          <layout:Field field="sv1#area3#page5#enu7#fld11"/>
+          <layout:Field field="sv1#area3#page5#enu7#sfld3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

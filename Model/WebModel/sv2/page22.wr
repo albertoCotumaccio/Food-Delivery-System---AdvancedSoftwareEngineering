@@ -1,0 +1,144 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page22" name="RegisterRestaurant" gr:x="1400" gr:y="45">
+  <ContentUnits>
+    <EntryUnit id="sv2#page22#enu10" name="FormRegisterRestaurant" gr:x="105" gr:y="0" fieldOrder="sv2#page22#enu10#fld73 sv2#page22#enu10#fld64 sv2#page22#enu10#fld65 sv2#page22#enu10#fld66 sv2#page22#enu10#fld67 sv2#page22#enu10#sfld15 sv2#page22#enu10#fld70 sv2#page22#enu10#fld71 sv2#page22#enu10#fld72 sv2#page22#enu10#fld74 sv2#page22#enu10#fld75 sv2#page22#enu10#fld76 sv2#page22#enu10#sfld1" linkOrder="sv2#page22#enu10#ln47">
+      <Field id="sv2#page22#enu10#fld64" name="username" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv2#page22#enu10#fld64#mnd20" name="Mandatory20"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#page22#enu10#fld65" name="password" type="password" modifiable="true">
+        <VRules>
+          <PasswordStrengthValidationRule id="sv2#page22#enu10#fld65#psvr3" name="Password Strength3" securityLevel="low"/>
+          <MandatoryValidationRule id="sv2#page22#enu10#fld65#mnd21" name="Mandatory21"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#page22#enu10#fld66" name="email" type="string" modifiable="true">
+        <VRules>
+          <EMailValidationRule id="sv2#page22#enu10#fld66#email3" name="EMail3"/>
+          <MandatoryValidationRule id="sv2#page22#enu10#fld66#mnd31" name="Mandatory31"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#page22#enu10#fld67" name="phone" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv2#page22#enu10#fld67#mnd32" name="Mandatory32"/>
+        </VRules>
+      </Field>
+      <SelectionField id="sv2#page22#enu10#sfld15" name="city" type="string">
+        <VRules>
+          <MandatoryValidationRule id="sv2#page22#enu10#sfld15#mnd18" name="Mandatory18"/>
+        </VRules>
+      </SelectionField>
+      <Field id="sv2#page22#enu10#fld73" name="name" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv2#page22#enu10#fld73#mnd22" name="Mandatory22"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#page22#enu10#fld72" name="bio" type="text" modifiable="true"/>
+      <Field id="sv2#page22#enu10#fld71" name="logo" type="blob" modifiable="true"/>
+      <Field id="sv2#page22#enu10#fld70" name="address" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv2#page22#enu10#fld70#mnd17" name="Mandatory17"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#page22#enu10#fld76" name="minimum spend" type="integer" modifiable="true"/>
+      <Field id="sv2#page22#enu10#fld75" name="delivery time" type="integer" modifiable="true"/>
+      <Field id="sv2#page22#enu10#fld74" name="delivery fee" type="float" modifiable="true"/>
+      <Link id="sv2#page22#enu10#ln47" name="Submit" to="sv2#miu5" type="normal" validate="true" gr:bendpoints="320,57,85,-368">
+        <LinkParameter id="sv2#page22#enu10#ln47#par337" name="address_address" source="sv2#page22#enu10#fld70" target="sv2#miu5.mov3#mpkg1#opm18#icu17#icp103"/>
+        <LinkParameter id="sv2#page22#enu10#ln47#par338" name="bio_bio" source="sv2#page22#enu10#fld72" target="sv2#miu5.mov3#mpkg1#opm18#icu17#icp102"/>
+        <LinkParameter id="sv2#page22#enu10#ln47#par339" name="city_city" source="sv2#page22#enu10#sfld15" target="sv2#miu5.mov3#mpkg1#opm18#icu17#icp93"/>
+        <LinkParameter id="sv2#page22#enu10#ln47#par340" name="cuisine_cuisine type" source="sv2#page22#enu10#sfld1" target="sv2#miu5.mov3#mpkg1#opm18#icu17#icp101"/>
+        <LinkParameter id="sv2#page22#enu10#ln47#par341" name="delivery fee_delivery fee" source="sv2#page22#enu10#fld74" target="sv2#miu5.mov3#mpkg1#opm18#icu17#icp100"/>
+        <LinkParameter id="sv2#page22#enu10#ln47#par342" name="delivery time_delivery time" source="sv2#page22#enu10#fld75" target="sv2#miu5.mov3#mpkg1#opm18#icu17#icp99"/>
+        <LinkParameter id="sv2#page22#enu10#ln47#par343" name="email_email" source="sv2#page22#enu10#fld66" target="sv2#miu5.mov3#mpkg1#opm18#icu17#icp95"/>
+        <LinkParameter id="sv2#page22#enu10#ln47#par344" name="logo_logo" source="sv2#page22#enu10#fld71" target="sv2#miu5.mov3#mpkg1#opm18#icu17#icp98"/>
+        <LinkParameter id="sv2#page22#enu10#ln47#par345" name="minimum spend_minimum spend" source="sv2#page22#enu10#fld76" target="sv2#miu5.mov3#mpkg1#opm18#icu17#icp104"/>
+        <LinkParameter id="sv2#page22#enu10#ln47#par346" name="name_name" source="sv2#page22#enu10#fld73" target="sv2#miu5.mov3#mpkg1#opm18#icu17#icp97"/>
+        <LinkParameter id="sv2#page22#enu10#ln47#par347" name="password_password" source="sv2#page22#enu10#fld65" target="sv2#miu5.mov3#mpkg1#opm18#icu17#icp96"/>
+        <LinkParameter id="sv2#page22#enu10#ln47#par348" name="phone_phone" source="sv2#page22#enu10#fld67" target="sv2#miu5.mov3#mpkg1#opm18#icu17#icp94"/>
+        <LinkParameter id="sv2#page22#enu10#ln47#par349" name="username_username" source="sv2#page22#enu10#fld64" target="sv2#miu5.mov3#mpkg1#opm18#icu17#icp105"/>
+      </Link>
+      <SelectionField id="sv2#page22#enu10#sfld1" name="cuisine" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv2#page22#enu10#sfld1#mnd19" name="Mandatory19"/>
+        </VRules>
+      </SelectionField>
+    </EntryUnit>
+    <SelectorUnit id="sv2#page22#seu15" name="Cities" gr:x="0" gr:y="95" entity="ent7">
+      <Link id="sv2#page22#seu15#ln38" name="Flow6" to="sv2#page22#enu10" type="transport" validate="true">
+        <LinkParameter id="sv2#page22#seu15#ln38#par74" name="name_UserToCity [label]" source="ent7#att18Array" target="sv2#page22#enu10#sfld15_label"/>
+        <LinkParameter id="sv2#page22#seu15#ln38#par75" name="name_UserToCity [output]" source="ent7#att18Array" target="sv2#page22#enu10#sfld15_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="310" gr:y="105" id="sv2#page22#seu17" name="Cuisine" entity="ent8">
+      <Link id="sv2#page22#seu17#ln43" name="Flow43" to="sv2#page22#enu10" type="transport" validate="true">
+        <LinkParameter id="sv2#page22#seu17#ln43#par71" name="name_cuisine [label]" source="ent8#att30Array" target="sv2#page22#enu10#sfld1_label"/>
+        <LinkParameter id="sv2#page22#seu17#ln43#par72" name="name_cuisine [output]" source="ent8#att30Array" target="sv2#page22#enu10#sfld1_output"/>
+      </Link>
+    </SelectorUnit>
+    <MultiMessageUnit id="sv2#page22#mssu17" name="Notification error registration" gr:x="60" gr:y="200"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page22#enu10">
+          <layout:Link link="sv2#page22#enu10#ln47"/>
+          <layout:Field field="sv2#page22#enu10#fld73"/>
+          <layout:Field field="sv2#page22#enu10#fld64"/>
+          <layout:Field field="sv2#page22#enu10#fld65"/>
+          <layout:Field field="sv2#page22#enu10#fld66"/>
+          <layout:Field field="sv2#page22#enu10#fld67"/>
+          <layout:Field field="sv2#page22#enu10#sfld15"/>
+          <layout:Field field="sv2#page22#enu10#fld70"/>
+          <layout:Field field="sv2#page22#enu10#fld71"/>
+          <layout:Field field="sv2#page22#enu10#fld72"/>
+          <layout:Field field="sv2#page22#enu10#fld74"/>
+          <layout:Field field="sv2#page22#enu10#fld75"/>
+          <layout:Field field="sv2#page22#enu10#fld76"/>
+          <layout:Field field="sv2#page22#enu10#sfld1"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page22#mssu17"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

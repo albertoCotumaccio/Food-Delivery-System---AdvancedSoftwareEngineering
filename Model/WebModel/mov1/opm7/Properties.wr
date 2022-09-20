@@ -1,0 +1,29 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#opm7" name="Save slot" gr:x="135" gr:y="165">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm7#icu7" gr:x="40" gr:y="210">
+      <InputCollectorParameter id="mov1#opm7#icu7#icp42" name="finish"/>
+      <InputCollectorParameter id="mov1#opm7#icu7#icp35" name="start"/>
+      <InputCollectorParameter id="mov1#opm7#icu7#icp33" name="day"/>
+      <OKLink id="mov1#opm7#icu7#oln6" name="OKFlow6" to="mov1#opm7#mfu3">
+        <LinkParameter id="mov1#opm7#icu7#oln6#par22" name="day_day" source="mov1#opm7#icu7#icp33" target="mov1#opm7#mfu3.ent6#att14"/>
+        <LinkParameter id="mov1#opm7#icu7#oln6#par23" name="finish_finish" source="mov1#opm7#icu7#icp42" target="mov1#opm7#mfu3.ent6#att16"/>
+        <LinkParameter id="mov1#opm7#icu7#oln6#par26" name="start_start" source="mov1#opm7#icu7#icp35" target="mov1#opm7#mfu3.ent6#att15"/>
+        <LinkParameter id="mov1#opm7#icu7#oln6#par28" name="oid_slot_KeyCondition2 [oid]" source="mov1#opm7#icu7#icp43" target="mov1#opm7#mfu3#su11#kcond2.ent6#att13"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#opm7#icu7#icp43" name="oid_slot"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov1#opm7#okcu5" name="OK Port2" gr:x="1085" gr:y="90">
+      <OutputCollectorParameter id="mov1#opm7#okcu5#ocp7" name="Message" value="Slot saved"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit id="mov1#opm7#kocu7" name="KO Port2" gr:x="1085" gr:y="345">
+      <OutputCollectorParameter id="mov1#opm7#kocu7#ocp8" name="Message" value="Slot not saved"/>
+    </KOCollectorUnit>
+    <ModifyUnit gr:x="630" gr:y="190" id="mov1#opm7#mfu3" name="Update slot" entity="ent6">
+      <Selector id="mov1#opm7#mfu3#su11" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm7#mfu3#su11#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm7#mfu3#oln8" name="OKFlow8" to="mov1#opm7#okcu5" automaticCoupling="true"/>
+      <KOLink id="mov1#opm7#mfu3#kln8" name="KOFlow8" to="mov1#opm7#kocu7" automaticCoupling="true"/>
+    </ModifyUnit>
+  </OperationUnits>
+</OperationModule>

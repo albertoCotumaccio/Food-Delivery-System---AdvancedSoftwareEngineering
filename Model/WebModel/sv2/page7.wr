@@ -1,0 +1,62 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="285" gr:y="55" id="sv2#page7" name="Login" customURLName="login" linkOrder="sv2#page7#ln26 sv2#page7#ln33">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv2#page7#enu12" name="LoginForm" entity="User" linkOrder="sv2#page7#enu12#ln24">
+      <Field id="sv2#page7#enu12#fld19" name="userName" type="string" modifiable="true" attribute="userName">
+        <VRules>
+          <MandatoryValidationRule id="sv2#page7#enu12#fld19#mnd38" name="Mandatory38"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#page7#enu12#fld20" name="password" type="password" modifiable="true" attribute="password">
+        <VRules>
+          <MandatoryValidationRule id="sv2#page7#enu12#fld20#mnd37" name="Mandatory37"/>
+        </VRules>
+      </Field>
+      <Link id="sv2#page7#enu12#ln24" name="Login" to="sv2#miu8" type="normal" validate="true">
+        <LinkParameter id="sv2#page7#enu12#ln24#par58" name="password_Password" source="sv2#page7#enu12#fld20" target="sv2#miu8.mov3#opm4#icu4#icp11"/>
+        <LinkParameter id="sv2#page7#enu12#ln24#par59" name="userName_Username" source="sv2#page7#enu12#fld19" target="sv2#miu8.mov3#opm4#icu4#icp12"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="375" gr:y="85" id="sv2#page7#mssu12" name="Notification ok registration"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page7#enu12">
+          <layout:Field field="sv2#page7#enu12#fld19"/>
+          <layout:Field field="sv2#page7#enu12#fld20"/>
+          <layout:Link link="sv2#page7#enu12#ln24"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page7#mssu12"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv2#page7#ln26" name="Register as a customer" to="sv2#page2" type="normal" validate="true" gr:bendpoints="39,216,49,-274"/>
+  <Link id="sv2#page7#ln33" name="Register a rider" to="sv2#page20" type="normal" validate="true" gr:bendpoints="39,216,49,-274"/>
+  <Link id="sv2#page7#ln42" name="Register as a restaurant" to="sv2#page22" type="normal" validate="true" gr:bendpoints="39,216,49,-274"/>
+</Page>

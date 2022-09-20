@@ -1,0 +1,20 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="850" gr:y="205" id="mov1#opm19" name="reject order">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm19#icu18" gr:x="30" gr:y="60">
+      <OKLink id="mov1#opm19#icu18#oln27" name="OKFlow27" to="mov1#opm19#mfu8">
+        <LinkParameter id="mov1#opm19#icu18#oln27#par102" name="orderID_KeyCondition8 [oid]" source="mov1#opm19#icu18#icp10" target="mov1#opm19#mfu8#su20#kcond8.ent5#att6"/>
+        <LinkParameter id="mov1#opm19#icu18#oln27#par104" name="0_accepted" sourceValue="0" target="mov1#opm19#mfu8.ent5#att10"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#opm19#icu18#icp10" name="orderID"/>
+    </InputCollectorUnit>
+    <KOCollectorUnit gr:x="775" gr:y="210" id="mov1#opm19#kocu19" name="KO Port19"/>
+    <OKCollectorUnit gr:x="775" gr:y="75" id="mov1#opm19#okcu18" name="OK Port18"/>
+    <ModifyUnit gr:x="415" gr:y="125" id="mov1#opm19#mfu8" name="Update8" entity="ent5">
+      <Selector id="mov1#opm19#mfu8#su20" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm19#mfu8#su20#kcond8" name="KeyCondition8" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm19#mfu8#oln48" name="OKFlow48" to="mov1#opm19#okcu18" automaticCoupling="true"/>
+      <KOLink id="mov1#opm19#mfu8#kln38" name="KOFlow38" to="mov1#opm19#kocu19" automaticCoupling="true"/>
+    </ModifyUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,182 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv4#area1#page23" name="Restaurants" layout:pageLayout="WebRatio/Basic">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="335" gr:y="5" id="sv4#area1#page23#pwu3" name="List of all restaurants in the same city" sortable="false" checkable="false" useCountQuery="false" gr:showAllParts="false" linkOrder="sv4#area1#page23#pwu3#ln112" displayAttributes="ent3#att20 ent3#att23 ent3#att22 ent3#att5 ent3#att21 ent3#att24 ent3#att27 ent3#att37 rel7#role13.ent8#att30" entity="ent3">
+      <SortAttribute attribute="ent3#att23" order="ascending"/>
+      <Selector id="sv4#area1#page23#pwu3#su14" defaultPolicy="fill" booleanOperator="or" expression="( IFNULLTRUE(sv4#area1#page23#pwu3#su14#acond1) OR IFNULLTRUE(sv4#area1#page23#pwu3#su14#rcond3) ) AND sv4#area1#page23#pwu3#su14#kcond29">
+        <AttributesCondition id="sv4#area1#page23#pwu3#su14#acond1" name="name contain keyword" predicate="contains" booleanOperator="or" implied="true" ignoreCase="true" attributes="ent3#att23"/>
+        <RelationshipRoleCondition id="sv4#area1#page23#pwu3#su14#rcond3" name="cusine contain keyword" predicate="in" implied="true" role="rel7#role14"/>
+        <KeyCondition id="sv4#area1#page23#pwu3#su14#kcond29" name="KeyCondition29" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#area1#page23#pwu3#ln112" name="Make an order" to="sv4#area1#miu23" type="normal" validate="true" gr:bendpoints="58,153,198,-252">
+        <LinkParameter id="sv4#area1#page23#pwu3#ln112#par408" name="oid_oid_rest" source="data[].userOID" target="sv4#area1#miu23.mov4#opm21#icu21#icp109"/>
+      </Link>
+    </PowerIndexUnit>
+    <EntryUnit gr:x="735" gr:y="0" id="sv4#area1#page23#enu6" name="Search Restaurant by keyword" linkOrder="sv4#area1#page23#enu6#ln2">
+      <Field id="sv4#area1#page23#enu6#fld36" type="string" modifiable="true"/>
+      <Link id="sv4#area1#page23#enu6#ln2" name="Search" to="sv4#area1#page23#pwu3" type="normal" validate="true">
+        <LinkParameter id="sv4#area1#page23#enu6#ln2#par2" name="keyword_name contain keyword" source="sv4#area1#page23#enu6#fld36" target="sv4#area1#page23#pwu3#su14#acond1"/>
+        <LinkParameter id="sv4#area1#page23#enu6#ln2#par5" name="keyword_cusine contain keyword [name]" source="sv4#area1#page23#enu6#fld36" target="sv4#area1#page23#pwu3#su14#rcond3.ent8#att30"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="540" gr:y="225" id="sv4#area1#page23#mssu11" name="Message11"/>
+    <MultiMessageUnit id="sv4#area1#page23#mssu13" name="Message11" gr:x="750" gr:y="225"/>
+    <SelectorUnit id="sv4#area1#page23#seu22" name="get customer. goal: same city" gr:x="5" gr:y="165" entity="User">
+      <Selector id="sv4#area1#page23#seu22#su33" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area1#page23#seu22#su33#kcond16" name="KeyCondition15" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#area1#page23#seu22#ln109" name="Flow109" to="sv4#area1#page23#seu24" type="transport" validate="true">
+        <LinkParameter id="sv4#area1#page23#seu22#ln109#par264" name="UserToCity.name_RoleCondition21 [name]" source="rel11#role21_ent7#att18Array" target="sv4#area1#page23#seu24#su40#rcond21.ent7#att18"/>
+      </Link>
+    </SelectorUnit>
+    <GetUnit gr:x="0" gr:y="310" id="sv4#area1#page23#gtu10" name="Get10" contextParameters="UserCtxParam">
+      <Link id="sv4#area1#page23#gtu10#ln95" name="Flow95" to="sv4#area1#page23#seu22" type="transport" validate="true">
+        <LinkParameter id="sv4#area1#page23#gtu10#ln95#par167" name="UserCtxParam.oid_KeyCondition15 [oid]" source="sv4#area1#page23#gtu10.UserCtxParam" target="sv4#area1#page23#seu22#su33#kcond16.userOID"/>
+      </Link>
+    </GetUnit>
+    <QueryUnit id="sv4#area1#page23#qu11" name="restOid of open restaurants" gr:x="270" gr:y="185" mode="select" language="SQL" db="db6">
+      <QueryText xml:space="preserve">select r.user_oid
+from restaurantuser r, slot s
+where s.restaurantuser_oid = r.user_oid and s.day = DAYNAME(CURRENT_DATE) and s.start &lt;= CURRENT_TIME and s.finish &gt;= CURRENT_TIME;</QueryText>
+      <QueryOutput id="sv4#area1#page23#qu11#qo21" name="restKey" type="integer"/>
+      <Link id="sv4#area1#page23#qu11#ln113" name="Flow113" to="sv4#area1#page23#seu24" type="transport" validate="true">
+        <LinkParameter id="sv4#area1#page23#qu11#ln113#par279" name="restKey_KeyCondition28 [oid]" target="sv4#area1#page23#seu24#su40#kcond28.userOID" source="sv4#area1#page23#qu11#qo21"/>
+      </Link>
+    </QueryUnit>
+    <SelectorUnit gr:x="40" gr:y="5" id="sv4#area1#page23#seu24" name="Selector24" entity="ent3">
+      <Selector id="sv4#area1#page23#seu24#su40" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#area1#page23#seu24#su40#rcond21" name="RoleCondition21" predicate="in" implied="false" role="rel11#role22"/>
+        <KeyCondition id="sv4#area1#page23#seu24#su40#kcond28" name="KeyCondition28" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#area1#page23#seu24#ln114" name="Flow114" to="sv4#area1#page23#pwu3" type="transport" validate="true">
+        <LinkParameter id="sv4#area1#page23#seu24#ln114#par280" name="oid_KeyCondition29 [oid]" source="userOIDArray" target="sv4#area1#page23#pwu3#su14#kcond29.userOID"/>
+      </Link>
+    </SelectorUnit>
+    <MultiMessageUnit id="sv4#area1#page23#mssu31" name="Message22" gr:x="865" gr:y="130"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="sv4#area1#page23#mssu31"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4">
+        <layout:Unit unitId="sv4#area1#page23#enu6">
+          <layout:Field field="sv4#area1#page23#enu6#fld36"/>
+          <layout:Link link="sv4#area1#page23#enu6#ln2"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area1#page23#pwu3">
+          <layout:LayoutParameter name="image-width" value="200" type="attribute"/>
+          <layout:LayoutParameter name="image-height" value="200" type="attribute"/>
+          <layout:Attribute attribute="ent3#att20"/>
+          <layout:Attribute attribute="ent3#att23"/>
+          <layout:Attribute attribute="ent3#att22"/>
+          <layout:Attribute attribute="ent3#att5"/>
+          <layout:Attribute attribute="ent3#att21"/>
+          <layout:Attribute attribute="ent3#att24"/>
+          <layout:Attribute attribute="ent3#att27"/>
+          <layout:Attribute attribute="ent3#att37"/>
+          <layout:Attribute attribute="rel7#role13.ent8#att30"/>
+          <layout:Link link="sv4#area1#page23#pwu3#ln112"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area1#page23#mssu11"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area1#page23#mssu13"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

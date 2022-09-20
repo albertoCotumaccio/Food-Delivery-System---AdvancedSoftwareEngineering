@@ -1,0 +1,70 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv4#area8#page17" name="My orders" landmark="true">
+  <ContentUnits>
+    <GetUnit gr:x="0" gr:y="155" id="sv4#area8#page17#gtu4" name="userKey" contextParameters="UserCtxParam">
+      <Link id="sv4#area8#page17#gtu4#ln61" name="Flow61" to="sv4#area8#page17#qu2" type="transport" validate="true">
+        <LinkParameter id="sv4#area8#page17#gtu4#ln61#par62" name="UserCtxParam.oid_userKey" source="sv4#area8#page17#gtu4.UserCtxParam" target="sv4#area8#page17#qu2.sv4#area8#page17#qu2#qi2"/>
+      </Link>
+    </GetUnit>
+    <QueryUnit gr:x="125" gr:y="0" id="sv4#area8#page17#qu2" name="show current orders" mode="select" language="SQL" db="db6" outputsOrder="sv4#area8#page17#qu2#qo10 sv4#area8#page17#qu2#qo4 sv4#area8#page17#qu2#qo8 sv4#area8#page17#qu2#qo9 sv4#area8#page17#qu2#qo11 sv4#area8#page17#qu2#qo1 sv4#area8#page17#qu2#qo13">
+      <QueryText xml:space="preserve">select distinct o.oid, r.name, o.total, o.accepted, r.delivery_time, rider.surname, ur.phone
+from restaurantuser r, sapienza_delivery.order o, item i, orderitem oi, rideruser rider, sapienza_delivery.user u, sapienza_delivery.user ur
+where o.customeruser_oid = :userKey and r.user_oid = i.restaurantuser_oid 
+and oi.item_oid = i.oid and oi.order_oid = o.oid and o.rideruser_oid = rider.user_oid 
+and rider.user_oid = u.oid and r.user_oid = ur.oid and u.oid &lt;&gt; ur.oid and (o.delivered &lt;&gt; 1 or o.delivered is null)</QueryText>
+      <QueryOutput id="sv4#area8#page17#qu2#qo4" name="restaurant" type="string"/>
+      <QueryOutput id="sv4#area8#page17#qu2#qo8" name="total" type="float"/>
+      <QueryOutput id="sv4#area8#page17#qu2#qo9" name="accepted" type="boolean"/>
+      <QueryInput id="sv4#area8#page17#qu2#qi2" name="userKey" required="true"/>
+      <QueryOutput id="sv4#area8#page17#qu2#qo11" name="delivery time" type="integer"/>
+      <QueryOutput id="sv4#area8#page17#qu2#qo1" name="rider"/>
+      <QueryOutput id="sv4#area8#page17#qu2#qo10" name="order ID" type="integer"/>
+      <QueryOutput id="sv4#area8#page17#qu2#qo13" name="restaurant phone" type="string"/>
+    </QueryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area8#page17#qu2"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

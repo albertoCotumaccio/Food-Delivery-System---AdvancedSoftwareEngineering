@@ -1,0 +1,12 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="2765" gr:y="25" id="sv4#area6" name="Balance" landmark="true" defaultPage="sv4#area6#page8">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="565" gr:y="295" id="sv4#area6#miu16" action="true" name="Update balance" moduleId="mov4#opm23">
+      <OKLink id="sv4#area6#miu16#oln80" name="OKFlow80" to="sv4#area6#page8#mssu21">
+        <LinkParameter id="sv4#area6#miu16#oln80#par116" name="message_Shown Messages" source="mov4#opm23#okcu21#ocp33" target="sv4#area6#page8#mssu21.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv4#area6#miu16#kln32" name="KOFlow32" to="sv4#area6#page8#mssu21" gr:bendpoints="-105,110,140,-20">
+        <LinkParameter id="sv4#area6#miu16#kln32#par127" name="message_Shown Messages" source="mov4#opm23#kocu23#ocp34" target="sv4#area6#page8#mssu21.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</Area>

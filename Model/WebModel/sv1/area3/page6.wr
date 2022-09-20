@@ -1,0 +1,55 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="240" gr:y="485" id="sv1#area3#page6" name="New group" landmark="true">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv1#area3#page6#enu11" name="Create group" entity="Group" fieldOrder="sv1#area3#page6#enu11#fld18 sv1#area3#page6#enu11#sfld11" linkOrder="sv1#area3#page6#enu11#ln19">
+      <Field id="sv1#area3#page6#enu11#fld18" name="name" type="string" modifiable="true" attribute="groupName"/>
+      <SelectionField id="sv1#area3#page6#enu11#sfld11" name="module" type="string" role="Group2DefaultModule"/>
+      <Link id="sv1#area3#page6#enu11#ln19" name="Create" to="sv1#area3#miu7" type="normal" validate="true">
+        <LinkParameter id="sv1#area3#page6#enu11#ln19#par31" name="module_module" source="sv1#area3#page6#enu11#sfld11" target="sv1#area3#miu7.mov2#mpkg2#opm3#icu3#icp9"/>
+        <LinkParameter id="sv1#area3#page6#enu11#ln19#par32" name="name_name_group" source="sv1#area3#page6#enu11#fld18" target="sv1#area3#miu7.mov2#mpkg2#opm3#icu3#icp8"/>
+        <LinkParameter id="sv1#area3#page6#enu11#ln19#par33" name="Key [oid]_oid_group" source="key.groupOID" target="sv1#area3#miu7.mov2#mpkg2#opm3#icu3#icp7"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit gr:x="40" gr:y="150" id="sv1#area3#page6#seu8" name="Modules" entity="Module">
+      <Link id="sv1#area3#page6#seu8#ln22" name="Flow22" to="sv1#area3#page6#enu11" type="transport" validate="true">
+        <LinkParameter id="sv1#area3#page6#seu8#ln22#par38" name="moduleName_module [label]" source="moduleNameArray" target="sv1#area3#page6#enu11#sfld11_label"/>
+        <LinkParameter id="sv1#area3#page6#seu8#ln22#par39" name="oid_module [output]" source="moduleOIDArray" target="sv1#area3#page6#enu11#sfld11_output"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area3#page6#enu11">
+          <layout:Link link="sv1#area3#page6#enu11#ln19"/>
+          <layout:Field field="sv1#area3#page6#enu11#fld18"/>
+          <layout:Field field="sv1#area3#page6#enu11#sfld11"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

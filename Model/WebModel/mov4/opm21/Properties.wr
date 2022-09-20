@@ -1,0 +1,30 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="420" gr:y="140" id="mov4#opm21" name="Create Order">
+  <OperationUnits>
+    <InputCollectorUnit id="mov4#opm21#icu21" gr:x="30" gr:y="60" linkOrder="mov4#opm21#icu21#ln5">
+      <InputCollectorParameter id="mov4#opm21#icu21#icp108" name="customer_creator"/>
+      <InputCollectorParameter id="mov4#opm21#icu21#icp109" name="oid_rest"/>
+      <Link id="mov4#opm21#icu21#ln115" name="Flow115" to="mov4#opm21#okcu16" type="transport" validate="true" gr:bendpoints="545,-34,-520,-59">
+        <LinkParameter id="mov4#opm21#icu21#ln115#par409" name="oid_rest_rest_key" source="mov4#opm21#icu21#icp109" target="mov4#opm21#okcu16#ocp32"/>
+      </Link>
+      <Link id="mov4#opm21#icu21#ln3" name="Flow3" to="mov4#opm21#kocu21" type="transport" validate="true" gr:bendpoints="551,16,-509,-184">
+        <LinkParameter id="mov4#opm21#icu21#ln3#par16" name="customer_creator_customer_creator" source="mov4#opm21#icu21#icp108" target="mov4#opm21#kocu21#ocp18"/>
+        <LinkParameter id="mov4#opm21#icu21#ln3#par27" name="oid_rest_rest_key" source="mov4#opm21#icu21#icp109" target="mov4#opm21#kocu21#ocp31"/>
+      </Link>
+      <OKLink id="mov4#opm21#icu21#oln47" name="OKFlow24" to="mov4#opm21#opg2#dlu6">
+        <LinkParameter id="mov4#opm21#icu21#oln47#par84" name="customer_creator_relationshipCustomer [oid]" source="mov4#opm21#icu21#icp108" target="mov4#opm21#opg2#dlu6#su12#rcond6.userOID"/>
+      </OKLink>
+      <Link id="mov4#opm21#icu21#ln5" name="Flow5" to="mov4#opm21#opg2#cru4" type="transport" validate="true">
+        <LinkParameter id="mov4#opm21#icu21#ln5#par98" name="customer_creator_CustomerUser.oid(OrderToCustomerUser)" source="mov4#opm21#icu21#icp108" target="mov4#opm21#opg2#cru4.rel3#role5.userOID"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="1100" gr:y="85" id="mov4#opm21#okcu16" name="OK Port16">
+      <OutputCollectorParameter id="mov4#opm21#okcu16#ocp30" name="new_order_key"/>
+      <OutputCollectorParameter id="mov4#opm21#okcu16#ocp32" name="rest_key"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="1100" gr:y="260" id="mov4#opm21#kocu21" name="KO Port21">
+      <OutputCollectorParameter id="mov4#opm21#kocu21#ocp17" name="message" value="errore"/>
+      <OutputCollectorParameter id="mov4#opm21#kocu21#ocp31" name="rest_key"/>
+      <OutputCollectorParameter id="mov4#opm21#kocu21#ocp18" name="customer_creator"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

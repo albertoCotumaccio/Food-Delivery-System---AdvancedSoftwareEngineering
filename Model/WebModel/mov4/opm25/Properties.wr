@@ -1,0 +1,93 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="650" gr:y="135" id="mov4#opm25" name="remove item">
+  <OperationUnits>
+    <InputCollectorUnit id="mov4#opm25#icu25" gr:x="30" gr:y="180" linkOrder="mov4#opm25#icu25#ln124">
+      <InputCollectorParameter id="mov4#opm25#icu25#icp18" name="customerID"/>
+      <InputCollectorParameter id="mov4#opm25#icu25#icp19" name="item"/>
+      <OKLink id="mov4#opm25#icu25#oln112" name="OKFlow112" to="mov4#opm25#seu27">
+        <LinkParameter id="mov4#opm25#icu25#oln112#par367" name="customerID_customer relationship [oid]" source="mov4#opm25#icu25#icp18" target="mov4#opm25#seu27#su50#rcond25.userOID"/>
+      </OKLink>
+      <Link id="mov4#opm25#icu25#ln124" name="Flow124" to="mov4#opm25#seu26" type="transport" validate="true">
+        <LinkParameter id="mov4#opm25#icu25#ln124#par368" name="item_item relationship [oid]" source="mov4#opm25#icu25#icp19" target="mov4#opm25#seu26#su48#rcond24.ent9#att31"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov4#opm25#okcu24" name="OK Port13" gr:x="1540" gr:y="55"/>
+    <SelectorUnit id="mov4#opm25#seu26" name="get orderItem" gr:x="400" gr:y="85" entity="ent10">
+      <Selector id="mov4#opm25#seu26#su48" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov4#opm25#seu26#su48#rcond20" name="order relationship" predicate="in" implied="false" role="rel4#role7"/>
+        <RelationshipRoleCondition id="mov4#opm25#seu26#su48#rcond24" name="item relationship" predicate="in" implied="false" role="rel10#role20"/>
+      </Selector>
+      <OKLink id="mov4#opm25#seu26#oln104" name="OKFlow33" to="mov4#opm25#inn9">
+        <LinkParameter id="mov4#opm25#seu26#oln104#par350" name="oid_Input" source="ent10#att2Array" target="mov4#opm25#inn9.isnotnull"/>
+      </OKLink>
+      <Link id="mov4#opm25#seu26#ln126" name="Flow126" to="mov4#opm25#seu28" type="transport" validate="true">
+        <LinkParameter id="mov4#opm25#seu26#ln126#par370" name="oid_KeyCondition30 [oid]" source="ent10#att2Array" target="mov4#opm25#seu28#su52#kcond30.ent10#att2"/>
+      </Link>
+      <Link id="mov4#opm25#seu26#ln129" name="Flow129" to="mov4#opm25#mfu12" type="transport" validate="true">
+        <LinkParameter id="mov4#opm25#seu26#ln129#par371" name="oid_KeyCondition12 [oid]" source="ent10#att2Array" target="mov4#opm25#mfu12#su51#kcond27.ent10#att2"/>
+      </Link>
+      <Link id="mov4#opm25#seu26#ln131" name="Flow131" to="mov4#opm25#qu13" type="transport" validate="true">
+        <LinkParameter id="mov4#opm25#seu26#ln131#par372" name="oid_orderItemID" source="ent10#att2Array" target="mov4#opm25#qu13.mov4#opm25#qu13#qi12"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="mov4#opm25#seu27" name="Select pending Order" gr:x="270" gr:y="295" entity="ent5">
+      <Selector id="mov4#opm25#seu27#su50" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov4#opm25#seu27#su50#acond25" name="accepted = NULL" predicate="null" booleanOperator="or" implied="false" attributes="ent5#att10"/>
+        <AttributesCondition id="mov4#opm25#seu27#su50#acond26" name="delivered = NULL" predicate="null" booleanOperator="or" implied="false" attributes="ent5#att17"/>
+        <AttributesCondition id="mov4#opm25#seu27#su50#acond27" name="total = 0" predicate="eq" booleanOperator="or" implied="false" value="0" attributes="ent5#att39"/>
+        <RelationshipRoleCondition id="mov4#opm25#seu27#su50#rcond25" name="customer relationship" predicate="in" implied="false" role="rel3#role6"/>
+      </Selector>
+      <OKLink id="mov4#opm25#seu27#oln107" name="OKFlow30" to="mov4#opm25#seu26">
+        <LinkParameter id="mov4#opm25#seu27#oln107#par354" name="oid_order relationship [oid]" source="ent5#att6Array" target="mov4#opm25#seu26#su48#rcond20.ent5#att6"/>
+      </OKLink>
+    </SelectorUnit>
+    <KOCollectorUnit id="mov4#opm25#kocu26" name="KO Port15" gr:x="1540" gr:y="385"/>
+    <ModifyUnit id="mov4#opm25#mfu12" name="Update Quantity" gr:x="1290" gr:y="20" entity="ent10">
+      <Selector id="mov4#opm25#mfu12#su51" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov4#opm25#mfu12#su51#kcond27" name="KeyCondition12" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov4#opm25#mfu12#oln109" name="OKFlow60" to="mov4#opm25#okcu24" automaticCoupling="true"/>
+      <KOLink id="mov4#opm25#mfu12#kln53" name="KOFlow34" to="mov4#opm25#kocu26" automaticCoupling="true"/>
+    </ModifyUnit>
+    <IsNotNullUnit id="mov4#opm25#inn9" name="orderitem exists?" gr:x="595" gr:y="370" emptyStringAsNull="true">
+      <KOLink id="mov4#opm25#inn9#kln56" name="KOFlow56" to="mov4#opm25#kocu26" gr:bendpoints="468,40,-517,10">
+        <LinkParameter id="mov4#opm25#inn9#kln56#par369" name="_messaggio" target="mov4#opm25#kocu26#ocp44" sourceValue="Add an item first"/>
+      </KOLink>
+      <OKLink id="mov4#opm25#inn9#oln113" name="OKFlow113" to="mov4#opm25#seu28" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <QueryUnit id="mov4#opm25#qu13" name="get newQuantity of item" gr:x="1160" gr:y="165" mode="select" language="SQL" db="db6">
+      <QueryInput id="mov4#opm25#qu13#qi12" name="orderItemID" required="true" type="integer"/>
+      <QueryOutput id="mov4#opm25#qu13#qo22" name="newQuantity" type="integer"/>
+      <QueryText xml:space="preserve">select oi.quantity - 1
+from orderitem oi
+where oi.oid = :orderItemID </QueryText>
+      <OKLink id="mov4#opm25#qu13#oln111" name="OKFlow101" to="mov4#opm25#mfu12">
+        <LinkParameter id="mov4#opm25#qu13#oln111#par365" name="newQuantity_quantity" source="data[].newQuantity" target="mov4#opm25#mfu12.ent10#att7"/>
+      </OKLink>
+    </QueryUnit>
+    <SelectorUnit gr:x="710" gr:y="205" id="mov4#opm25#seu28" name="check quantity" entity="ent10">
+      <Selector id="mov4#opm25#seu28#su52" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov4#opm25#seu28#su52#kcond30" name="KeyCondition30" predicate="in" implied="false"/>
+        <AttributesCondition id="mov4#opm25#seu28#su52#acond29" name="AttCondition29" predicate="eq" booleanOperator="or" implied="false" attributes="ent10#att7" value="1"/>
+      </Selector>
+      <Link id="mov4#opm25#seu28#ln133" name="Flow133" to="mov4#opm25#dlu7" type="transport" validate="true" gr:bendpoints="296,133,-309,43">
+        <LinkParameter id="mov4#opm25#seu28#ln133#par373" name="oid_KeyCondition31 [oid]" source="ent10#att2Array" target="mov4#opm25#dlu7#su55#kcond31.ent10#att2"/>
+      </Link>
+      <OKLink id="mov4#opm25#seu28#oln119" name="OKFlow119" to="mov4#opm25#inn11">
+        <LinkParameter id="mov4#opm25#seu28#oln119#par376" name="oid_Input" source="ent10#att2Array" target="mov4#opm25#inn11.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="940" gr:y="245" id="mov4#opm25#inn11" name="orderitem quantity = 1 ?">
+      <OKLink id="mov4#opm25#inn11#oln116" name="OKFlow116" to="mov4#opm25#dlu7" automaticCoupling="true"/>
+      <KOLink id="mov4#opm25#inn11#kln59" name="KOFlow59" to="mov4#opm25#qu13" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <DeleteUnit gr:x="1325" gr:y="305" id="mov4#opm25#dlu7" name="delete orderItem" entity="ent10">
+      <Selector id="mov4#opm25#dlu7#su55" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov4#opm25#dlu7#su55#kcond31" name="KeyCondition31" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov4#opm25#dlu7#oln117" name="OKFlow117" to="mov4#opm25#okcu24"/>
+      <KOLink id="mov4#opm25#dlu7#kln60" name="KOFlow60" to="mov4#opm25#kocu26">
+        <LinkParameter id="mov4#opm25#dlu7#kln60#par377" name="Item deleted_messaggio" sourceValue="could not delete the item" target="mov4#opm25#kocu26#ocp44"/>
+      </KOLink>
+    </DeleteUnit>
+  </OperationUnits>
+</OperationModule>

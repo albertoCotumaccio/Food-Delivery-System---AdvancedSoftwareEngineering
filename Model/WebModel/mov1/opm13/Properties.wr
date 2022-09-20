@@ -1,0 +1,31 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="605" gr:y="250" id="mov1#opm13" name="edit item">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm13#icu13" gr:x="30" gr:y="60">
+      <OKLink id="mov1#opm13#icu13#oln54" name="OKFlow54" to="mov1#opm13#mfu2">
+        <LinkParameter id="mov1#opm13#icu13#oln54#par202" name="category_category" source="mov1#opm13#icu13#icp50" target="mov1#opm13#mfu2.ent9#att34"/>
+        <LinkParameter id="mov1#opm13#icu13#oln54#par203" name="description_description" source="mov1#opm13#icu13#icp51" target="mov1#opm13#mfu2.ent9#att33"/>
+        <LinkParameter id="mov1#opm13#icu13#oln54#par204" name="item_key_KeyCondition3 [oid]" source="mov1#opm13#icu13#icp52" target="mov1#opm13#mfu2#su3#kcond3.ent9#att31"/>
+        <LinkParameter id="mov1#opm13#icu13#oln54#par205" name="name_name" source="mov1#opm13#icu13#icp48" target="mov1#opm13#mfu2.ent9#att32"/>
+        <LinkParameter id="mov1#opm13#icu13#oln54#par206" name="price_price" source="mov1#opm13#icu13#icp49" target="mov1#opm13#mfu2.ent9#att35"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#opm13#icu13#icp51" name="description"/>
+      <InputCollectorParameter id="mov1#opm13#icu13#icp50" name="category"/>
+      <InputCollectorParameter id="mov1#opm13#icu13#icp49" name="price"/>
+      <InputCollectorParameter id="mov1#opm13#icu13#icp48" name="name"/>
+      <InputCollectorParameter id="mov1#opm13#icu13#icp52" name="item_key"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="955" gr:y="90" id="mov1#opm13#okcu11" name="OK Port11">
+      <OutputCollectorParameter id="mov1#opm13#okcu11#ocp19" name="message" value="updated"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="955" gr:y="280" id="mov1#opm13#kocu13" name="KO Port13">
+      <OutputCollectorParameter id="mov1#opm13#kocu13#ocp20" name="message" value="error"/>
+    </KOCollectorUnit>
+    <ModifyUnit gr:x="545" gr:y="155" id="mov1#opm13#mfu2" name="Update2" entity="ent9">
+      <Selector id="mov1#opm13#mfu2#su3" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm13#mfu2#su3#kcond3" name="KeyCondition3" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm13#mfu2#oln55" name="OKFlow55" to="mov1#opm13#okcu11" automaticCoupling="true"/>
+      <KOLink id="mov1#opm13#mfu2#kln27" name="KOFlow27" to="mov1#opm13#kocu13" automaticCoupling="true"/>
+    </ModifyUnit>
+  </OperationUnits>
+</OperationModule>

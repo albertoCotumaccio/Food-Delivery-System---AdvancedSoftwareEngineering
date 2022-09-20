@@ -1,0 +1,3 @@
+<SiteView id="sv1" name="Administration_view" protected="true" landmarks="sv1#area3 sv1#area11" homePage="sv1#area3#page1">
+  <OperationUnits/>
+</SiteView>

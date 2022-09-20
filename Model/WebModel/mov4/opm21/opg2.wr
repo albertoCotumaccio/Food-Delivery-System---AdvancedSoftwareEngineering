@@ -1,0 +1,22 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="315" gr:y="240" id="mov4#opm21#opg2" name="Operation Group 2" transaction="true">
+  <OperationUnits>
+    <CreateUnit id="mov4#opm21#opg2#cru4" name="Create1" gr:x="315" gr:y="0" entity="ent5">
+      <OKLink id="mov4#opm21#opg2#cru4#oln29" name="OKFlow18" to="mov4#opm21#okcu16">
+        <LinkParameter id="mov4#opm21#opg2#cru4#oln29#par83" name="oid_new_order_key" source="ent5#att6Array" target="mov4#opm21#okcu16#ocp30"/>
+      </OKLink>
+    </CreateUnit>
+    <DeleteUnit id="mov4#opm21#opg2#dlu6" name="Delete4" gr:x="0" gr:y="0" entity="ent5">
+      <Selector id="mov4#opm21#opg2#dlu6#su12" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov4#opm21#opg2#dlu6#su12#rcond6" name="relationshipCustomer" predicate="in" implied="false" role="rel3#role6"/>
+        <AttributesCondition id="mov4#opm21#opg2#dlu6#su12#acond2" name="total" predicate="eq" booleanOperator="or" implied="false" attributes="ent5#att39" value="0.0"/>
+        <AttributesCondition id="mov4#opm21#opg2#dlu6#su12#acond4" name="delivered" predicate="null" booleanOperator="or" implied="false" attributes="ent5#att17"/>
+        <AttributesCondition id="mov4#opm21#opg2#dlu6#su12#acond5" name="accepted" predicate="null" booleanOperator="or" implied="false" attributes="ent5#att10"/>
+      </Selector>
+      <CascadeDeleteRole id="mov4#opm21#opg2#dlu6#cdr2" name="Cascade Delete Role1" role="rel4#role7"/>
+      <OKLink id="mov4#opm21#opg2#dlu6#oln32" name="OKFlow26" to="mov4#opm21#opg2#cru4">
+        <LinkParameter id="mov4#opm21#opg2#dlu6#oln32#par97" name="0.0_total" sourceValue="0.0" target="mov4#opm21#opg2#cru4.ent5#att39"/>
+      </OKLink>
+    </DeleteUnit>
+  </OperationUnits>
+  <KOLink id="mov4#opm21#opg2#kln25" name="KOFlow25" to="mov4#opm21#kocu21" automaticCoupling="true"/>
+</OperationGroup>

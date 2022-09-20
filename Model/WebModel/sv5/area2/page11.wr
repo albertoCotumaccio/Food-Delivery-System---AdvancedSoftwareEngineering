@@ -1,0 +1,129 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv5#area2#page11" name="Info restaurant" gr:x="0" gr:y="0">
+  <ContentUnits>
+    <EntryUnit gr:x="35" gr:y="0" id="sv5#area2#page11#enu5" name="Form info Restaurant" fieldOrder="sv5#area2#page11#enu5#fld17 sv5#area2#page11#enu5#fld21 sv5#area2#page11#enu5#fld22 sv5#area2#page11#enu5#fld27 sv5#area2#page11#enu5#fld28 sv5#area2#page11#enu5#fld29 sv5#area2#page11#enu5#fld30 sv5#area2#page11#enu5#fld31 sv5#area2#page11#enu5#fld32 sv5#area2#page11#enu5#fld33 sv5#area2#page11#enu5#fld34 sv5#area2#page11#enu5#fld35 sv5#area2#page11#enu5#sfld4 sv5#area2#page11#enu5#sfld5" linkOrder="sv5#area2#page11#enu5#ln52" entity="ent3">
+      <Field id="sv5#area2#page11#enu5#fld17" name="address" type="string" modifiable="true" preloaded="true" attribute="ent3#att5"/>
+      <Field id="sv5#area2#page11#enu5#fld21" name="logo" type="blob" modifiable="true" contentType="image" attribute="ent3#att20"/>
+      <Field id="sv5#area2#page11#enu5#fld22" name="bio" type="text" modifiable="true" preloaded="true" attribute="ent3#att21"/>
+      <Field id="sv5#area2#page11#enu5#fld27" name="name" type="string" modifiable="true" preloaded="true" attribute="ent3#att23"/>
+      <Field id="sv5#area2#page11#enu5#fld28" name="delivery fee" type="float" modifiable="true" preloaded="true" attribute="ent3#att24"/>
+      <Field id="sv5#area2#page11#enu5#fld29" name="delivery time" type="integer" modifiable="true" preloaded="true" attribute="ent3#att27"/>
+      <Field id="sv5#area2#page11#enu5#fld30" name="minimum spend" type="integer" modifiable="true" preloaded="true" attribute="ent3#att37"/>
+      <Field id="sv5#area2#page11#enu5#fld31" name="userName" type="string" modifiable="true" preloaded="true" attribute="userName"/>
+      <Field id="sv5#area2#page11#enu5#fld32" name="password" type="password" modifiable="true" preloaded="true" attribute="password"/>
+      <Field id="sv5#area2#page11#enu5#fld33" name="email" type="string" modifiable="true" preloaded="true" attribute="email"/>
+      <Field id="sv5#area2#page11#enu5#fld34" name="balance" type="float" modifiable="true" preloaded="true" attribute="User#att1"/>
+      <Field id="sv5#area2#page11#enu5#fld35" name="phone" type="string" modifiable="true" preloaded="true" attribute="User#att29"/>
+      <SelectionField id="sv5#area2#page11#enu5#sfld4" name="RestaurantUserToCuisine type" type="string" role="rel7#role13">
+        <VRules>
+          <MandatoryValidationRule id="sv5#area2#page11#enu5#sfld4#mnd34" name="Mandatory34"/>
+        </VRules>
+      </SelectionField>
+      <SelectionField id="sv5#area2#page11#enu5#sfld5" name="UserToCity" type="string" role="rel11#role21">
+        <VRules>
+          <MandatoryValidationRule id="sv5#area2#page11#enu5#sfld5#mnd33" name="Mandatory33"/>
+        </VRules>
+      </SelectionField>
+      <Link id="sv5#area2#page11#enu5#ln52" name="Update" to="sv5#area2#miu14" type="normal" validate="true" gr:bendpoints="110,201,164,-153">
+        <LinkParameter id="sv5#area2#page11#enu5#ln52#par186" name="address_address" source="sv5#area2#page11#enu5#fld17" target="sv5#area2#miu14.mov1#opm8#icu8#icp58"/>
+        <LinkParameter id="sv5#area2#page11#enu5#ln52#par187" name="balance_balance" source="sv5#area2#page11#enu5#fld34" target="sv5#area2#miu14.mov1#opm8#icu8#icp59"/>
+        <LinkParameter id="sv5#area2#page11#enu5#ln52#par188" name="bio_bio" source="sv5#area2#page11#enu5#fld22" target="sv5#area2#miu14.mov1#opm8#icu8#icp60"/>
+        <LinkParameter id="sv5#area2#page11#enu5#ln52#par189" name="UserToCity_City.name(UserToCity)" source="sv5#area2#page11#enu5#sfld5" target="sv5#area2#miu14.mov1#opm8#icu8#icp53"/>
+        <LinkParameter id="sv5#area2#page11#enu5#ln52#par190" name="RestaurantUserToCuisine type_Cuisine type.name(RestaurantUserToCuisine type)" source="sv5#area2#page11#enu5#sfld4" target="sv5#area2#miu14.mov1#opm8#icu8#icp54"/>
+        <LinkParameter id="sv5#area2#page11#enu5#ln52#par191" name="delivery fee_delivery fee" source="sv5#area2#page11#enu5#fld28" target="sv5#area2#miu14.mov1#opm8#icu8#icp61"/>
+        <LinkParameter id="sv5#area2#page11#enu5#ln52#par192" name="delivery time_delivery time" source="sv5#area2#page11#enu5#fld29" target="sv5#area2#miu14.mov1#opm8#icu8#icp62"/>
+        <LinkParameter id="sv5#area2#page11#enu5#ln52#par193" name="email_email" source="sv5#area2#page11#enu5#fld33" target="sv5#area2#miu14.mov1#opm8#icu8#icp63"/>
+        <LinkParameter id="sv5#area2#page11#enu5#ln52#par194" name="Key [oid]_KeyCondition7 [oid]" source="key.userOID" target="sv5#area2#miu14.mov1#opm8#icu8#icp57"/>
+        <LinkParameter id="sv5#area2#page11#enu5#ln52#par195" name="logo_logo" source="sv5#area2#page11#enu5#fld21" target="sv5#area2#miu14.mov1#opm8#icu8#icp64"/>
+        <LinkParameter id="sv5#area2#page11#enu5#ln52#par215" name="minimum spend_minimum spend" source="sv5#area2#page11#enu5#fld30" target="sv5#area2#miu14.mov1#opm8#icu8#icp66"/>
+        <LinkParameter id="sv5#area2#page11#enu5#ln52#par216" name="name_name" source="sv5#area2#page11#enu5#fld27" target="sv5#area2#miu14.mov1#opm8#icu8#icp67"/>
+        <LinkParameter id="sv5#area2#page11#enu5#ln52#par217" name="password_password" source="sv5#area2#page11#enu5#fld32" target="sv5#area2#miu14.mov1#opm8#icu8#icp68"/>
+        <LinkParameter id="sv5#area2#page11#enu5#ln52#par218" name="phone_phone" source="sv5#area2#page11#enu5#fld35" target="sv5#area2#miu14.mov1#opm8#icu8#icp69"/>
+        <LinkParameter id="sv5#area2#page11#enu5#ln52#par219" name="userName_userName" source="sv5#area2#page11#enu5#fld31" target="sv5#area2#miu14.mov1#opm8#icu8#icp70"/>
+      </Link>
+    </EntryUnit>
+    <GetUnit gr:x="270" gr:y="5" id="sv5#area2#page11#gtu2" name="Get name restaurant" contextParameters="UserCtxParam">
+      <Link id="sv5#area2#page11#gtu2#ln48" name="Flow48" to="sv5#area2#page11#enu5" type="transport" validate="true">
+        <LinkParameter id="sv5#area2#page11#gtu2#ln48#par73" name="UserCtxParam.oid_Key Condition [oid]" source="sv5#area2#page11#gtu2.UserCtxParam" target="sv5#area2#page11#enu5.userOID"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="0" gr:y="155" id="sv5#area2#page11#seu4" name="cities" entity="ent7">
+      <Link id="sv5#area2#page11#seu4#ln49" name="Flow49" to="sv5#area2#page11#enu5" type="transport" validate="true">
+        <LinkParameter id="sv5#area2#page11#seu4#ln49#par89" name="name_UserToCity - Preselection" source="ent7#att18Array" target="sv5#area2#page11#enu5#sfld5_presel"/>
+        <LinkParameter id="sv5#area2#page11#seu4#ln49#par90" name="name_UserToCity [label]" source="ent7#att18Array" target="sv5#area2#page11#enu5#sfld5_label"/>
+        <LinkParameter id="sv5#area2#page11#seu4#ln49#par91" name="name_UserToCity [output]" source="ent7#att18Array" target="sv5#area2#page11#enu5#sfld5_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="sv5#area2#page11#seu5" name="cuisines" gr:x="315" gr:y="135" entity="ent8">
+      <Link id="sv5#area2#page11#seu5#ln51" name="Flow51" to="sv5#area2#page11#enu5" type="transport" validate="true">
+        <LinkParameter id="sv5#area2#page11#seu5#ln51#par78" name="name_RestaurantUserToCuisine type - Preselection" source="ent8#att30Array" target="sv5#area2#page11#enu5#sfld4_presel"/>
+        <LinkParameter id="sv5#area2#page11#seu5#ln51#par79" name="name_RestaurantUserToCuisine type [label]" source="ent8#att30Array" target="sv5#area2#page11#enu5#sfld4_label"/>
+        <LinkParameter id="sv5#area2#page11#seu5#ln51#par88" name="name_RestaurantUserToCuisine type [output]" source="ent8#att30Array" target="sv5#area2#page11#enu5#sfld4_output"/>
+      </Link>
+    </SelectorUnit>
+    <MultiMessageUnit id="sv5#area2#page11#mssu5" name="Notification" gr:x="35" gr:y="270"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv5#area2#page11#enu5">
+          <layout:Field field="sv5#area2#page11#enu5#fld17"/>
+          <layout:Field field="sv5#area2#page11#enu5#fld21"/>
+          <layout:Field field="sv5#area2#page11#enu5#fld22"/>
+          <layout:Field field="sv5#area2#page11#enu5#fld27"/>
+          <layout:Field field="sv5#area2#page11#enu5#fld28"/>
+          <layout:Field field="sv5#area2#page11#enu5#fld29"/>
+          <layout:Field field="sv5#area2#page11#enu5#fld30"/>
+          <layout:Field field="sv5#area2#page11#enu5#fld31"/>
+          <layout:Field field="sv5#area2#page11#enu5#fld32"/>
+          <layout:Field field="sv5#area2#page11#enu5#fld33"/>
+          <layout:Field field="sv5#area2#page11#enu5#fld34"/>
+          <layout:Field field="sv5#area2#page11#enu5#fld35"/>
+          <layout:Field field="sv5#area2#page11#enu5#sfld4"/>
+          <layout:Field field="sv5#area2#page11#enu5#sfld5"/>
+          <layout:Link link="sv5#area2#page11#enu5#ln52"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv5#area2#page11#mssu5"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

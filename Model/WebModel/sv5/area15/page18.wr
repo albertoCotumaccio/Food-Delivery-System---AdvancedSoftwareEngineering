@@ -1,0 +1,123 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv5#area15#page18" name="Menu" gr:x="0" gr:y="0">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="5" gr:y="0" id="sv5#area15#page18#pwu2" name="List Menu" sortable="true" checkable="false" useCountQuery="false" linkOrder="sv5#area15#page18#pwu2#ln41 sv5#area15#page18#pwu2#ln53" displayAttributes="ent9#att32 ent9#att33 ent9#att34 ent9#att35" entity="ent9">
+      <Selector id="sv5#area15#page18#pwu2#su1" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv5#area15#page18#pwu2#su1#rcond1" name="item_Of_restaurant" predicate="in" implied="false" role="rel8#role15"/>
+      </Selector>
+      <SortAttribute attribute="ent9#att34" order="ascending"/>
+      <SortAttribute attribute="ent9#att32" order="ascending"/>
+      <SortAttribute attribute="ent9#att35" order="descending"/>
+      <Link id="sv5#area15#page18#pwu2#ln41" name="delete" to="sv5#area15#miu10" type="normal" validate="true">
+        <LinkParameter id="sv5#area15#page18#pwu2#ln41#par173" name="oid_key_item" source="data[].ent9#att31" target="sv5#area15#miu10.mov1#opm12#icu12#icp47"/>
+      </Link>
+      <Link id="sv5#area15#page18#pwu2#ln53" name="edit" to="sv5#area15#page4#enu3" type="normal" validate="true" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowTitle="Edit slot" ajaxWindowWidth="800" ajaxWindowHeight="600" ajaxWindowClosable="true" ajaxWindowMaximizable="false" ajaxWindowMinimizable="false" ajaxWindowModal="true" ajaxWindowShowEffect="Effect.BlindDown" gr:bendpoints="388,-98,-92,-173">
+        <LinkParameter id="sv5#area15#page18#pwu2#ln53#par196" name="oid_Key Condition [oid]" source="data[].ent9#att31" target="sv5#area15#page4#enu3.ent9#att31"/>
+      </Link>
+    </PowerIndexUnit>
+    <GetUnit gr:x="0" gr:y="185" id="sv5#area15#page18#gtu3" name="get restaurantID" contextParameters="UserCtxParam">
+      <Link id="sv5#area15#page18#gtu3#ln30" name="Flow30" to="sv5#area15#page18#pwu2" type="transport" validate="true">
+        <LinkParameter id="sv5#area15#page18#gtu3#ln30#par65" name="UserCtxParam.oid_item_Of_restaurant [oid]" source="sv5#area15#page18#gtu3.UserCtxParam" target="sv5#area15#page18#pwu2#su1#rcond1.userOID"/>
+      </Link>
+      <Link id="sv5#area15#page18#gtu3#ln37" name="Flow37" to="sv5#area15#miu9" type="transport" validate="true">
+        <LinkParameter id="sv5#area15#page18#gtu3#ln37#par172" name="UserCtxParam.oid_RestaurantUser.oid(ItemToRestaurantUser)" source="sv5#area15#page18#gtu3.UserCtxParam" target="sv5#area15#miu9.mov1#opm11#icu11#icp14"/>
+      </Link>
+    </GetUnit>
+    <EntryUnit gr:x="90" gr:y="375" id="sv5#area15#page18#enu2" name="create item form" fieldOrder="sv5#area15#page18#enu2#fld13 sv5#area15#page18#enu2#fld14 sv5#area15#page18#enu2#fld15 sv5#area15#page18#enu2#fld16" linkOrder="sv5#area15#page18#enu2#ln36" entity="ent9">
+      <Field id="sv5#area15#page18#enu2#fld13" name="name" type="string" modifiable="true" attribute="ent9#att32">
+        <VRules>
+          <MandatoryValidationRule id="sv5#area15#page18#enu2#fld13#mnd3" name="Mandatory3"/>
+        </VRules>
+      </Field>
+      <Field id="sv5#area15#page18#enu2#fld14" name="description" type="text" modifiable="true" attribute="ent9#att33">
+        <VRules>
+          <MandatoryValidationRule id="sv5#area15#page18#enu2#fld14#mnd1" name="Mandatory1"/>
+        </VRules>
+      </Field>
+      <Field id="sv5#area15#page18#enu2#fld15" name="category" type="string" modifiable="true" attribute="ent9#att34">
+        <VRules>
+          <MandatoryValidationRule id="sv5#area15#page18#enu2#fld15#mnd2" name="mandatoru"/>
+        </VRules>
+      </Field>
+      <Field id="sv5#area15#page18#enu2#fld16" name="price" type="float" modifiable="true" attribute="ent9#att35">
+        <VRules>
+          <MandatoryValidationRule id="sv5#area15#page18#enu2#fld16#mnd4" name="Mandatory4"/>
+          <CompareValidationRule id="sv5#area15#page18#enu2#fld16#cmp2" name="price &gt;= 0" predicate="gteq" value="0"/>
+        </VRules>
+      </Field>
+      <Link id="sv5#area15#page18#enu2#ln36" name="add item" to="sv5#area15#miu9" type="normal" validate="true">
+        <LinkParameter id="sv5#area15#page18#enu2#ln36#par142" name="category_category" source="sv5#area15#page18#enu2#fld15" target="sv5#area15#miu9.mov1#opm11#icu11#icp24"/>
+        <LinkParameter id="sv5#area15#page18#enu2#ln36#par143" name="description_description" source="sv5#area15#page18#enu2#fld14" target="sv5#area15#miu9.mov1#opm11#icu11#icp32"/>
+        <LinkParameter id="sv5#area15#page18#enu2#ln36#par144" name="name_name" source="sv5#area15#page18#enu2#fld13" target="sv5#area15#miu9.mov1#opm11#icu11#icp44"/>
+        <LinkParameter id="sv5#area15#page18#enu2#ln36#par169" name="Key [oid]_oid" source="key.ent9#att31" target="sv5#area15#miu9.mov1#opm11#icu11#icp45"/>
+        <LinkParameter id="sv5#area15#page18#enu2#ln36#par171" name="price_price" source="sv5#area15#page18#enu2#fld16" target="sv5#area15#miu9.mov1#opm11#icu11#icp46"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit id="sv5#area15#page18#mssu4" name="Notification" gr:x="175" gr:y="170"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="7">
+        <layout:Unit unitId="sv5#area15#page18#pwu2">
+          <layout:Attribute attribute="ent9#att32"/>
+          <layout:Attribute attribute="ent9#att33"/>
+          <layout:Attribute attribute="ent9#att34"/>
+          <layout:Attribute attribute="ent9#att35"/>
+          <layout:Link link="sv5#area15#page18#pwu2#ln41"/>
+          <layout:Link link="sv5#area15#page18#pwu2#ln53"/>
+          <layout:Link link="sv5#area15#page18#pwu2ent9#att34"/>
+          <layout:Link link="sv5#area15#page18#pwu2ent9#att32"/>
+          <layout:Link link="sv5#area15#page18#pwu2ent9#att35"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="5">
+        <layout:Unit unitId="sv5#area15#page18#enu2">
+          <layout:Field field="sv5#area15#page18#enu2#fld13"/>
+          <layout:Field field="sv5#area15#page18#enu2#fld14"/>
+          <layout:Field field="sv5#area15#page18#enu2#fld15"/>
+          <layout:Field field="sv5#area15#page18#enu2#fld16"/>
+          <layout:Link link="sv5#area15#page18#enu2#ln36"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv5#area15#page18#mssu4"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

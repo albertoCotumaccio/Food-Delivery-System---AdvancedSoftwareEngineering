@@ -1,0 +1,34 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov3#mpkg1#opm17" name="RegisterRider" gr:x="5" gr:y="75">
+  <OperationUnits>
+    <InputCollectorUnit id="mov3#mpkg1#opm17#icu16" gr:x="5" gr:y="75">
+      <InputCollectorParameter id="mov3#mpkg1#opm17#icu16#icp85" name="city"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm17#icu16#icp86" name="phone"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm17#icu16#icp87" name="email"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm17#icu16#icp88" name="password"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm17#icu16#icp89" name="username"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm17#icu16#icp90" name="surname"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm17#icu16#icp91" name="name"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm17#icu16#icp92" name="mean of transport "/>
+      <OKLink id="mov3#mpkg1#opm17#icu16#oln81" name="OKFlow20" to="mov3#mpkg1#opm17#opg4#cru14">
+        <LinkParameter id="mov3#mpkg1#opm17#icu16#oln81#par153" name="0.0_balance" target="mov3#mpkg1#opm17#opg4#cru14.User#att1" sourceValue="0.0"/>
+        <LinkParameter id="mov3#mpkg1#opm17#icu16#oln81#par154" name="city_City.name(UserToCity)" source="mov3#mpkg1#opm17#icu16#icp85" target="mov3#mpkg1#opm17#opg4#cru14.rel11#role21.ent7#att18"/>
+        <LinkParameter id="mov3#mpkg1#opm17#icu16#oln81#par155" name="email_email" source="mov3#mpkg1#opm17#icu16#icp87" target="mov3#mpkg1#opm17#opg4#cru14.email"/>
+        <LinkParameter id="mov3#mpkg1#opm17#icu16#oln81#par156" name="customer_Group.oid(defaultGroup)" target="mov3#mpkg1#opm17#opg4#cru14.User2DefaultGroup.groupOID" sourceValue="3"/>
+        <LinkParameter id="mov3#mpkg1#opm17#icu16#oln81#par157" name="customer_Group.oid(groups)" target="mov3#mpkg1#opm17#opg4#cru14.User2Group.groupOID" sourceValue="3"/>
+        <LinkParameter id="mov3#mpkg1#opm17#icu16#oln81#par158" name="password_password" source="mov3#mpkg1#opm17#icu16#icp88" target="mov3#mpkg1#opm17#opg4#cru14.password"/>
+        <LinkParameter id="mov3#mpkg1#opm17#icu16#oln81#par159" name="phone_phone" source="mov3#mpkg1#opm17#icu16#icp86" target="mov3#mpkg1#opm17#opg4#cru14.User#att29"/>
+        <LinkParameter id="mov3#mpkg1#opm17#icu16#oln81#par160" name="username_userName" source="mov3#mpkg1#opm17#icu16#icp89" target="mov3#mpkg1#opm17#opg4#cru14.userName"/>
+        <LinkParameter id="mov3#mpkg1#opm17#icu16#oln81#par161" name="name_name" source="mov3#mpkg1#opm17#icu16#icp91" target="mov3#mpkg1#opm17#opg4#cru14.ent2#att11"/>
+        <LinkParameter id="mov3#mpkg1#opm17#icu16#oln81#par162" name="surname_surname" source="mov3#mpkg1#opm17#icu16#icp90" target="mov3#mpkg1#opm17#opg4#cru14.ent2#att47"/>
+        <LinkParameter id="mov3#mpkg1#opm17#icu16#oln81#par163" name="mean of transport _Mean of transport.name(RiderUserToEntity4)" source="mov3#mpkg1#opm17#icu16#icp92" target="mov3#mpkg1#opm17#opg4#cru14.rel1#role1.ent4#att8"/>
+        <LinkParameter id="mov3#mpkg1#opm17#icu16#oln81#par251" name="0_busy" sourceValue="0" target="mov3#mpkg1#opm17#opg4#cru14.ent2#att19"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov3#mpkg1#opm17#okcu14" name="OK Port4" gr:x="1240" gr:y="95">
+      <OutputCollectorParameter id="mov3#mpkg1#opm17#okcu14#ocp26" name="message" value="Successfully registered"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit id="mov3#mpkg1#opm17#kocu16" name="KO Port6" gr:x="1240" gr:y="265">
+      <OutputCollectorParameter id="mov3#mpkg1#opm17#kocu16#ocp27" name="message" value="Error: something went wrong.."/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

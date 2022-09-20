@@ -1,0 +1,75 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="850" gr:y="140" id="mov1#opm10" name="accept order">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm10#icu10" gr:x="30" gr:y="60" linkOrder="mov1#opm10#icu10#ln158">
+      <InputCollectorParameter id="mov1#opm10#icu10#icp5" name="orderID"/>
+      <OKLink id="mov1#opm10#icu10#oln24" name="OKFlow24" to="mov1#opm10#mfu5">
+        <LinkParameter id="mov1#opm10#icu10#oln24#par100" name="orderID_KeyCondition6 [oid]" source="mov1#opm10#icu10#icp5" target="mov1#opm10#mfu5#su7#kcond6.ent5#att6"/>
+        <LinkParameter id="mov1#opm10#icu10#oln24#par101" name="1_accepted" sourceValue="1" target="mov1#opm10#mfu5.ent5#att10"/>
+      </OKLink>
+      <Link id="mov1#opm10#icu10#ln157" name="Flow157" to="mov1#opm10#qu20" type="transport" validate="true">
+        <LinkParameter id="mov1#opm10#icu10#ln157#par422" name="orderID_orderID" source="mov1#opm10#icu10#icp5" target="mov1#opm10#qu20.mov1#opm10#qu20#qi22"/>
+      </Link>
+      <Link id="mov1#opm10#icu10#ln158" name="Flow158" to="mov1#opm10#qu21" type="transport" validate="true">
+        <LinkParameter id="mov1#opm10#icu10#ln158#par430" name="orderID_orderID" source="mov1#opm10#icu10#icp5" target="mov1#opm10#qu21.mov1#opm10#qu21#qi23"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="1530" gr:y="55" id="mov1#opm10#okcu7" name="OK Port7">
+      <OutputCollectorParameter id="mov1#opm10#okcu7#ocp35" name="message" value="OK"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="1530" gr:y="360" id="mov1#opm10#kocu9" name="KO Port9">
+      <OutputCollectorParameter id="mov1#opm10#kocu9#ocp36" name="message"/>
+    </KOCollectorUnit>
+    <ModifyUnit gr:x="360" gr:y="170" id="mov1#opm10#mfu5" name="Update5" entity="ent5">
+      <Selector id="mov1#opm10#mfu5#su7" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm10#mfu5#su7#kcond6" name="KeyCondition6" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="mov1#opm10#mfu5#kln37" name="KOFlow37" to="mov1#opm10#kocu9">
+        <LinkParameter id="mov1#opm10#mfu5#kln37#par425" name="errore: update5_message" sourceValue="errore: update5" target="mov1#opm10#kocu9#ocp36"/>
+      </KOLink>
+      <OKLink id="mov1#opm10#mfu5#oln142" name="OKFlow142" to="mov1#opm10#qu20" automaticCoupling="true"/>
+    </ModifyUnit>
+    <GetUnit gr:x="345" gr:y="-25" id="mov1#opm10#gtu15" name="Get15" contextParameters="UserCtxParam" linkOrder="mov1#opm10#gtu15#ln152 mov1#opm10#gtu15#ln153">
+      <Link id="mov1#opm10#gtu15#ln152" name="Flow152" to="mov1#opm10#qu20" type="transport" validate="true">
+        <LinkParameter id="mov1#opm10#gtu15#ln152#par411" name="UserCtxParam.oid_restID" source="mov1#opm10#gtu15.UserCtxParam" target="mov1#opm10#qu20.mov1#opm10#qu20#qi21"/>
+      </Link>
+      <Link id="mov1#opm10#gtu15#ln153" name="Flow153" to="mov1#opm10#mfu16" type="transport" validate="true" gr:bendpoints="297,-46,-283,-81">
+        <LinkParameter id="mov1#opm10#gtu15#ln153#par414" name="UserCtxParam.oid_KeyCondition40 [oid]" source="mov1#opm10#gtu15.UserCtxParam" target="mov1#opm10#mfu16#su53#kcond40.userOID"/>
+      </Link>
+    </GetUnit>
+    <QueryUnit gr:x="615" gr:y="15" id="mov1#opm10#qu20" name="get new balance of restaurant" mode="select" language="SQL" db="db6">
+      <QueryInput id="mov1#opm10#qu20#qi21" name="restID" required="true" type="integer"/>
+      <QueryInput id="mov1#opm10#qu20#qi22" name="orderID" required="true" type="integer"/>
+      <QueryText xml:space="preserve">select o.total + u.balance
+from sapienza_delivery.order o, sapienza_delivery.user u
+where o.oid = :orderID and u.oid = :restID;</QueryText>
+      <QueryOutput id="mov1#opm10#qu20#qo28" name="balanceRestaurant" type="float"/>
+      <OKLink id="mov1#opm10#qu20#oln143" name="OKFlow143" to="mov1#opm10#mfu16">
+        <LinkParameter id="mov1#opm10#qu20#oln143#par416" name="balanceRestaurant_balance" source="data[].balanceRestaurant" target="mov1#opm10#mfu16.User#att1"/>
+      </OKLink>
+    </QueryUnit>
+    <QueryUnit id="mov1#opm10#qu21" name="get new balance of customer" gr:x="885" gr:y="190" mode="select" language="SQL" db="db6">
+      <QueryInput id="mov1#opm10#qu21#qi23" name="orderID" required="true" type="integer"/>
+      <QueryText xml:space="preserve">select u.balance - o.total, u.oid
+from sapienza_delivery.order o, sapienza_delivery.user u, customeruser cu
+where o.customeruser_oid = cu.user_oid and cu.user_oid = u.oid and o.oid = :orderID;</QueryText>
+      <QueryOutput id="mov1#opm10#qu21#qo29" name="newBalanceCustomer" type="float"/>
+      <OKLink id="mov1#opm10#qu21#oln147" name="OKFlow147" to="mov1#opm10#mfu17">
+        <LinkParameter id="mov1#opm10#qu21#oln147#par432" name="newBalanceCustomer_balance" source="data[].newBalanceCustomer" target="mov1#opm10#mfu17.User#att1"/>
+        <LinkParameter id="mov1#opm10#qu21#oln147#par433" name="customerID_KeyCondition41 [oid]" source="data[].customerID" target="mov1#opm10#mfu17#su54#kcond41.userOID"/>
+      </OKLink>
+      <QueryOutput id="mov1#opm10#qu21#qo30" name="customerID" type="integer"/>
+    </QueryUnit>
+    <ModifyUnit gr:x="940" gr:y="0" id="mov1#opm10#mfu16" name="Update Restaurantuser (balance)" entity="User">
+      <Selector id="mov1#opm10#mfu16#su53" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm10#mfu16#su53#kcond40" name="KeyCondition40" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm10#mfu16#oln144" name="OKFlow144" to="mov1#opm10#qu21" automaticCoupling="true"/>
+    </ModifyUnit>
+    <ModifyUnit gr:x="1250" gr:y="220" id="mov1#opm10#mfu17" name="Update CustomerUser (balance)" entity="User">
+      <Selector id="mov1#opm10#mfu17#su54" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm10#mfu17#su54#kcond41" name="KeyCondition41" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm10#mfu17#oln148" name="OKFlow148" to="mov1#opm10#okcu7" automaticCoupling="true"/>
+    </ModifyUnit>
+  </OperationUnits>
+</OperationModule>

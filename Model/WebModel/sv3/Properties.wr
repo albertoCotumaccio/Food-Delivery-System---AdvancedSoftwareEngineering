@@ -1,0 +1,20 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="Rider_view" protected="true" landmarks="sv3#area9 sv3#area12 sv3#area13 sv3#area19" homePage="sv3#area12#page33">
+  <OperationUnits>
+    <ModuleInstanceUnit id="sv3#miu15" name="take order rider" gr:x="790" gr:y="70" action="true" moduleId="mov5#opm20">
+      <KOLink id="sv3#miu15#kln46" name="KOFlow32" to="sv3#area12#page33#mssu3" gr:bendpoints="-172,-12,233,-142">
+        <LinkParameter id="sv3#miu15#kln46#par243" name="message_Shown Messages" source="mov5#opm20#kocu20#ocp38" target="sv3#area12#page33#mssu3.shownMessages"/>
+      </KOLink>
+      <OKLink id="sv3#miu15#oln91" name="OKFlow84" to="sv3#area13#page28#mssu19">
+        <LinkParameter id="sv3#miu15#oln91#par246" name="orderID_Shown Messages" source="mov5#opm20#okcu19#ocp37" target="sv3#area13#page28#mssu19.shownMessages"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="495" gr:y="645" id="sv3#miu26" action="true" name="order delivered" moduleId="mov5#opm22">
+      <OKLink id="sv3#miu26#oln92" name="OKFlow92" to="sv3#area13#page28#mssu19">
+        <LinkParameter id="sv3#miu26#oln92#par320" name="message_Shown Messages" source="mov5#opm22#okcu20#ocp40" target="sv3#area13#page28#mssu19.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv3#miu26#kln47" name="KOFlow47" to="sv3#area13#page28#mssu19" gr:bendpoints="147,-140,-407,196">
+        <LinkParameter id="sv3#miu26#kln47#par351" name="message_Shown Messages" source="mov5#opm22#kocu22#ocp41" target="sv3#area13#page28#mssu19.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</SiteView>

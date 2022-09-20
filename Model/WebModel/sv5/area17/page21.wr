@@ -1,0 +1,226 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv5#area17#page21" name="Orders" gr:x="0" gr:y="25">
+  <ContentUnits>
+    <MultiMessageUnit id="sv5#area17#page21#mssu9" name="title" gr:x="120" gr:y="0">
+      <Message xml:space="preserve">Orders management</Message>
+    </MultiMessageUnit>
+    <GetUnit gr:x="275" gr:y="500" id="sv5#area17#page21#gtu6" name="get restaurant" contextParameters="UserCtxParam">
+      <Link id="sv5#area17#page21#gtu6#ln9" name="Flow9" to="sv5#area17#page21#seu2" type="transport" validate="true">
+        <LinkParameter id="sv5#area17#page21#gtu6#ln9#par63" name="UserCtxParam.oid_RoleCondition5 [oid]" source="sv5#area17#page21#gtu6.UserCtxParam" target="sv5#area17#page21#seu2#su15#rcond5.userOID"/>
+      </Link>
+      <Link id="sv5#area17#page21#gtu6#ln74" name="Flow74" to="sv5#area17#page21#pwu9" type="transport" validate="true">
+        <LinkParameter id="sv5#area17#page21#gtu6#ln74#par247" name="UserCtxParam.oid_KeyCondition19 [oid]" source="sv5#area17#page21#gtu6.UserCtxParam" target="sv5#area17#page21#pwu9#su39#kcond21.userOID"/>
+      </Link>
+    </GetUnit>
+    <PowerIndexUnit gr:x="255" gr:y="175" id="sv5#area17#page21#pwu10" name="Incoming orders" sortable="true" checkable="false" useCountQuery="false" displayAttributes="ent5#att6 ent5#att39 ent5#att10" entity="ent5" linkOrder="sv5#area17#page21#pwu10#ln8 sv5#area17#page21#pwu10#ln11 sv5#area17#page21#pwu10#ln57 sv5#area17#page21#pwu10#ln60">
+      <Link id="sv5#area17#page21#pwu10#ln8" name="customer details" to="sv5#area17#page24#qu4" type="normal" validate="true" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowWidth="800" ajaxWindowHeight="600" ajaxWindowClosable="true" ajaxWindowModal="true" ajaxWindowTitle="Order details" ajaxWindowAutoResizing="true">
+        <LinkParameter id="sv5#area17#page21#pwu10#ln8#par13" name="oid_orderID" source="data[].ent5#att6" target="sv5#area17#page24#qu4.sv5#area17#page24#qu4#qi3"/>
+      </Link>
+      <Link id="sv5#area17#page21#pwu10#ln11" name="order details" to="sv5#area17#page24#qu6" type="normal" validate="true" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowModal="true" ajaxWindowClosable="true" ajaxWindowWidth="800" ajaxWindowHeight="600" ajaxWindowTitle="Order details" ajaxWindowAutoResizing="true">
+        <LinkParameter id="sv5#area17#page21#pwu10#ln11#par64" name="oid_orderID" source="data[].ent5#att6" target="sv5#area17#page24#qu6.sv5#area17#page24#qu6#qi6"/>
+      </Link>
+      <Link id="sv5#area17#page21#pwu10#ln57" name="reject order" to="sv5#area17#miu21" type="normal" validate="true" gr:bendpoints="30,172,-180,-123;98,200,-112,-95;134,217,-86,-78">
+        <LinkParameter id="sv5#area17#page21#pwu10#ln57#par103" name="oid_orderID" source="data[].ent5#att6" target="sv5#area17#miu21.mov1#opm19#icu18#icp10"/>
+      </Link>
+      <Link id="sv5#area17#page21#pwu10#ln60" name="accept order" to="sv5#area17#miu18" type="normal" validate="true">
+        <LinkParameter id="sv5#area17#page21#pwu10#ln60#par96" name="oid_orderID" source="data[].ent5#att6" target="sv5#area17#miu18.mov1#opm10#icu10#icp5"/>
+      </Link>
+      <Selector id="sv5#area17#page21#pwu10#su23" defaultPolicy="fill" booleanOperator="or" expression="( sv5#area17#page21#pwu10#su23#acond8 OR sv5#area17#page21#pwu10#su23#acond12 ) AND ( sv5#area17#page21#pwu10#su23#acond21 OR sv5#area17#page21#pwu10#su23#acond23 ) AND sv5#area17#page21#pwu10#su23#kcond22">
+        <AttributesCondition id="sv5#area17#page21#pwu10#su23#acond8" name="accepted == 1" predicate="eq" booleanOperator="or" implied="false" attributes="ent5#att10" value="1"/>
+        <AttributesCondition id="sv5#area17#page21#pwu10#su23#acond12" name="accepted is null" predicate="null" booleanOperator="or" implied="false" attributes="ent5#att10"/>
+        <AttributesCondition id="sv5#area17#page21#pwu10#su23#acond21" name="delivered == 0" predicate="eq" booleanOperator="or" implied="false" attributes="ent5#att17" value="0"/>
+        <AttributesCondition id="sv5#area17#page21#pwu10#su23#acond23" name="delivered is null" predicate="null" booleanOperator="or" implied="false" attributes="ent5#att17"/>
+        <KeyCondition id="sv5#area17#page21#pwu10#su23#kcond22" name="KeyCondition22" predicate="in" implied="false"/>
+      </Selector>
+    </PowerIndexUnit>
+    <SelectorUnit gr:x="0" gr:y="475" id="sv5#area17#page21#seu2" name="Selector of items" entity="ent9">
+      <Selector id="sv5#area17#page21#seu2#su15" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv5#area17#page21#seu2#su15#rcond5" name="RoleCondition5" predicate="in" implied="false" role="rel8#role15"/>
+      </Selector>
+      <Link id="sv5#area17#page21#seu2#ln29" name="Flow29" to="sv5#area17#page21#seu7" type="transport" validate="true" gr:bendpoints="-8,-80,12,80">
+        <LinkParameter id="sv5#area17#page21#seu2#ln29#par113" name="oid_RoleCondition11 [oid]" source="ent9#att31Array" target="sv5#area17#page21#seu7#su22#rcond11.ent9#att31"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="20" gr:y="320" id="sv5#area17#page21#seu7" name="Selector of orderitems" entity="ent10">
+      <Selector id="sv5#area17#page21#seu7#su22" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv5#area17#page21#seu7#su22#rcond11" name="RoleCondition11" predicate="in" implied="false" role="rel10#role20"/>
+      </Selector>
+      <Link id="sv5#area17#page21#seu7#ln55" name="Flow55" to="sv5#area17#page21#seu10" type="transport" validate="true">
+        <LinkParameter id="sv5#area17#page21#seu7#ln55#par152" name="oid_RoleCondition16 [oid]" source="ent10#att2Array" target="sv5#area17#page21#seu10#su36#rcond16.ent10#att2"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="10" gr:y="105" id="sv5#area17#page21#seu10" name="Selector of order" entity="ent5">
+      <Selector id="sv5#area17#page21#seu10#su36" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv5#area17#page21#seu10#su36#rcond16" name="RoleCondition16" predicate="in" implied="false" role="rel4#role8"/>
+      </Selector>
+      <Link id="sv5#area17#page21#seu10#ln64" name="Flow64" to="sv5#area17#page21#pwu10" type="transport" validate="true">
+        <LinkParameter id="sv5#area17#page21#seu10#ln64#par244" name="oid_KeyCondition22 [oid]" source="ent5#att6Array" target="sv5#area17#page21#pwu10#su23#kcond22.ent5#att6"/>
+      </Link>
+    </SelectorUnit>
+    <MultiMessageUnit gr:x="290" gr:y="60" id="sv5#area17#page21#mssu32" name="feedback"/>
+    <PowerIndexUnit id="sv5#area17#page21#pwu9" name="display balance" gr:x="320" gr:y="665" sortable="true" checkable="false" useCountQuery="false" entity="User" displayAttributes="User#att1">
+      <Selector id="sv5#area17#page21#pwu9#su39" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv5#area17#page21#pwu9#su39#kcond21" name="KeyCondition19" predicate="in" implied="false"/>
+      </Selector>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="9">
+        <layout:Unit unitId="sv5#area17#page21#mssu9"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="3">
+        <layout:Unit unitId="sv5#area17#page21#pwu9">
+          <layout:Attribute attribute="User#att1"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv5#area17#page21#pwu10">
+          <layout:Attribute attribute="ent5#att6"/>
+          <layout:Attribute attribute="ent5#att39"/>
+          <layout:Attribute attribute="ent5#att10"/>
+          <layout:Link link="sv5#area17#page21#pwu10#ln8"/>
+          <layout:Link link="sv5#area17#page21#pwu10#ln11"/>
+          <layout:Link link="sv5#area17#page21#pwu10#ln57"/>
+          <layout:Link link="sv5#area17#page21#pwu10#ln60"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv5#area17#page21#mssu32"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

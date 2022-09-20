@@ -1,0 +1,17 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv5#area17#page24" name="Details order" ignoreMasterPage="true" layout:pageLayout="WRDefault/Empty" gr:x="545" gr:y="175">
+  <ContentUnits>
+    <QueryUnit gr:x="10" gr:y="0" id="sv5#area17#page24#qu4" name="customer info" mode="select" language="SQL" db="db6">
+      <QueryText xml:space="preserve">select c.name, c.surname, c.address
+from sapienza_delivery.order o, customeruser c
+where o.customeruser_oid = c.user_oid and o.oid = :orderID;</QueryText>
+      <QueryInput id="sv5#area17#page24#qu4#qi3" name="orderID" required="true"/>
+      <QueryOutput id="sv5#area17#page24#qu4#qo14" name="name" type="string"/>
+      <QueryOutput id="sv5#area17#page24#qu4#qo15" name="surname" type="string"/>
+      <QueryOutput id="sv5#area17#page24#qu4#qo16" name="address" type="string"/>
+    </QueryUnit>
+    <QueryUnit gr:x="0" gr:y="125" id="sv5#area17#page24#qu6" name="item info" mode="select" language="SQL" db="db6">
+      <QueryInput id="sv5#area17#page24#qu6#qi6" name="orderID" required="true"/>
+      <QueryText xml:space="preserve">select i.name, oi.quantity, i.price
+from orderitem oi, item i, sapienza_delivery.order o
+where oi.item_oid = i.oid and oi.order_oid = o.oid and o.oid = :orderID;
+</QueryText>      <QueryOutput id="sv5#area17#page24#qu6#qo18" name="item" type="string"/>      <QueryOutput id="sv5#area17#page24#qu6#qo19" name="quantity" type="integer"/>      <QueryOutput id="sv5#area17#page24#qu6#qo20" name="price" type="float"/>    </QueryUnit>  </ContentUnits>  <layout:Grid containerType="grid">    <layout:Row>      <layout:Cell colspan="12">        <layout:Unit unitId="sv5#area17#page24#qu4"/>      </layout:Cell>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>    </layout:Row>    <layout:Row>      <layout:Cell colspan="12">        <layout:Unit unitId="sv5#area17#page24#qu6"/>      </layout:Cell>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>    </layout:Row>  </layout:Grid></Page>

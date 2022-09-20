@@ -1,0 +1,214 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1075" gr:y="35" id="sv4#area1#page12" name="Make an order" linkOrder="sv4#area1#page12#ln80">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="15" gr:y="115" id="sv4#area1#page12#pwu5" name="MENU of selected restaurant" sortable="true" checkable="false" useCountQuery="false" linkOrder="sv4#area1#page12#pwu5#ln110 sv4#area1#page12#pwu5#ln116" displayAttributes="ent9#att32 ent9#att33 ent9#att34 ent9#att35" entity="ent9">
+      <Selector id="sv4#area1#page12#pwu5#su10" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#area1#page12#pwu5#su10#rcond9" name="RoleCondition9" predicate="in" implied="false" role="rel8#role15"/>
+      </Selector>
+      <Link id="sv4#area1#page12#pwu5#ln110" name="+" to="sv4#area1#miu27" type="normal" validate="true">
+        <LinkParameter id="sv4#area1#page12#pwu5#ln110#par282" name="oid_item" source="data[].ent9#att31" target="sv4#area1#miu27.mov4#opm24#icu24#icp17"/>
+      </Link>
+      <Link id="sv4#area1#page12#pwu5#ln116" name="-" to="sv4#area1#miu28" type="normal" validate="true">
+        <LinkParameter id="sv4#area1#page12#pwu5#ln116#par319" name="oid_item" source="data[].ent9#att31" target="sv4#area1#miu28.mov4#opm25#icu25#icp19"/>
+      </Link>
+    </PowerIndexUnit>
+    <MultiMessageUnit gr:x="405" gr:y="0" id="sv4#area1#page12#mssu1" name="MENU">
+      <Message xml:space="preserve">MENU</Message>
+    </MultiMessageUnit>
+    <MultiMessageUnit id="sv4#area1#page12#mssu6" name="CART" gr:x="495" gr:y="0">
+      <Message xml:space="preserve">CART</Message>
+    </MultiMessageUnit>
+    <GetUnit gr:x="0" gr:y="540" id="sv4#area1#page12#gtu5" name="Get5" contextParameters="UserCtxParam">
+      <Link id="sv4#area1#page12#gtu5#ln59" name="Flow59" to="sv4#area1#page12#seu13" type="transport" validate="true">
+        <LinkParameter id="sv4#area1#page12#gtu5#ln59#par86" name="UserCtxParam.oid_customer relationship [oid]" source="sv4#area1#page12#gtu5.UserCtxParam" target="sv4#area1#page12#seu13#su21#rcond14.userOID"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit id="sv4#area1#page12#seu13" name="Select current Order" gr:x="270" gr:y="480" entity="ent5">
+      <Selector id="sv4#area1#page12#seu13#su21" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv4#area1#page12#seu13#su21#acond16" name="accepted = NULL" predicate="null" booleanOperator="or" implied="false" attributes="ent5#att10"/>
+        <AttributesCondition id="sv4#area1#page12#seu13#su21#acond17" name="delivered = NULL" predicate="null" booleanOperator="or" implied="false" attributes="ent5#att17"/>
+        <AttributesCondition id="sv4#area1#page12#seu13#su21#acond18" name="total = 0" predicate="eq" booleanOperator="or" implied="false" value="0.0" attributes="ent5#att39"/>
+        <RelationshipRoleCondition id="sv4#area1#page12#seu13#su21#rcond14" name="customer relationship" predicate="in" implied="false" role="rel3#role6"/>
+      </Selector>
+      <Link id="sv4#area1#page12#seu13#ln75" name="Flow75" to="sv4#area1#page12#qu3" type="transport" validate="true">
+        <LinkParameter id="sv4#area1#page12#seu13#ln75#par81" name="oid_order_oid" source="ent5#att6Array" target="sv4#area1#page12#qu3.sv4#area1#page12#qu3#qi5"/>
+      </Link>
+      <Link id="sv4#area1#page12#seu13#ln76" name="Flow76" to="sv4#area1#miu24" type="transport" validate="true">
+        <LinkParameter id="sv4#area1#page12#seu13#ln76#par87" name="oid_order" source="ent5#att6Array" target="sv4#area1#miu24.mov4#opm6#icu6#icp2"/>
+      </Link>
+      <Link id="sv4#area1#page12#seu13#ln134" name="Flow134" to="sv4#area1#page12#qu19" type="transport" validate="true">
+        <LinkParameter id="sv4#area1#page12#seu13#ln134#par379" name="oid_ordine" source="ent5#att6Array" target="sv4#area1#page12#qu19.sv4#area1#page12#qu19#qi14"/>
+      </Link>
+    </SelectorUnit>
+    <QueryUnit gr:x="465" gr:y="360" id="sv4#area1#page12#qu3" name="CART" mode="select" language="SQL" outputsOrder="sv4#area1#page12#qu3#qo7 sv4#area1#page12#qu3#qo5 sv4#area1#page12#qu3#qo6" db="db6">
+      <QueryText xml:space="preserve">select item.name as name, quantity as quantity, (quantity*price) as price
+from orderitem, item
+where order_oid = :ordine and orderitem.item_oid = item.oid</QueryText>
+      <QueryOutput id="sv4#area1#page12#qu3#qo5" name="quantity" type="integer"/>
+      <QueryInput id="sv4#area1#page12#qu3#qi5" name="ordine" required="true" type="integer"/>
+      <QueryOutput id="sv4#area1#page12#qu3#qo6" name="price" type="string"/>
+      <QueryOutput id="sv4#area1#page12#qu3#qo7" name="item" type="string"/>
+    </QueryUnit>
+    <QueryUnit gr:x="50" gr:y="10" id="sv4#area1#page12#qu1" name="get restaurantName" mode="select" language="SQL" db="db6">
+      <QueryInput id="sv4#area1#page12#qu1#qi1" name="restaurantKey" required="true" type="integer"/>
+      <QueryOutput id="sv4#area1#page12#qu1#qo3" name="RESTAURANT" type="string"/>
+      <QueryText xml:space="preserve">select name
+from restaurantuser
+where user_oid = :restaurantKey</QueryText>
+    </QueryUnit>
+    <QueryUnit id="sv4#area1#page12#qu19" name="get total of order" gr:x="115" gr:y="330" mode="select" language="SQL" db="db6">
+      <QueryInput id="sv4#area1#page12#qu19#qi14" name="ordine" required="true"/>
+      <QueryText xml:space="preserve">select sum(quantity*price)+ restaurantuser.delivery_fee as total
+from orderitem, item, restaurantuser
+where orderitem.order_oid = :ordine and orderitem.item_oid = item.oid and item.restaurantuser_oid = restaurantuser.user_oid</QueryText>
+      <QueryOutput id="sv4#area1#page12#qu19#qo23" name="total" type="float"/>
+    </QueryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area1#page12#qu1"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv4#area1#page12#mssu1"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="5">
+        <layout:Unit unitId="sv4#area1#page12#mssu6"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv4#area1#page12#pwu5">
+          <layout:Attribute attribute="ent9#att32"/>
+          <layout:Attribute attribute="ent9#att33"/>
+          <layout:Attribute attribute="ent9#att34"/>
+          <layout:Attribute attribute="ent9#att35"/>
+          <layout:Link link="sv4#area1#page12#pwu5#ln110"/>
+          <layout:Link link="sv4#area1#page12#pwu5#ln116"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv4#area1#page12#qu3"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="9"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="3">
+        <layout:Unit unitId="sv4#area1#page12#qu19"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv4#area1#page12#ln80" name="Finalize order" to="sv4#area1#miu24" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="263,-90,173,50"/>
+</Page>

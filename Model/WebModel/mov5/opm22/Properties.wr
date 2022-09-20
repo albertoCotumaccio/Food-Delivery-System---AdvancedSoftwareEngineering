@@ -1,0 +1,70 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="380" gr:y="175" id="mov5#opm22" name="order delivered">
+  <OperationUnits>
+    <InputCollectorUnit id="mov5#opm22#icu22" gr:x="30" gr:y="60">
+      <OKLink id="mov5#opm22#icu22#oln103" name="OKFlow103" to="mov5#opm22#seu23" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="1770" gr:y="95" id="mov5#opm22#okcu20" name="OK Port20">
+      <OutputCollectorParameter id="mov5#opm22#okcu20#ocp40" name="message"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="1770" gr:y="285" id="mov5#opm22#kocu22" name="KO Port22">
+      <OutputCollectorParameter id="mov5#opm22#kocu22#ocp41" name="message" value="error"/>
+    </KOCollectorUnit>
+    <SelectorUnit id="mov5#opm22#seu23" name="get current order of rider still not delivered" gr:x="285" gr:y="310" entity="ent5">
+      <Selector id="mov5#opm22#seu23#su45" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov5#opm22#seu23#su45#rcond19" name="RoleCondition13" predicate="in" implied="false" role="rel12#role23"/>
+        <AttributesCondition id="mov5#opm22#seu23#su45#acond22" name="AttCondition15" predicate="eq" booleanOperator="or" implied="false" attributes="ent5#att17" value="0"/>
+      </Selector>
+      <OKLink id="mov5#opm22#seu23#oln106" name="OKFlow106" to="mov5#opm22#inn6">
+        <LinkParameter id="mov5#opm22#seu23#oln106#par362" name="oid_Input" source="ent5#att6Array" target="mov5#opm22#inn6.isnotnull"/>
+      </OKLink>
+      <Link id="mov5#opm22#seu23#ln127" name="Flow127" to="mov5#opm22#mfu20" type="transport" validate="true">
+        <LinkParameter id="mov5#opm22#seu23#ln127#par363" name="oid_KeyCondition20 [oid]" source="ent5#att6Array" target="mov5#opm22#mfu20#su47#kcond25.ent5#att6"/>
+      </Link>
+    </SelectorUnit>
+    <GetUnit id="mov5#opm22#gtu16" name="Get10" gr:x="465" gr:y="490" contextParameters="UserCtxParam">
+      <Link id="mov5#opm22#gtu16#ln119" name="Flow96" to="mov5#opm22#seu23" type="transport" validate="true">
+        <LinkParameter id="mov5#opm22#gtu16#ln119#par284" name="UserCtxParam.oid_RoleCondition13 [oid]" source="mov5#opm22#gtu16.UserCtxParam" target="mov5#opm22#seu23#su45#rcond19.userOID"/>
+      </Link>
+      <Link id="mov5#opm22#gtu16#ln125" name="Flow111" to="mov5#opm22#mfu19" type="transport" validate="true" gr:bendpoints="353,-3,-157,262">
+        <LinkParameter id="mov5#opm22#gtu16#ln125#par355" name="UserCtxParam.oid_KeyCondition21 [oid]" source="mov5#opm22#gtu16.UserCtxParam" target="mov5#opm22#mfu19#su46#kcond24.userOID"/>
+      </Link>
+    </GetUnit>
+    <ModifyUnit id="mov5#opm22#mfu19" name="rider not busy anymore and set newBalance" gr:x="1335" gr:y="65" entity="ent2">
+      <Selector id="mov5#opm22#mfu19#su46" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov5#opm22#mfu19#su46#kcond24" name="KeyCondition21" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov5#opm22#mfu19#oln154" name="OKFlow154" to="mov5#opm22#okcu20">
+        <LinkParameter id="mov5#opm22#mfu19#oln154#par438" name="Order succesfully delivered_message" sourceValue="Order succesfully delivered" target="mov5#opm22#okcu20#ocp40"/>
+      </OKLink>
+      <KOLink id="mov5#opm22#mfu19#kln70" name="KOFlow70" to="mov5#opm22#kocu22" automaticCoupling="true"/>
+    </ModifyUnit>
+    <ModifyUnit id="mov5#opm22#mfu20" name="order delivered" gr:x="775" gr:y="105" entity="ent5">
+      <Selector id="mov5#opm22#mfu20#su47" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov5#opm22#mfu20#su47#kcond25" name="KeyCondition20" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov5#opm22#mfu20#oln153" name="OKFlow153" to="mov5#opm22#qu22">
+        <LinkParameter id="mov5#opm22#mfu20#oln153#par436" name="oid_orderID" source="ent5#att6Array" target="mov5#opm22#qu22.mov5#opm22#qu22#qi26"/>
+      </OKLink>
+    </ModifyUnit>
+    <IsNotNullUnit gr:x="750" gr:y="300" id="mov5#opm22#inn6" name="Is Not Null?">
+      <OKLink id="mov5#opm22#inn6#oln105" name="OKFlow104" to="mov5#opm22#mfu20" gr:bendpoints="57,-86,-28,89">
+        <LinkParameter id="mov5#opm22#inn6#oln105#par360" name="1_delivered" target="mov5#opm22#mfu20.ent5#att17" sourceValue="1"/>
+        <LinkParameter id="mov5#opm22#inn6#oln105#par361" name="oid_KeyCondition20 [oid]" source="ent5#att6Array" target="mov5#opm22#mfu20#su47#kcond25.ent5#att6"/>
+      </OKLink>
+      <KOLink id="mov5#opm22#inn6#kln55" name="KOFlow55" to="mov5#opm22#okcu20" gr:bendpoints="572,21,-463,206">
+        <LinkParameter id="mov5#opm22#inn6#kln55#par364" name="No active orders!_message" sourceValue="No active orders!" target="mov5#opm22#okcu20#ocp40"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <QueryUnit id="mov5#opm22#qu22" name="get new balance of rider" gr:x="1035" gr:y="85" mode="select" language="SQL" db="db6">
+      <QueryInput id="mov5#opm22#qu22#qi26" name="orderID" required="true" type="integer"/>
+      <QueryText xml:space="preserve">select u.balance + (o.total / 10) 
+from sapienza_delivery.order o, sapienza_delivery.user u, rideruser ru
+where o.rideruser_oid = ru.user_oid and ru.user_oid = u.oid and o.oid = :orderID;</QueryText>
+      <QueryOutput id="mov5#opm22#qu22#qo40" name="newBalanceRider" type="float"/>
+      <OKLink id="mov5#opm22#qu22#oln152" name="OKFlow152" to="mov5#opm22#mfu19">
+        <LinkParameter id="mov5#opm22#qu22#oln152#par435" name="0_busy" sourceValue="0" target="mov5#opm22#mfu19.ent2#att19"/>
+        <LinkParameter id="mov5#opm22#qu22#oln152#par437" name="newBalanceRider_balance" source="data[].newBalanceRider" target="mov5#opm22#mfu19.User#att1"/>
+      </OKLink>
+    </QueryUnit>
+  </OperationUnits>
+</OperationModule>

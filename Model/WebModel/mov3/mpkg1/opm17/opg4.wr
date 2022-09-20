@@ -1,0 +1,56 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov3#mpkg1#opm17#opg4" name="Operation Registration Rider" transaction="true" gr:x="305" gr:y="170">
+  <OperationUnits>
+    <CreateUnit id="mov3#mpkg1#opm17#opg4#cru1" name="Create1" gr:x="0" gr:y="0" entity="ent6">
+      <OKLink id="mov3#mpkg1#opm17#opg4#cru1#oln64" name="OKFlow22" to="mov3#mpkg1#opm17#opg4#cru7" automaticCoupling="true"/>
+    </CreateUnit>
+    <CreateUnit id="mov3#mpkg1#opm17#opg4#cru5" name="Create5" gr:x="250" gr:y="0" entity="ent6">
+      <OKLink id="mov3#mpkg1#opm17#opg4#cru5#oln65" name="OKFlow30" to="mov3#mpkg1#opm17#opg4#cru9" automaticCoupling="true"/>
+    </CreateUnit>
+    <CreateUnit id="mov3#mpkg1#opm17#opg4#cru7" name="Create3" gr:x="120" gr:y="0" entity="ent6">
+      <OKLink id="mov3#mpkg1#opm17#opg4#cru7#oln72" name="OKFlow25" to="mov3#mpkg1#opm17#opg4#cru5" automaticCoupling="true"/>
+    </CreateUnit>
+    <CreateUnit id="mov3#mpkg1#opm17#opg4#cru8" name="Create9" gr:x="490" gr:y="0" entity="ent6">
+      <OKLink id="mov3#mpkg1#opm17#opg4#cru8#oln73" name="OKFlow33" to="mov3#mpkg1#opm17#opg4#cru11" automaticCoupling="true"/>
+    </CreateUnit>
+    <CreateUnit id="mov3#mpkg1#opm17#opg4#cru9" name="Create8" gr:x="370" gr:y="0" entity="ent6">
+      <OKLink id="mov3#mpkg1#opm17#opg4#cru9#oln74" name="OKFlow32" to="mov3#mpkg1#opm17#opg4#cru8" automaticCoupling="true"/>
+    </CreateUnit>
+    <CreateUnit id="mov3#mpkg1#opm17#opg4#cru10" name="Create11" gr:x="755" gr:y="0" entity="ent6">
+      <OKLink id="mov3#mpkg1#opm17#opg4#cru10#oln83" name="OKFlow83" to="mov3#mpkg1#opm17#okcu14" automaticCoupling="true"/>
+    </CreateUnit>
+    <CreateUnit id="mov3#mpkg1#opm17#opg4#cru11" name="Create10" gr:x="615" gr:y="0" entity="ent6">
+      <OKLink id="mov3#mpkg1#opm17#opg4#cru11#oln78" name="OKFlow35" to="mov3#mpkg1#opm17#opg4#cru10" automaticCoupling="true"/>
+    </CreateUnit>
+    <CreateUnit id="mov3#mpkg1#opm17#opg4#cru14" name="Rider" gr:x="40" gr:y="180" entity="ent2" linkOrder="mov3#mpkg1#opm17#opg4#cru14#ln78 mov3#mpkg1#opm17#opg4#cru14#ln79 mov3#mpkg1#opm17#opg4#cru14#ln81 mov3#mpkg1#opm17#opg4#cru14#ln90 mov3#mpkg1#opm17#opg4#cru14#ln91 mov3#mpkg1#opm17#opg4#cru14#ln92">
+      <OKLink id="mov3#mpkg1#opm17#opg4#cru14#oln82" name="OKFlow82" to="mov3#mpkg1#opm17#opg4#cru1">
+        <LinkParameter id="mov3#mpkg1#opm17#opg4#cru14#oln82#par164" name="Monday_day" sourceValue="Monday" target="mov3#mpkg1#opm17#opg4#cru1.ent6#att14"/>
+        <LinkParameter id="mov3#mpkg1#opm17#opg4#cru14#oln82#par166" name="oid_RiderUser.oid(SlotToRiderUser)" source="userOIDArray" target="mov3#mpkg1#opm17#opg4#cru1.rel2#role4.userOID"/>
+      </OKLink>
+      <Link id="mov3#mpkg1#opm17#opg4#cru14#ln78" name="Flow78" to="mov3#mpkg1#opm17#opg4#cru7" type="transport" validate="true">
+        <LinkParameter id="mov3#mpkg1#opm17#opg4#cru14#ln78#par221" name="Tuesday_day" sourceValue="Tuesday" target="mov3#mpkg1#opm17#opg4#cru7.ent6#att14"/>
+        <LinkParameter id="mov3#mpkg1#opm17#opg4#cru14#ln78#par230" name="oid_RiderUser.oid(SlotToRiderUser)" source="userOIDArray" target="mov3#mpkg1#opm17#opg4#cru7.rel2#role4.userOID"/>
+      </Link>
+      <Link id="mov3#mpkg1#opm17#opg4#cru14#ln79" name="Flow79" to="mov3#mpkg1#opm17#opg4#cru5" type="transport" validate="true">
+        <LinkParameter id="mov3#mpkg1#opm17#opg4#cru14#ln79#par231" name="Wednesday_day" sourceValue="Wednesday" target="mov3#mpkg1#opm17#opg4#cru5.ent6#att14"/>
+        <LinkParameter id="mov3#mpkg1#opm17#opg4#cru14#ln79#par232" name="oid_RiderUser.oid(SlotToRiderUser)" source="userOIDArray" target="mov3#mpkg1#opm17#opg4#cru5.rel2#role4.userOID"/>
+      </Link>
+      <Link id="mov3#mpkg1#opm17#opg4#cru14#ln81" name="Flow81" to="mov3#mpkg1#opm17#opg4#cru9" type="transport" validate="true">
+        <LinkParameter id="mov3#mpkg1#opm17#opg4#cru14#ln81#par233" name="Thursday_day" sourceValue="Thursday" target="mov3#mpkg1#opm17#opg4#cru9.ent6#att14"/>
+        <LinkParameter id="mov3#mpkg1#opm17#opg4#cru14#ln81#par234" name="oid_RiderUser.oid(SlotToRiderUser)" source="userOIDArray" target="mov3#mpkg1#opm17#opg4#cru9.rel2#role4.userOID"/>
+      </Link>
+      <Link id="mov3#mpkg1#opm17#opg4#cru14#ln90" name="Flow90" to="mov3#mpkg1#opm17#opg4#cru8" type="transport" validate="true">
+        <LinkParameter id="mov3#mpkg1#opm17#opg4#cru14#ln90#par235" name="Friday_day" sourceValue="Friday" target="mov3#mpkg1#opm17#opg4#cru8.ent6#att14"/>
+        <LinkParameter id="mov3#mpkg1#opm17#opg4#cru14#ln90#par236" name="oid_RiderUser.oid(SlotToRiderUser)" source="userOIDArray" target="mov3#mpkg1#opm17#opg4#cru8.rel2#role4.userOID"/>
+      </Link>
+      <Link id="mov3#mpkg1#opm17#opg4#cru14#ln91" name="Flow91" to="mov3#mpkg1#opm17#opg4#cru11" type="transport" validate="true">
+        <LinkParameter id="mov3#mpkg1#opm17#opg4#cru14#ln91#par237" name="Saturday_day" sourceValue="Saturday" target="mov3#mpkg1#opm17#opg4#cru11.ent6#att14"/>
+        <LinkParameter id="mov3#mpkg1#opm17#opg4#cru14#ln91#par239" name="oid_RiderUser.oid(SlotToRiderUser)" source="userOIDArray" target="mov3#mpkg1#opm17#opg4#cru11.rel2#role4.userOID"/>
+      </Link>
+      <Link id="mov3#mpkg1#opm17#opg4#cru14#ln92" name="Flow92" to="mov3#mpkg1#opm17#opg4#cru10" type="transport" validate="true">
+        <LinkParameter id="mov3#mpkg1#opm17#opg4#cru14#ln92#par240" name="Sunday_day" sourceValue="Sunday" target="mov3#mpkg1#opm17#opg4#cru10.ent6#att14"/>
+        <LinkParameter id="mov3#mpkg1#opm17#opg4#cru14#ln92#par241" name="oid_RiderUser.oid(SlotToRiderUser)" source="userOIDArray" target="mov3#mpkg1#opm17#opg4#cru10.rel2#role4.userOID"/>
+      </Link>
+    </CreateUnit>
+  </OperationUnits>
+  <KOLink id="mov3#mpkg1#opm17#opg4#kln44" name="KOFlow43" to="mov3#mpkg1#opm17#kocu16" automaticCoupling="true" gr:bendpoints="477,-20,-118,180"/>
+</OperationGroup>
