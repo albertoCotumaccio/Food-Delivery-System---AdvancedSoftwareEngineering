@@ -50,8 +50,9 @@ command to run if program contains helper info
 
 Contributors names and contact info
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+dr. Alberto Cotumaccio(https://twitter.com/dompizzie) 
+dr. Giovanni Montobbio
+dr. Vincenzo Romito
 
 ## Version History
 
