@@ -6,7 +6,8 @@ This project was carried out for the Advanced Software Engineering exam, Master 
 <img align="left" width="0" height="192px" hspace="10"/>
 
 
-So you had an idea and developed the next world's industry-changing application. You decided to open-source it because you're way cool. Now you need to educate people about your project and need some docs to get started. You got it. :alien:
+With the advent of digital transformation, a low-code development platform that anyone can use to rapidly develop new ones is an essential tool for enabling your business to adapt and thrive.
+Low-code development platforms make companies more productive and flexible by offering: efficiency, flexibility, responsiveness, iterability
 
 <br>
 <p align="center">
