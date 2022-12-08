@@ -11,8 +11,10 @@ Low-code development platforms make companies more productive and flexible by of
 We used the <a href="https://www.webratio.com/site/content/it/home">Webratio</a> low-code platform.
 <br>
 
+## Authors :thumbsup:
 
-## License
+> Those who participated in the creation of the project are listed here
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
+* [Alberto Cotumaccio](https://it.linkedin.com/in/alberto-cotumaccio-8b8443229?trk=people-guest_people_search-card)
+* Giovanni Montobbio
+* Vincenzo Romito
