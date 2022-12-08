@@ -10,11 +10,7 @@ With the advent of digital transformation, a low-code development platform that 
 Low-code development platforms make companies more productive and flexible by offering: efficiency, flexibility, responsiveness, iterability.
 We used the <a href="https://www.webratio.com/site/content/it/home">Webratio</a> low-code platform.
 <br>
-<p align="center">
-<strong>Templates included:</strong>
-<a href="/.github/README.md">README</a> • <a href="/.github/CONTRIBUTING.md">CONTRIBUTING </a> • <a href="/.github/PULL_REQUEST_TEMPLATE.md">PULL REQUEST</a> • <a href="/.github/ISSUE_TEMPLATE.md">ISSUE TEMPLATE</a> • <a href="/.github/CONTRIBUTORS.md">CONTRIBUTORS</a>
-</p>
-<br>
+
 
 ## License
 
